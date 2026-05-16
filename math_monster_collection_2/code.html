@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monster Index - Junior Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monster-card-shadow {
+            box-shadow: 0 4px 0 0 rgba(0,0,0,0.05);
+        }
+        .active-press:active {
+            transform: translateY(4px);
+            box-shadow: none !important;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#001d36",
+                    "tertiary-container": "#41b77b",
+                    "tertiary": "#006d41",
+                    "secondary": "#755b00",
+                    "primary": "#0061a3",
+                    "on-secondary-container": "#715800",
+                    "on-tertiary-fixed": "#002110",
+                    "on-primary-container": "#003b65",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9fc",
+                    "secondary-fixed-dim": "#eec138",
+                    "inverse-on-surface": "#eff1f4",
+                    "background": "#f7f9fc",
+                    "surface-variant": "#e0e3e6",
+                    "tertiary-fixed": "#86f9b7",
+                    "surface-container-highest": "#e0e3e6",
+                    "surface-container-low": "#f2f4f7",
+                    "primary-fixed-dim": "#9dcaff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffe08e",
+                    "surface-bright": "#f7f9fc",
+                    "outline": "#707883",
+                    "outline-variant": "#c0c7d4",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary-container": "#004226",
+                    "inverse-primary": "#9dcaff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#69dc9c",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-background": "#191c1e",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#d1e4ff",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-high": "#e6e8eb",
+                    "secondary-container": "#fdcf45",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#0061a3",
+                    "on-surface-variant": "#404752",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#584400",
+                    "primary-container": "#47a7ff",
+                    "surface-container": "#eceef1",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#005230"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-tablet": "40px",
+                    "touch-target-min": "56px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Quicksand"],
+                    "label-bold": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "headline-xl": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-bold": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["18px", {"lineHeight": "26px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-background dark:bg-on-background w-full top-0 sticky z-50 shadow-[0_4px_0_0_rgba(0,97,163,0.1)] flex justify-between items-center px-margin-mobile py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">house</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Junior Explorer</h1>
+</div>
+<div class="bg-primary-container px-4 py-1 rounded-full text-on-primary-container font-label-bold flex items-center gap-1 active:scale-95 transition-transform">
+<span>⭐ 125</span>
+</div>
+</header>
+<main class="px-margin-mobile mt-8">
+<!-- Collection Mastery Header -->
+<section class="mb-10">
+<div class="flex justify-between items-end mb-3 px-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Collection Mastery</h2>
+<span class="text-primary font-label-bold text-label-bold">4 / 12 Found</span>
+</div>
+<!-- Plump Progress Bar -->
+<div class="w-full h-6 bg-surface-container-highest rounded-full overflow-hidden border-b-4 border-outline-variant/30">
+<div class="h-full bg-secondary-container w-[33%] rounded-full relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+<p class="mt-4 text-on-surface-variant font-body-md text-body-md italic px-2">Keep exploring to find more math friends!</p>
+</section>
+<!-- Bento Grid for Monsters -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Monster 1: Pyro -->
+<div class="bg-surface-container-low border-2 border-outline-variant/20 rounded-lg p-5 flex flex-col gap-4 active-press transition-all monster-card-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-bold text-sm uppercase tracking-wider">Fire Type</div>
+<div class="text-on-surface-variant font-label-bold">LVL 12</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 bg-error-container/30 rounded-xl flex items-center justify-center overflow-hidden border-b-4 border-error/20">
+<img alt="Pyro the Fire Fox" class="w-20 h-20 object-contain" data-alt="A cute, stylized cartoon fox made of soft orange flames with large expressive amber eyes. The character is designed in a kid-friendly, chunky 3D toy style with rounded edges and matte textures. It stands in a playful pose against a soft cream background, illuminated by warm, friendly lighting that emphasizes its squishy, tactile form. The overall aesthetic is vibrant, cheerful, and fits a high-quality educational game for children." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ3eKv5FOAT4601MYa6lLqmkDqyCqUZy9PqoJeeJA1F4JQmrjM3cKFuqbGH1RwS3FLYVX18cxAxKLIxJMirwMSbeP8KLrYnzJwC6D2txQRNDdb36_HP_37YZHWJipX-Cry1PHLAARtoDj90aWfZgQJU3ISfmlB1vIReQQmfiLZh9jM4FpKqOZ0hntu21JgEZw7lW8X2L1jQttIWvwbnZ9bEKql0WWQ_C5YSPn6qQQw4Aa85rTxlXGN5f8_bPpM5l0z9_RLOSq-IA"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-error">Pyro</h3>
+<p class="text-on-surface-variant font-label-bold text-label-bold">Multiplication Master</p>
+</div>
+</div>
+<div class="bg-white/60 p-3 rounded-DEFAULT border border-outline-variant/10">
+<p class="text-on-surface font-body-md text-body-md">Pyro uses blazing speed to solve groups of numbers in a flash!</p>
+</div>
+</div>
+<!-- Monster 2: Bubble -->
+<div class="bg-surface-container-low border-2 border-outline-variant/20 rounded-lg p-5 flex flex-col gap-4 active-press transition-all monster-card-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-sm uppercase tracking-wider">Water Type</div>
+<div class="text-on-surface-variant font-label-bold">LVL 8</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 bg-primary-container/30 rounded-xl flex items-center justify-center overflow-hidden border-b-4 border-primary/20">
+<img alt="Bubble the Water Penguin" class="w-20 h-20 object-contain" data-alt="A round, adorable blue penguin character with a belly made of shimmering water bubbles. The art style is chunky and tactile, resembling high-end matte vinyl toys. It has large, curious eyes and a friendly smile, standing in a bright, airy environment with soft, cool blue lighting. The character looks squishy and responsive, designed perfectly for a children's digital learning interface with a playful, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZS3RWCBixbJ7-xeMPuQcXDTBfBJh6TPuH3_Jh_D1RifGX9VKDJ1g03Pc5iMoN-vVAe21kmojo5b7jxtmgaS6W3BhEn7BDErb-2LLyRygv7P1Bf3M62QtvOGL9JYvPF-3Ca-yudJlR1L152TOU7FPdy4cFYuvamCigxrjYf7-0f3ziNzzQhtS3IAKhy1fmu-FKBQTda1CJC2x3WWAXUJ9zGrUioW2KddRj2vk1RopDn0THcWWYvTGmE9QnpbDHgVNCC8srXD0-9w"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Bubble</h3>
+<p class="text-on-surface-variant font-label-bold text-label-bold">Pattern Vision</p>
+</div>
+</div>
+<div class="bg-white/60 p-3 rounded-DEFAULT border border-outline-variant/10">
+<p class="text-on-surface font-body-md text-body-md">Bubble can see hidden sequences in the ocean waves!</p>
+</div>
+</div>
+<!-- Monster 3: Hexa -->
+<div class="bg-surface-container-low border-2 border-outline-variant/20 rounded-lg p-5 flex flex-col gap-4 active-press transition-all monster-card-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-bold text-sm uppercase tracking-wider">Leaf Type</div>
+<div class="text-on-surface-variant font-label-bold">LVL 15</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 bg-tertiary-container/30 rounded-xl flex items-center justify-center overflow-hidden border-b-4 border-tertiary/20">
+<img alt="Hexa the Leaf Turtle" class="w-20 h-20 object-contain" data-alt="A sturdy and friendly turtle with a shell composed of vibrant green geometric leaf shapes. The character is rendered in a soft, matte 3D style with rounded, touchable corners. It features bright green tones and gentle lighting that creates soft shadows, giving it a physical presence like a rubber toy. The setting is bright and optimistic, reflecting a safe and encouraging educational atmosphere for young learners." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFQi76pekvj0V5S504gzVSBRi5d4ulRcB4puzOx7QIEKQynaydmFmzoHFXzPb6pNdWLX8wWuSqZrkkEjJLdZ5v5lEWriMSLPNSiI1BbRqq9GQtMb0jwETz5Azkp_KPA-oZeBNnYyavczD2uvY9mHYFD0aTRv58jzur0ocPV9rVfwTYnxhEV2M9exAIYvJnHQSQSUiftQtLOpTxCtic_XQ0pRCXlI-bEmP_4BmgdWIhuJipsaVRPYd4QKLe6TT2DBx8SMvE5G8mFA"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary">Hexa</h3>
+<p class="text-on-surface-variant font-label-bold text-label-bold">Geometry Shield</p>
+</div>
+</div>
+<div class="bg-white/60 p-3 rounded-DEFAULT border border-outline-variant/10">
+<p class="text-on-surface font-body-md text-body-md">Hexa protects her friends using the power of perfect shapes!</p>
+</div>
+</div>
+<!-- Monster 4: Spark -->
+<div class="bg-surface-container-low border-2 border-outline-variant/20 rounded-lg p-5 flex flex-col gap-4 active-press transition-all monster-card-shadow">
+<div class="flex justify-between items-start">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-bold text-sm uppercase tracking-wider">Electric Type</div>
+<div class="text-on-surface-variant font-label-bold">LVL 5</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 bg-secondary-container/30 rounded-xl flex items-center justify-center overflow-hidden border-b-4 border-secondary/20">
+<img alt="Spark the Electric Cat" class="w-20 h-20 object-contain" data-alt="An energetic yellow cat character with zig-zagging electric fur patterns and bright, glowing whiskers. The style is chunky and playful, using a matte plastic texture that looks soft to the touch. The lighting is high-key and cheerful, with subtle yellow glows around the character. It fits perfectly within a modern, kid-centric UI that prioritizes tactile feedback and friendly, vibrant digital companions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOHkEpk1JgLzTmHvLht06X-LpgWtRv0V6Sgzok90K6-zAu7g2SMJNIsf9nxknKPh-AIootSqUDhcNKU-Z7BOR78lDf_ayFult2gZm_ViYAYFugZmYvI6LWMz6qzbQyaxBhv6hYHVxKRQdlWm82oHy96AtxPp0y2GQ8mm_-2NsjgR7e-de93DTTEPKivp-ov0qDPlGgqAAfGAyvq3-d7D8Uxir4eetmVvnvP_ZDu4a9T6h-4issFS7a9u0Tp347OoZDXawNrj7ctQ"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-secondary">Spark</h3>
+<p class="text-on-surface-variant font-label-bold text-label-bold">Fast Counting</p>
+</div>
+</div>
+<div class="bg-white/60 p-3 rounded-DEFAULT border border-outline-variant/10">
+<p class="text-on-surface font-body-md text-body-md">Spark counts lightning bolts faster than any other monster!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-lg rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined mb-1">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</a>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 shadow-md">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</div>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined mb-1">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</a>
+</nav>
+</body></html>

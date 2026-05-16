@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Math Quest - Grand World Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#261a00",
+                        "error": "#ba1a1a",
+                        "primary-container": "#00a3ff",
+                        "on-surface": "#191c1e",
+                        "secondary": "#006c49",
+                        "surface-bright": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#cfe5ff",
+                        "primary-fixed-dim": "#98cbff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "outline-variant": "#bec7d4",
+                        "secondary-container": "#6cf8bb",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-container": "#00714d",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#6f7883",
+                        "tertiary-fixed": "#ffdf9f",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary-container": "#443100",
+                        "surface-tint": "#00629d",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed": "#001d33",
+                        "on-primary-container": "#00375a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#004a77",
+                        "tertiary": "#795900",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#c69400",
+                        "primary": "#00629d",
+                        "on-surface-variant": "#3f4852",
+                        "inverse-primary": "#98cbff",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .soft-ui-volume {
+            box-shadow: 8px 8px 16px rgba(0, 98, 157, 0.08), -8px -8px 16px rgba(255, 255, 255, 0.8);
+        }
+        .soft-ui-inset {
+            box-shadow: inset 4px 4px 8px rgba(0, 98, 157, 0.05), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+        }
+        .button-3d {
+            border-bottom-width: 4px;
+            transition: transform 0.1s, border-bottom-width 0.1s;
+        }
+        .button-3d:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+        }
+        .galaxy-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(0, 163, 255, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(108, 248, 187, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(249, 189, 34, 0.05) 0%, transparent 60%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-bright min-h-screen font-body-md text-on-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-bright/80 backdrop-blur-xl shadow-md rounded-b-xl flex justify-between items-center px-margin-mobile py-4 md:px-margin-desktop">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container shadow-sm">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A charming 3D character illustration of a young kid explorer wearing oversized tech glasses and a vibrant green adventure suit. The style is high-fidelity 3D with soft rim lighting and a cheerful expression, set against a clean, out-of-focus educational background. The character radiates curiosity and intelligence, consistent with a premium polished digital learning environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHAgmCId5HWm6Z2fzEAlNdSBnGD1PV4QhNMECB4E16ipSJkDMaQOGnOwWuzoQWrtIUVEEPMxp2Zd62OcCuJc8Nkl7jKlfD_xTAluCAcaUf224jGKNqu7uG8C11UcGQlcahuxSgs1vpty611Z4eyLKWI8v9j4giCf7U3T2TtwPPKrvfZoviET16VNfn4BUAUihp9vplEXXzDeft3XiETjqTBzE9fOxxazz5L8SdVN--eLtftYgY00YFNEYiVIAY14dOqvXTVjs4nw"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Math Quest</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-primary-container/10 px-4 py-1.5 rounded-full border border-primary-container/20">
+<span class="font-label-md text-label-md text-primary">Lv. 12</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">settings</button>
+</div>
+</header>
+<!-- Main Canvas: Knowledge Galaxy Map -->
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop min-h-screen galaxy-bg relative overflow-hidden">
+<!-- Decorative Galaxy Elements -->
+<div class="absolute top-40 left-10 w-64 h-64 bg-primary-container/5 rounded-full blur-[80px]"></div>
+<div class="absolute bottom-60 right-10 w-96 h-96 bg-secondary-container/5 rounded-full blur-[100px]"></div>
+<!-- Map Navigation Container -->
+<div class="max-w-container-max mx-auto space-y-24 relative z-10">
+<!-- Section: Advanced (Grades 7-8) -->
+<section class="relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-container/20 flex items-center justify-center text-tertiary shadow-sm">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Advanced Clusters</h2>
+<p class="font-label-md text-label-md text-outline">Mastering the Abstract</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Grade 8 -->
+<div class="soft-ui-volume bg-white/60 backdrop-blur-sm p-8 rounded-[32px] flex flex-col items-center text-center relative overflow-hidden border border-white/40">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<img alt="Grade 8" class="w-40 h-40 object-contain mb-4 drop-shadow-xl" data-alt="A floating 3D island representing Grade 8 mathematics, featuring high-tech floating crystalline structures and glowing geometric shapes like tetrahedrons and spheres. The island is suspended in a bright Knowledge Galaxy theme with soft pastel nebulae. The lighting is ethereal and bright, using a palette of soft gold and pure white to signify advanced intellectual achievement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvkgFFdDAVXkwfcNNy6ZrOCasNL0wJs1rsrGet4hX-_MFyXSKAkOnwGf4fMAVHCBjqAGDweKGrZaLfHgI1PZwaWPP5Y2uRXP-mwx8XTxUgsguMIF1kcfRD86SnjPfPqkhygCx1IhqPchKXFR6C4E0AlDvqqf6dXQB3pNweO7ww1rsp0GDw81hIfd0oE_SUOWBRjbJWtPT-FKQkpaU-LUHqfVkUWskoWO1OpGpyGkdo6DYsKfjSpv7pyGdOETyr1oclwbD7NFVmRA"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Grade 8</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Algebraic Mastery &amp; Functions</p>
+<button class="button-3d bg-surface-container-high border-surface-dim text-outline px-8 py-3 rounded-xl font-label-md cursor-not-allowed">Locked</button>
+</div>
+<!-- Grade 7 -->
+<div class="soft-ui-volume bg-white/60 backdrop-blur-sm p-8 rounded-[32px] flex flex-col items-center text-center relative overflow-hidden border border-white/40">
+<img alt="Grade 7" class="w-40 h-40 object-contain mb-4 drop-shadow-xl" data-alt="A floating 3D island for Grade 7, characterized by intricate mechanical gears and floating mathematical symbols like pi and square roots. The island has a lush, soft-textured landscape with floating waterfalls of light. The visual style is polished Neumorphism with bright high-key lighting and vibrant blue accents against a soft-touch surface background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Dc37L7obXxTtAaxjkC6Vu9eH8ElNZI2fbSInEPx4oI3XfBr6gO5-tpptcbb6mRnbaycdkNhjYtXZo-mJkDSLPxBpnLsnIKod47xq5NchHydL9Mp5uMl2AynsU_NfYXHq71ooYGTcluvmZL57lh4bojKVaihwMQj61d1iSSvt-EM41SRP65FA4W8xkAeMYxAAw4PGCvc8uX463-46KFI-DZdqcxVRPxRYLJ-RhrEKrCkehcwZfuWFpFFoB773ZktdcHM1VCs2dQ"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Grade 7</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Proportionality &amp; Logic</p>
+<button class="button-3d bg-surface-container-high border-surface-dim text-outline px-8 py-3 rounded-xl font-label-md cursor-not-allowed">Locked</button>
+</div>
+</div>
+<!-- Mission Path -->
+<div class="hidden md:block absolute left-1/2 -bottom-24 w-1 h-24 border-l-4 border-dotted border-outline-variant/50"></div>
+</section>
+<!-- Section: Intermediate (Grades 4-6) -->
+<section class="relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined">explore</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Intermediate Islands</h2>
+<p class="font-label-md text-label-md text-outline">Journey of Discovery</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Grade 6 -->
+<div class="soft-ui-volume bg-white/60 backdrop-blur-sm p-8 rounded-[32px] flex flex-col items-center text-center border border-white/40">
+<img alt="Grade 6" class="w-32 h-32 object-contain mb-4" data-alt="A 3D floating landmass for Grade 6 math, showing stylized graphs and data visualization icons as physical 3D objects. The landscape is a soft mint green with fluffy cloud-like edges. The atmosphere is bright and energetic, with clear mission paths visible between floating 3D cubes and pyramids. The lighting is soft and inviting, mimicking a sunny day in a digital world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYBOMaTNwScVmt6EVIZtrz9JRm-1neAnlUPUMIeaWkgRowk2R_OCrIcA4D1UWe0YYjv4KarewgFoWvncVfsrJKGbtiRvB5gTsRLMMoS1XXZ1Mr2S6fK-EXz_IykAN0nEsBPp3WKRWnnC2NNuSwNh3369FhVOmGMuborhzNdaQkGass-4Ka6psdpH3Kio2sbd87bjsd6JSlfy0nDmuZD5r-pJnX9FfiJ9ud28MWjX96iZcHI3u_yKefRYnXW6dGpnwbohaZDX1HUQ"/>
+<h3 class="font-label-md text-label-md text-on-surface">Grade 6</h3>
+<button class="mt-4 button-3d bg-surface-container-high border-surface-dim text-outline px-6 py-2 rounded-xl text-sm font-label-md cursor-not-allowed">Locked</button>
+</div>
+<!-- Grade 5 (CURRENT ACTIVE MISSION HIGHLIGHTED) -->
+<div class="soft-ui-volume bg-white p-8 rounded-[32px] flex flex-col items-center text-center border-2 border-primary-container ring-8 ring-primary-container/10 scale-105 z-20 relative shadow-2xl">
+<div class="absolute -top-4 bg-primary-container text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg">ACTIVE MISSION</div>
+<img alt="Grade 5" class="w-40 h-40 object-contain mb-4 animate-bounce-slow" data-alt="The central active mission island for Grade 5, featuring a vibrant 3D lighthouse that beams light towards other islands. The island is covered in soft, rounded 3D grass and features oversized floating colorful beads and abacus parts. The lighting is high-contrast but soft-rimmed, creating a deep sense of volume. The color palette is dominated by vibrant sky blue and sunny yellow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7kVrEf70d_2Wm5PPNZ3jgElQ4fhuN-QVw0j-UlmLJ70b1T_fH8scbagssY0uRi8fKKZZa9ZEVJ5SCtt09XEXs2r5DfbbRkYeuonvVb063YwQqxLHrWTBd5xi_VneyCvU1WnwGunHC6vHeYgb00HSUT09Ien6uRPyDAQLnSJS9O7PnfqIVVvzO5pcdSQIDJ7R7WLiS5WexKkHc5RV89rU_W4mKSMD6TYP0tEYkjiQWrAWhB9Syz-5RFw6haKoMQdouH0nezmNCwQ"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Grade 5</h3>
+<p class="font-label-md text-label-md text-primary mb-6">Decimals &amp; Volume</p>
+<button class="button-3d bg-primary-container border-on-primary-container/20 text-white px-10 py-3 rounded-xl font-bold shadow-lg hover:brightness-110">Continue Path</button>
+</div>
+<!-- Grade 4 -->
+<div class="soft-ui-volume bg-white/80 backdrop-blur-sm p-8 rounded-[32px] flex flex-col items-center text-center border border-white/40">
+<img alt="Grade 4" class="w-32 h-32 object-contain mb-4 grayscale-[0.5] opacity-80" data-alt="A 3D island for Grade 4 with giant floating wooden blocks and stylized fractions shown as glowing 3D pie slices. The terrain is a soft pastel orange. The island is surrounded by a gentle, bright nebula in the Knowledge Galaxy. The visual style is Neumorphism-lite with dual ambient shadows providing a puffed-out tactile quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVdTFrpx_qqTtWjmVtnqQ14ITyVuCiGw9JI87U83GuV6RomQsMHyGquhaX_9jFHG_rxp5rvw_OAUIQXcYKvqWGwwdXY08ZfayMQsrg_O5QoD_vRWUDy3wEE8aWmyQlOUwrjVZzlK6Kkm_cIigGaAyPuxCqDuHqdTs8Q_RQO2YixQLuFvqk4X3nN1FLRg96PKXhAZj_bi9LWjHiYWd9LCkvprcaYVhA04LjRFY1TMbRTWqUPSjXd0xoS8Vu2RIptGdlHIumUQSDfg"/>
+<h3 class="font-label-md text-label-md text-on-surface">Grade 4</h3>
+<div class="mt-4 flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs font-bold">COMPLETED</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block absolute left-1/2 -bottom-24 w-1 h-24 border-l-4 border-dotted border-outline-variant/50"></div>
+</section>
+<!-- Section: Foundational (Grades 1-3) -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Foundational Roots</h2>
+<p class="font-label-md text-label-md text-outline">Building the Base</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<!-- Grades 1-3 Chips/Mini Islands -->
+<div class="soft-ui-volume bg-white/90 p-6 rounded-[24px] flex flex-col items-center justify-center border border-white/50">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">calculate</span>
+<span class="font-label-md text-on-surface">Grade 3</span>
+<span class="text-[10px] text-secondary font-bold mt-1">100% DONE</span>
+</div>
+<div class="soft-ui-volume bg-white/90 p-6 rounded-[24px] flex flex-col items-center justify-center border border-white/50">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">add_circle</span>
+<span class="font-label-md text-on-surface">Grade 2</span>
+<span class="text-[10px] text-secondary font-bold mt-1">100% DONE</span>
+</div>
+<div class="soft-ui-volume bg-white/90 p-6 rounded-[24px] flex flex-col items-center justify-center border border-white/50 col-span-2 md:col-span-1">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">counter_1</span>
+<span class="font-label-md text-on-surface">Grade 1</span>
+<span class="text-[10px] text-secondary font-bold mt-1">100% DONE</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 rounded-t-[2rem] shadow-[0_-8px_30px_rgba(0,98,157,0.1)]">
+<!-- Map (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-white rounded-2xl px-6 py-2.5 transition-all active:scale-90 shadow-lg shadow-primary-container/30" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-md text-label-md mt-0.5">Map</span>
+</a>
+<!-- Collection -->
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-surface-container-high rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md mt-0.5">Collection</span>
+</a>
+<!-- Quests -->
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-surface-container-high rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-label-md text-label-md mt-0.5">Quests</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-surface-container-high rounded-2xl transition-all" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-md text-label-md mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button: Shortcut to Active Quest -->
+<button class="fixed bottom-28 right-6 w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container shadow-2xl flex items-center justify-center border-b-4 border-secondary hover:brightness-105 active:translate-y-1 active:border-b-0 transition-all z-40">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</body></html>

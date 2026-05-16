@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math World - Nexus Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Quicksand:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --soft-white: #ffffff;
+            --soft-shadow: rgba(0, 98, 157, 0.12);
+            --highlight: #ffffff;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #f7f9fb;
+        }
+        .neumorphic-puffed {
+            background: #f7f9fb;
+            box-shadow: 
+                8px 8px 16px var(--soft-shadow), 
+                -8px -8px 16px var(--highlight);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .neumorphic-inset {
+            background: #f7f9fb;
+            box-shadow: 
+                inset 4px 4px 8px var(--soft-shadow), 
+                inset -4px -4px 8px var(--highlight);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .path-mesh {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 163, 255, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#261a00",
+                    "error": "#ba1a1a",
+                    "primary-container": "#00a3ff",
+                    "on-surface": "#191c1e",
+                    "secondary": "#006c49",
+                    "surface-bright": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#cfe5ff",
+                    "primary-fixed-dim": "#98cbff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#f9bd22",
+                    "outline-variant": "#bec7d4",
+                    "secondary-container": "#6cf8bb",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-container": "#00714d",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eceef0",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6f7883",
+                    "tertiary-fixed": "#ffdf9f",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-tertiary-container": "#443100",
+                    "surface-tint": "#00629d",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#001d33",
+                    "on-primary-container": "#00375a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed-variant": "#004a77",
+                    "tertiary": "#795900",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#c69400",
+                    "primary": "#00629d",
+                    "on-surface-variant": "#3f4852",
+                    "inverse-primary": "#98cbff",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-md": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface-bright dark:bg-surface-container-low fixed top-0 w-full z-[100] flex justify-between items-center px-margin-mobile py-4 rounded-b-xl shadow-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden border-2 border-white shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A high-quality 3D portrait of a young kid explorer wearing stylish round glasses and a vibrant green adventure suit. The lighting is soft and cinematic, highlighting a cheerful expression. The style is reminiscent of modern high-end 3D animation with rich textures and a clean, bright studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDubNFvKWcek66eOp4CUX3v0BltiyTLf3Nv2gVmfDSSSLGq18DKLu-vN4bYDc1u7JIO7FEWNMcgrWoRJYwc4qduWoZMLkYgEhX1OIFOiEuEThA2IRlsSKlrYlB05acrQ5ErJKo_bAhQ8a1sMSH41nO4USDIJ79YrwpfdhAN0qsKx2Ai1xq7GJAWwRWkF46CwcFrnPkQhfCM4l5L5_aECSIT3t8o7b4atKHYN0MWc7tv5vSdyxpuKhN0GdEZh-kwMlqrGOie4QJjpQ"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Math Quest</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-secondary-container px-4 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">stars</span>
+<span class="font-label-md text-label-md text-on-secondary-container">Lv. 12</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas: Nexus Hub -->
+<main class="flex-grow pt-24 pb-32 px-margin-mobile relative overflow-hidden bg-gradient-to-b from-[#e0f2ff] to-[#f7f9fb]">
+<!-- Decorative Clouds (Background Layer) -->
+<div class="absolute top-20 left-[-10%] opacity-40">
+<div class="w-64 h-32 bg-white rounded-full blur-3xl"></div>
+</div>
+<div class="absolute top-60 right-[-5%] opacity-40">
+<div class="w-80 h-40 bg-white rounded-full blur-3xl"></div>
+</div>
+<!-- Central Winding Path -->
+<div class="relative max-w-lg mx-auto min-h-[1200px] path-mesh rounded-full">
+<!-- The Path Line -->
+<svg class="absolute top-0 left-0 w-full h-full opacity-20" preserveaspectratio="none">
+<path d="M 200 1200 Q 50 1000 200 800 Q 350 600 200 400 Q 50 200 200 0" fill="transparent" stroke="url(#pathGradient)" stroke-linecap="round" stroke-width="24"></path>
+<defs>
+<lineargradient id="pathGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#00a3ff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#00629d;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Mission Nodes (Bento Grid Style Interaction) -->
+<div class="relative z-10 flex flex-col items-center gap-48 pt-20">
+<!-- Level 4: The Apex -->
+<div class="group relative">
+<button class="neumorphic-puffed w-24 h-24 rounded-2xl flex items-center justify-center transform group-hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">castle</span>
+</button>
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-white px-4 py-1 rounded-full shadow-md whitespace-nowrap">
+<span class="font-label-md text-label-md text-primary">Infinity Fortress</span>
+</div>
+</div>
+<!-- Level 3 -->
+<div class="group relative self-end mr-12">
+<button class="neumorphic-puffed w-20 h-20 rounded-full flex items-center justify-center border-4 border-white transform group-hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</button>
+<div class="absolute -right-2 top-0 translate-x-full ml-4 glass-panel p-3 rounded-xl w-40">
+<p class="font-label-md text-xs text-on-surface-variant mb-1">Chapter 3</p>
+<p class="font-headline-md text-sm text-primary">Algebraic Isles</p>
+</div>
+</div>
+<!-- Level 2 (Active/Unlocked) -->
+<div class="group relative self-start ml-8">
+<div class="absolute -inset-4 bg-primary/10 rounded-full blur-xl"></div>
+<button class="bg-primary text-white w-28 h-28 rounded-full flex items-center justify-center border-8 border-white shadow-xl transform group-hover:scale-110 transition-all duration-300 relative z-20">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</button>
+<div class="absolute -bottom-14 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-6 py-2 rounded-full shadow-lg border-2 border-white">
+<span class="font-label-md text-label-md">Current: Fraction Forest</span>
+</div>
+</div>
+<!-- Level 1 (Completed) -->
+<div class="group relative">
+<button class="neumorphic-inset w-20 h-20 rounded-full flex items-center justify-center opacity-80">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2">
+<span class="font-label-md text-xs text-outline">Digit Desert</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mascot & Interaction Layer -->
+<div class="fixed bottom-32 right-margin-mobile z-40 flex items-end gap-4 max-w-[80%]">
+<!-- Speech Bubble -->
+<div class="neumorphic-puffed p-5 rounded-3xl rounded-br-none glass-panel border-2 border-white relative mb-12">
+<p class="font-body-lg text-primary font-bold leading-tight">Ready to explore, Junior Explorer?</p>
+<div class="absolute bottom-[-10px] right-0 w-6 h-6 bg-white rotate-45 border-r-2 border-b-2 border-white"></div>
+</div>
+<!-- Math-Bot -->
+<div class="w-28 h-28 drop-shadow-2xl">
+<img alt="Math-Bot" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugt30d5TzwILiAtxEYNDRMpgGOAiXSUN5bSVI7btFrB84Lo0op0CgB8nCfzJqZLpC6yfSYp_6VVLjokXmY-VN0JHZJtLy-_tV9P14tly587MigV6ozAKZJWSROhFWx-3hjNRnwriEakoOxd-T7vmPaWkSJxa-74entRtYd9ul1YdWVjg-iZBN6FdFx1tZ95uVhbo3kaIMNX3sGmos1v4jsteKbBES0NVklmlXDRLwHGnPAbyi8nBP14WQ"/>
+</div>
+</div>
+<!-- Floating Action Button (Contextual) -->
+<div class="fixed bottom-28 left-1/2 -translate-x-1/2 z-50">
+<button class="bg-primary text-white px-8 py-4 rounded-full shadow-[0_10px_20px_rgba(0,98,157,0.3)] border-b-4 border-on-primary-fixed-variant flex items-center gap-3 transform active:scale-95 transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+<span class="font-headline-md text-lg">Continue Quest</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest dark:bg-surface-container-high z-50 rounded-t-xl shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<!-- Map (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-4 py-2 scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-md text-label-md">Map</span>
+</a>
+<!-- Collection -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-md text-label-md">Collection</span>
+</a>
+<!-- Quests -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-label-md text-label-md">Quests</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Content Overlays (Glassmorphism Bento Elements) -->
+<div class="fixed top-24 left-margin-mobile space-y-4 pointer-events-none">
+<div class="glass-panel p-4 rounded-2xl w-48 pointer-events-auto">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-xs text-on-surface-variant">Daily Energy</span>
+<span class="material-symbols-outlined text-tertiary text-sm">bolt</span>
+</div>
+<div class="h-3 w-full neumorphic-inset rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-tertiary to-tertiary-fixed-dim w-3/4 rounded-full shadow-[0_0_8px_rgba(121,89,0,0.4)]"></div>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-2xl w-48 pointer-events-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 neumorphic-puffed rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">emoji_events</span>
+</div>
+<div>
+<p class="font-label-md text-xs text-on-surface-variant">Rank</p>
+<p class="font-headline-md text-sm text-primary">#42 Local</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

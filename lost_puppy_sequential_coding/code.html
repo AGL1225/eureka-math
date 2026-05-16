@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Junior Explorer: Lost Robot Puppy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    }
+    .perspective-text {
+      text-shadow: 0px 4px 0px rgba(0,0,0,0.1);
+    }
+    /* Empire Style: Physical Depth Shadows */
+    .empire-card {
+      box-shadow: 0px 8px 0px 0px rgba(0, 74, 198, 0.2);
+    }
+    .empire-button-green {
+      box-shadow: 0px 6px 0px 0px #005236;
+    }
+    .empire-button-blue {
+      box-shadow: 0px 6px 0px 0px #003ea8;
+    }
+    .grid-tile {
+        background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(211,228,254,0.5) 100%);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface": "#f8f9ff",
+                  "outline-variant": "#c3c6d7",
+                  "surface-variant": "#d3e4fe",
+                  "primary-container": "#2563eb",
+                  "on-primary": "#ffffff",
+                  "on-primary-container": "#eeefff",
+                  "on-error-container": "#93000a",
+                  "inverse-primary": "#b4c5ff",
+                  "primary-fixed": "#dbe1ff",
+                  "error": "#ba1a1a",
+                  "primary-fixed-dim": "#b4c5ff",
+                  "on-tertiary-container": "#ffeedd",
+                  "on-surface-variant": "#434655",
+                  "surface-dim": "#cbdbf5",
+                  "surface-container-lowest": "#ffffff",
+                  "on-primary-fixed-variant": "#003ea8",
+                  "background": "#f8f9ff",
+                  "on-secondary-fixed-variant": "#005236",
+                  "tertiary-fixed-dim": "#ffb95f",
+                  "tertiary-fixed": "#ffddb8",
+                  "primary": "#004ac6",
+                  "outline": "#737686",
+                  "on-surface": "#0b1c30",
+                  "surface-bright": "#f8f9ff",
+                  "on-tertiary": "#ffffff",
+                  "secondary": "#006c49",
+                  "surface-container-highest": "#d3e4fe",
+                  "on-tertiary-fixed": "#2a1700",
+                  "secondary-container": "#6cf8bb",
+                  "secondary-fixed": "#6ffbbe",
+                  "on-background": "#0b1c30",
+                  "surface-container-high": "#dce9ff",
+                  "on-tertiary-fixed-variant": "#653e00",
+                  "surface-container-low": "#eff4ff",
+                  "tertiary": "#784b00",
+                  "on-secondary": "#ffffff",
+                  "on-primary-fixed": "#00174b",
+                  "inverse-surface": "#213145",
+                  "on-error": "#ffffff",
+                  "secondary-fixed-dim": "#4edea3",
+                  "surface-tint": "#0053db",
+                  "surface-container": "#e5eeff",
+                  "on-secondary-fixed": "#002113",
+                  "tertiary-container": "#996100",
+                  "inverse-on-surface": "#eaf1ff",
+                  "error-container": "#ffdad6",
+                  "on-secondary-container": "#00714d"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "base": "8px",
+                  "xs": "4px",
+                  "xl": "64px",
+                  "lg": "40px",
+                  "md": "24px",
+                  "margin-mobile": "16px",
+                  "margin-desktop": "48px",
+                  "gutter": "24px",
+                  "sm": "12px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Quicksand"],
+                  "display-lg-mobile": ["Quicksand"],
+                  "body-md": ["Quicksand"],
+                  "label-caps": ["Quicksand"],
+                  "body-lg": ["Quicksand"],
+                  "display-lg": ["Quicksand"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-on-background shadow-[0_4px_0_0_rgba(0,97,163,0.1)] w-full top-0 sticky z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="house">house</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Junior Explorer</h1>
+</div>
+<div class="flex items-center bg-secondary-container px-4 py-1 rounded-full empire-button-green transition-all active:translate-y-1">
+<span class="font-bold text-on-secondary-container">⭐ 125</span>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 mt-8 space-y-lg">
+<!-- Game Introduction -->
+<section class="text-center space-y-xs">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary">Lost Robot Puppy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Help Rover find the blue kennel! Avoid the tall grass!</p>
+</section>
+<!-- The Mathematical Sandbox: The Grid Path -->
+<section class="relative bg-surface-container rounded-lg p-4 border-4 border-primary-fixed empire-card overflow-hidden">
+<div class="grid grid-cols-5 grid-rows-5 gap-2 aspect-square w-full max-w-[500px] mx-auto">
+<!-- Grid Items -->
+<!-- Start Point with Puppy -->
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center relative">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center border-b-4 border-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-on-primary text-3xl" data-icon="smart_toy">smart_toy</span>
+</div>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-40 text-3xl" data-icon="grass">grass</span>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-40 text-3xl" data-icon="grass">grass</span>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-40 text-3xl" data-icon="grass">grass</span>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-40 text-3xl" data-icon="grass">grass</span>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<div class="grid-tile rounded-md border-2 border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary opacity-40 text-3xl" data-icon="grass">grass</span>
+</div>
+<div class="grid-tile rounded-md border-2 border-surface-variant"></div>
+<!-- Goal: Kennel -->
+<div class="grid-tile rounded-md border-2 border-primary bg-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="home_storage" style="font-variation-settings: 'FILL' 1;">home_storage</span>
+</div>
+</div>
+<!-- Environment Details -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" data-alt="A soft and dreamy children's illustration of a lush green meadow with rolling hills and distant fluffy clouds. The artistic style is reminiscent of a gentle storybook RPG with warm golden sunlight filtering through leaves. The colors are dominated by vibrant greens, soft blues, and warm yellows, creating a friendly and inviting atmosphere for early elementary students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwkkQkF3XhzJpCtCWl5URmIfBLrm_lxUvVMTzZ2vxxP0J0Ew3WVrfR9_OCDYpHs7ujkCsJrVhYMDx2eibP7SZPlzfb_jQ4MLkl1zrv9InC70G2HoUCnycFwMoBrhCsUODKKPjH4yKKtFFE1IGyuLPY2ZaVoxNI_-EVb5Mt7zWK11rTtkXbERxPNvIDKusPB0pfFOM6gRAb-r8L4-RNc30JJ6WlKdoo7zCDSDGGm9QdcmoU5jqYCcZsvpzpQDfGj_C9xudUuKCD8A"/>
+</section>
+<!-- Programming Tray (Sequencing) -->
+<section class="space-y-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">Your Mission Tray</h3>
+<button class="bg-error-container text-on-error-container px-4 py-2 rounded-full font-bold transition-all active:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span> Clear
+        </button>
+</div>
+<!-- Tray Area -->
+<div class="bg-surface-container-low min-h-[100px] border-dashed border-4 border-outline-variant rounded-lg p-4 flex flex-wrap gap-sm items-center">
+<!-- Placeholder content for visual of cards in tray -->
+<div class="bg-primary-container text-on-primary-container p-3 rounded-md empire-button-blue flex items-center gap-2 transform rotate-1">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+<span class="font-bold">Forward</span>
+</div>
+<div class="bg-primary-container text-on-primary-container p-3 rounded-md empire-button-blue flex items-center gap-2 transform -rotate-1">
+<span class="material-symbols-outlined" data-icon="rotate_right">rotate_right</span>
+<span class="font-bold">Right</span>
+</div>
+<div class="flex items-center justify-center border-2 border-outline-variant border-dashed w-16 h-16 rounded-md opacity-30">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+</div>
+</section>
+<!-- Command Cards (Selector) -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Choose Commands</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Forward Card -->
+<button class="bg-white border-2 border-surface-variant p-4 rounded-lg empire-card hover:scale-105 transition-all flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="arrow_upward">arrow_upward</span>
+</div>
+<span class="font-bold text-primary">Forward</span>
+</button>
+<!-- Jump Card -->
+<button class="bg-white border-2 border-surface-variant p-4 rounded-lg empire-card hover:scale-105 transition-all flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary" data-icon="height">height</span>
+</div>
+<span class="font-bold text-tertiary">Jump</span>
+</button>
+<!-- Left Card -->
+<button class="bg-white border-2 border-surface-variant p-4 rounded-lg empire-card hover:scale-105 transition-all flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="rotate_left">rotate_left</span>
+</div>
+<span class="font-bold text-on-secondary-container">Turn Left</span>
+</button>
+<!-- Right Card -->
+<button class="bg-white border-2 border-surface-variant p-4 rounded-lg empire-card hover:scale-105 transition-all flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="rotate_right">rotate_right</span>
+</div>
+<span class="font-bold text-on-secondary-container">Turn Right</span>
+</button>
+</div>
+</section>
+<!-- Run Action -->
+<div class="flex justify-center pt-8">
+<button class="bg-secondary-container text-on-secondary-container px-16 py-6 rounded-full empire-button-green text-3xl font-bold hover:scale-110 active:translate-y-2 transition-all flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            RUN MISSION
+        </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-lg bg-surface-container dark:bg-surface-container-highest shadow-lg">
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="videogame_asset" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</a>
+</div>
+</nav>
+</body></html>

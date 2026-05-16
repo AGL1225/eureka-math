@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math World - Nexus Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Nunito+Sans:wght@300;400;500;600;700&amp;family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e1e2eb",
+                        "on-surface": "#e1e2eb",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffe083",
+                        "secondary-fixed": "#a2eeff",
+                        "background": "#10131a",
+                        "primary-fixed": "#ebddff",
+                        "on-error": "#690005",
+                        "surface": "#10131a",
+                        "inverse-primary": "#7331df",
+                        "surface-container-high": "#272a31",
+                        "surface-variant": "#32353c",
+                        "secondary": "#5de6ff",
+                        "on-surface-variant": "#ccc3d7",
+                        "surface-bright": "#363940",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-lowest": "#0b0e14",
+                        "on-tertiary-fixed": "#231b00",
+                        "secondary-container": "#00cbe6",
+                        "on-secondary-fixed": "#001f25",
+                        "outline-variant": "#4a4455",
+                        "surface-container": "#1d2026",
+                        "tertiary-container": "#cea700",
+                        "on-primary": "#3f008d",
+                        "on-tertiary": "#3c2f00",
+                        "on-primary-container": "#dac5ff",
+                        "on-secondary": "#00363e",
+                        "surface-dim": "#10131a",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "on-primary-fixed-variant": "#5b00c5",
+                        "surface-container-low": "#191c22",
+                        "primary": "#d3bbff",
+                        "surface-container-highest": "#32353c",
+                        "tertiary": "#eec200",
+                        "primary-container": "#6d28d9",
+                        "outline": "#958da1",
+                        "error-container": "#93000a",
+                        "on-background": "#e1e2eb",
+                        "on-primary-fixed": "#250059",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "on-secondary-container": "#00515d",
+                        "tertiary-fixed-dim": "#eec200",
+                        "surface-tint": "#d3bbff",
+                        "primary-fixed-dim": "#d3bbff",
+                        "inverse-on-surface": "#2e3037",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "touch-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "brand": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "30px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b0e14;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(115, 49, 223, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 203, 230, 0.1) 0%, transparent 40%);
+            overflow-x: hidden;
+        }
+        .orbital-path {
+            stroke-dasharray: 8 12;
+            filter: drop-shadow(0 0 8px rgba(93, 230, 255, 0.4));
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .planet-glow-primary {
+            box-shadow: 0 0 30px rgba(0, 203, 230, 0.6);
+        }
+        .planet-glow-secondary {
+            box-shadow: 0 0 30px rgba(115, 49, 223, 0.6);
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid #5de6ff;
+            border-left: 2px solid #5de6ff;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 12px;
+            height: 12px;
+            border-bottom: 2px solid #5de6ff;
+            border-right: 2px solid #5de6ff;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-secondary/20 bg-surface/10 shadow-[0_0_15px_rgba(93,230,255,0.3)]">
+<div class="flex justify-between items-center px-margin-mobile h-touch-target-min w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container border-2 border-primary flex items-center justify-center overflow-hidden">
+<img alt="Explorer Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh5AxluuztBCGRNqUR9v4wDHY8fzY80pHCIX_5HSyHaYX5xxie7bzl8hZkzsvXwnASch6f-2V_rpjFp7-fPxBR5eg1s7J3_O8TVETMj5BtTfrpd13jWATSaGUFxIBYmK1Dfgjw9MVcAMg-7qViAWrInKhDtF015_VMTTrBoaTDdeze3hqcjXQpjxmQ44xWDLkYfhu5lbYjlvRNb4PwjZxU93yqIPZhF8xaPnfe1RHc94RHkg7wnalCeU_XkqTT5yPIi7DW0jOHJQ"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary">Eureka Math World</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="glass-panel px-4 py-1 rounded-full border border-secondary/40 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">stars</span>
+<span class="font-label-caps text-secondary">Level 42</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content: Nexus Hub Canvas -->
+<main class="relative pt-24 pb-32 min-h-screen flex flex-col items-center">
+<!-- Starfield Background Overlay (Simulated) -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-40" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 40px 40px;"></div>
+<!-- Adventure Path Visualization -->
+<div class="relative w-full max-w-lg px-margin-mobile z-10 py-12">
+<svg class="absolute inset-0 w-full h-[800px] pointer-events-none" fill="none" viewbox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+<path class="orbital-path" d="M200 50C200 50 350 150 350 250C350 350 50 450 50 550C50 650 200 750 200 750" stroke="url(#paint0_linear)" stroke-linecap="round" stroke-width="4"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="200" x2="200" y1="50" y2="750">
+<stop stop-color="#5DE6FF"></stop>
+<stop offset="1" stop-color="#D3BBFF"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex flex-col items-center space-y-32">
+<!-- Level 5: Locked -->
+<div class="relative group">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center border-2 border-outline/30 grayscale opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">lock</span>
+</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 glass-panel rounded-lg text-xs font-label-caps text-outline">
+                        Mission 5
+                    </div>
+</div>
+<!-- Level 4: Locked -->
+<div class="relative group self-end mr-8">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center border-2 border-outline/30 grayscale opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">lock</span>
+</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 glass-panel rounded-lg text-xs font-label-caps text-outline">
+                        Mission 4
+                    </div>
+</div>
+<!-- Level 3: Locked -->
+<div class="relative group self-start ml-8">
+<div class="w-24 h-24 rounded-full bg-surface-container flex items-center justify-center border-2 border-outline/30 grayscale opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">lock</span>
+</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 glass-panel rounded-lg text-xs font-label-caps text-outline">
+                        Mission 3
+                    </div>
+</div>
+<!-- Level 2: Green Planet (Ready) -->
+<div class="relative group self-end mr-12 active:scale-95 transition-transform cursor-pointer">
+<div class="w-28 h-28 rounded-full bg-gradient-to-tr from-tertiary/80 to-tertiary-fixed border-4 border-tertiary shadow-[0_0_20px_rgba(238,194,0,0.4)] flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary text-4xl">forest</span>
+</div>
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-1 glass-panel rounded-lg text-sm font-label-caps text-tertiary border border-tertiary/40">
+                        The Geometry Glade
+                    </div>
+</div>
+<!-- Level 1: Active Bright Blue Planet -->
+<div class="relative group active:scale-95 transition-transform cursor-pointer">
+<div class="w-36 h-36 rounded-full bg-gradient-to-br from-secondary to-secondary-container planet-glow-primary border-4 border-white/40 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary text-5xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap px-6 py-2 glass-panel corner-accent rounded-lg text-lg font-headline-lg-mobile text-white shadow-lg">
+                        HUB WORLD
+                    </div>
+<!-- Pulser indicator -->
+<div class="absolute inset-0 rounded-full border-4 border-secondary animate-ping opacity-20"></div>
+</div>
+</div>
+</div>
+<!-- Math-Bot and Dialogue Section -->
+<div class="fixed bottom-24 left-margin-mobile right-margin-mobile z-20 flex items-end gap-4">
+<div class="w-32 h-32 flex-shrink-0 drop-shadow-[0_0_15px_rgba(93,230,255,0.5)]">
+<img alt="Math-Bot Mascot" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugt30d5TzwILiAtxEYNDRMpgGOAiXSUN5bSVI7btFrB84Lo0op0CgB8nCfzJqZLpC6yfSYp_6VVLjokXmY-VN0JHZJtLy-_tV9P14tly587MigV6ozAKZJWSROhFWx-3hjNRnwriEakoOxd-T7vmPaWkSJxa-74entRtYd9ul1YdWVjg-iZBN6FdFx1tZ95uVhbo3kaIMNX3sGmos1v4jsteKbBES0NVklmlXDRLwHGnPAbyi8nBP14WQ"/>
+</div>
+<div class="flex-grow glass-panel corner-accent p-4 rounded-2xl relative mb-6 border-secondary/30">
+<div class="absolute -left-2 bottom-4 w-4 h-4 bg-surface-container border-l border-b border-secondary/30 transform rotate-45 z-[-1]"></div>
+<p class="font-body-lg text-on-surface leading-snug">
+<span class="text-secondary font-bold">Math-Bot:</span><br/>
+                    Ready to explore, Junior Explorer? We have 3 new missions waiting in the <span class="text-tertiary">Geometry Glade</span>!
+                </p>
+<div class="mt-3 flex gap-2">
+<button class="bg-primary px-4 py-1 rounded-full text-on-primary font-label-caps text-[10px] active:scale-90 transition-transform">LET'S GO!</button>
+<button class="border border-secondary text-secondary px-4 py-1 rounded-full font-label-caps text-[10px] active:scale-90 transition-transform">NOT NOW</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl backdrop-blur-xl border-t border-primary/20 bg-surface/10 shadow-[0_-5px_20px_rgba(115,49,223,0.3)]">
+<div class="flex justify-around items-center w-full px-2 py-2">
+<!-- Map (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container/40 text-on-primary-container rounded-xl p-2 shadow-[0_0_10px_rgba(211,187,255,0.5)] active:scale-90 duration-200 group">
+<span class="material-symbols-outlined text-secondary transition-all" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</button>
+<!-- Collection -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-caps text-label-caps">Collection</span>
+</button>
+<!-- Quests -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-label-caps text-label-caps">Quests</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-secondary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

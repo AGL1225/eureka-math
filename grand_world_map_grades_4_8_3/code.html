@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#6900b3",
+                    "inverse-primary": "#494bd6",
+                    "on-surface": "#dae2fd",
+                    "tertiary": "#ddb7ff",
+                    "outline-variant": "#464554",
+                    "outline": "#908fa0",
+                    "surface-tint": "#c0c1ff",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-tertiary-fixed": "#2c0051",
+                    "surface-container": "#171f33",
+                    "primary-fixed": "#e1e0ff",
+                    "primary-container": "#8083ff",
+                    "on-secondary-fixed-variant": "#005047",
+                    "secondary-container": "#03c6b2",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "secondary-fixed-dim": "#3cddc7",
+                    "primary": "#c0c1ff",
+                    "on-tertiary-container": "#400071",
+                    "tertiary-container": "#b76dff",
+                    "inverse-on-surface": "#283044",
+                    "on-primary": "#1000a9",
+                    "surface-variant": "#2d3449",
+                    "on-primary-container": "#0d0096",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed": "#00201c",
+                    "surface-container-highest": "#2d3449",
+                    "on-background": "#dae2fd",
+                    "surface-container-highest": "#2d3449",
+                    "on-background": "#dae2fd",
+                    "surface-container-highest": "#2d3449",
+                    "on-background": "#dae2fd",
+                    "surface-container-highest": "#2d3449",
+                    "on-background": "#dae2fd",
+                    "secondary-fixed": "#62fae3",
+                    "inverse-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "background": "#0b1326",
+                    "tertiary-fixed": "#f0dbff",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-primary-fixed": "#07006c",
+                    "on-secondary": "#003731",
+                    "on-tertiary": "#490080",
+                    "surface-container-high": "#222a3d",
+                    "surface-dim": "#0b1326",
+                    "secondary": "#44e2cd",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#004d44",
+                    "tertiary-fixed-dim": "#ddb7ff",
+                    "surface-container-low": "#131b2e",
+                    "surface": "#0b1326"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "margin-desktop": "48px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "lg": "40px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Quicksand"],
+                    "body-md": ["Quicksand"],
+                    "label-lg": ["Quicksand"],
+                    "display-md": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "label-sm": ["Quicksand"],
+                    "body-lg": ["Quicksand"]
+            },
+            "fontSize": {
+                    "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-md": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Quicksand', sans-serif; }
+        .path-line {
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(192, 193, 255, 0.3) 10px, rgba(192, 193, 255, 0.3) 20px);
+        }
+        .active-path-line {
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, #44e2cd 10px, #44e2cd 20px);
+        }
+        .grade-transition {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary/30 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-container/80 backdrop-blur-md text-primary font-headline-lg-mobile text-headline-lg-mobile docked full-width top-0 border-b border-outline-variant/30 shadow-md flex justify-between items-center w-full px-margin-mobile h-16 sticky z-50">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-headline-lg-mobile font-bold text-primary">Grade 6: Mystic Peaks</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-secondary">Level 42</span>
+<div class="w-24 h-2 bg-surface-container-highest rounded-full overflow-hidden border border-outline-variant/30">
+<div class="bg-secondary h-full w-[65%] shadow-[0_0_8px_rgba(68,226,205,0.6)]"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">stars</span>
+</div>
+</header>
+<!-- Progress Indicator Overlay -->
+<div class="sticky top-16 left-0 right-0 z-40 px-margin-mobile py-base bg-background/40 backdrop-blur-sm">
+<div class="flex justify-between items-center bg-surface-container-low/80 p-sm rounded-xl border border-white/5 shadow-lg">
+<div class="flex gap-xs items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WORLD PROGRESS</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">58%</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container border border-background flex items-center justify-center text-[10px] font-bold text-on-secondary-container">G4</div>
+<div class="w-6 h-6 rounded-full bg-secondary-container border border-background flex items-center justify-center text-[10px] font-bold text-on-secondary-container">G5</div>
+<div class="w-6 h-6 rounded-full bg-primary border-2 border-secondary flex items-center justify-center text-[10px] font-bold text-on-primary shadow-[0_0_10px_#c0c1ff]">G6</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-background flex items-center justify-center text-[10px] font-bold text-on-surface-variant">G7</div>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-background flex items-center justify-center text-[10px] font-bold text-on-surface-variant">G8</div>
+</div>
+</div>
+</div>
+<main class="relative flex flex-col items-center pb-32">
+<!-- SECTION: GRADE 8 COSMIC SKY (Top of scroll) -->
+<section class="w-full relative py-xl flex flex-col items-center bg-gradient-to-b from-[#060e20] to-[#171f33]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none" data-alt="A mystical cosmic sky filled with swirling nebulae in deep violets and indigo. Ethereal glowing stars and mathematical constellations float in the background. The lighting is cold and celestial, emphasizing the advanced journey's end in this Celestial Calculus theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_oabzLst5horJDIdmZbTBqVJUi2nyw7PQwTD-Ng7obTTj2rbHYua33wSjlsfkjtWT9ZygcZ7dKD76ysJRv0W1FiVyWrm0fieSeH1ok_fhN2OT_TsNOqZmSUYi8IkrAYTbBcxJ-vJ0A0cFw9jkTORkrk4Cc-fOrfNgdWWM0Nm1eDLtk6tZ3yRa2Lk0T5u9oS7Q-MXcQXyGf4n6RVY5isWjc1g86Mz3evIGt80xrKW5ygADQJz3F7ygVVv0XoKpvWaNFAO-QQwyXw"/>
+<div class="relative z-10 flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-tertiary-container tracking-widest mb-base">FINAL FRONTIER</span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary mb-xl">Grade 8: Cosmic Calculus</h2>
+<!-- Lesson Nodes -->
+<div class="flex flex-col items-center gap-xl relative">
+<div class="absolute w-1 h-full path-line left-1/2 -translate-x-1/2"></div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="absolute left-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-outline-variant/30 text-on-surface-variant font-label-lg">Pythagorean Plaza</div>
+</div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="absolute right-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-outline-variant/30 text-on-surface-variant font-label-lg">Infinite Integrals</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: GRADE 7 VOLCANIC REGION -->
+<section class="w-full relative py-xl flex flex-col items-center bg-gradient-to-b from-[#171f33] to-[#222a3d]">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,0,10,0.15)_0%,transparent_70%)]"></div>
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-error mb-xl">Grade 7: Molten Mantle</h2>
+<div class="flex flex-col items-center gap-xl relative">
+<div class="absolute w-1 h-full path-line left-1/2 -translate-x-1/2"></div>
+<!-- Floating Island / Monster -->
+<div class="absolute -left-32 top-0 animate-bounce">
+<div class="bg-surface-container p-md rounded-2xl shadow-2xl border border-error/20 flex flex-col items-center">
+<img class="w-20 h-20 object-contain mb-xs" data-alt="A fearsome Mystic Dragon with scales like cooled lava and glowing magma eyes. It is perched on a floating basalt rock island. The art style is high-end digital painting with dramatic lighting and ember particles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6em86l51nznSwJKOI3ZT56tMOKzlJvQAbwK5lWCw15NSUqZygehpG6zUaUWt1tTqQLXWXqGtVXv-Htde2ERt-7-MdHP7rrgj-8j0s4HXvml_oa69jHtXkc9g_zJGaZqe-yudqwBuZB5onpo6nU8_i6XGQXjbo80MUskh1EwMcUVyhk6bUKjJM5LX2qTnI-SaqxOwniwdxAQH07Qx3ypRDconWdncPHfCEzHbzZpi-ri0mRS4wUpzHD_Gf-thPrURNybdBpfBC4g"/>
+<span class="font-label-sm text-label-sm text-error">Mystic Dragon</span>
+</div>
+</div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="absolute left-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-outline-variant/30 text-on-surface-variant font-label-lg">Ratio Ravine</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: GRADE 6 MOUNTAIN RANGE (CURRENT) -->
+<section class="w-full relative py-xl flex flex-col items-center bg-gradient-to-b from-[#222a3d] to-[#131b2e] border-y border-primary/20">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary px-lg py-xs rounded-full shadow-[0_0_20px_#c0c1ff] z-20">
+<span class="font-label-sm text-label-sm text-on-primary font-bold">CURRENT CHAPTER</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xl">Grade 6: Mystic Peaks</h2>
+<div class="flex flex-col items-center gap-xl relative">
+<!-- Path logic -->
+<div class="absolute w-1 h-[40%] active-path-line left-1/2 -translate-x-1/2 bottom-0"></div>
+<div class="absolute w-1 h-[60%] path-line left-1/2 -translate-x-1/2 top-0"></div>
+<!-- Lesson Nodes -->
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest border-2 border-outline-variant flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="absolute left-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-variant/80 backdrop-blur-md px-md py-xs rounded-lg border border-outline-variant/30 text-on-surface-variant font-label-lg">Algebraic Altar</div>
+</div>
+<!-- CURRENT ACTIVE NODE -->
+<div class="relative flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-primary-container border-4 border-primary flex items-center justify-center shadow-[0_0_30px_rgba(192,193,255,0.6)] animate-pulse cursor-pointer">
+<span class="material-symbols-outlined text-on-primary-container text-[40px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="absolute -top-12 whitespace-nowrap bg-secondary-container text-on-secondary-container px-md py-xs rounded-full font-bold shadow-lg text-label-lg">
+                            ACTIVE: Probability Peak
+                        </div>
+</div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute right-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-secondary/30 text-secondary font-label-lg">Statistical Summit</div>
+</div>
+<!-- Monster Ally -->
+<div class="absolute -right-32 top-[40%]">
+<div class="bg-surface-container p-md rounded-2xl shadow-2xl border border-primary/20 flex flex-col items-center backdrop-blur-md">
+<img class="w-24 h-24 object-cover rounded-xl mb-xs" data-alt="A wise and fluffy Cosmic Owl with iridescent feathers that shimmer with starlight. It wears a small golden monocle and perches on a stack of floating ancient math scrolls. Soft, dreamy lighting with glowing blue particles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPUbo5DFX5c8ftr1gx7NyGa8MHIQ2VwqT7rDHj-pPrNQpany429vRLdt1OCAIz5lsoYYkw8J01bKKL90Ekn7bbVCugfZ_VdzFWBz7sdstSZV0YcX0uEtqoUAnWEiMcBTbtSjz8g2UZzzm3tNylSorDbtIpuoKDiY8tkfyeG7bPhBuz1_G2eWNj493QiRRKIB7jZ6VfwR6uimwHVeZZf7Nk0JeACzxNsYrkThO7r6shA1ZbmgJwD-RfPj0AtLPlW9VET5HYUWSDgQ"/>
+<span class="font-label-sm text-label-sm text-primary">Cosmic Owl</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: GRADE 5 DESERT -->
+<section class="w-full relative py-xl flex flex-col items-center bg-gradient-to-b from-[#131b2e] to-[#283044]">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(68,226,205,0.1)_0%,transparent_60%)]"></div>
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-xl">Grade 5: Fractal Dunes</h2>
+<div class="flex flex-col items-center gap-xl relative">
+<div class="absolute w-1 h-full active-path-line left-1/2 -translate-x-1/2"></div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute left-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-secondary/30 text-secondary font-label-lg">Decimal Desert</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: GRADE 4 LUSH FOREST (Bottom of scroll) -->
+<section class="w-full relative py-xl flex flex-col items-center bg-gradient-to-b from-[#283044] to-[#060e20]">
+<div class="relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface-variant mb-xl">Grade 4: Origin Woods</h2>
+<div class="flex flex-col items-center gap-xl relative">
+<div class="absolute w-1 h-full active-path-line left-1/2 -translate-x-1/2"></div>
+<!-- Monster -->
+<div class="absolute -left-32 top-10">
+<div class="bg-surface-container p-md rounded-2xl shadow-2xl border border-secondary/20 flex flex-col items-center">
+<img class="w-16 h-16 object-contain mb-xs" data-alt="A playful Ice Penguin with a small crystalline crown, sliding down a ramp of frozen numbers. The environment is a lush magical forest at night with glowing mushrooms and soft green lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5x6mzK7Lmb9YkGJet-rEdm_EWn3iOnhB9oFtYCuciCnKWTEqUhET07wT4FDYKUATUlidgv9GMW-M1tCn0oDqI17GhPxqj_Coh5SL-LZTvUa1fRxsHeFNvJSkDnzSDJarso-7wG5vhstKtA9tqKzwFhoky0D1FYhANlgvJoyiRIY9lz7I8q8hwNuWYiPRBFgHE5lrluMgUvx48OOwkfw-FsWvvcg04_GbivAF3SLAqS5p70tx7c4W5wLy3r2xdTOztEnPKwEktRw"/>
+<span class="font-label-sm text-label-sm text-secondary">Ice Penguin</span>
+</div>
+</div>
+<div class="relative group">
+<div class="w-16 h-16 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute right-20 top-1/2 -translate-y-1/2 whitespace-nowrap bg-surface-container-low px-md py-xs rounded-lg border border-secondary/30 text-secondary font-label-lg">Place Value Palace</div>
+</div>
+</div>
+</div>
+<div class="mt-xl">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_double_arrow_up</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating FAB: Quick Actions -->
+<button class="fixed bottom-24 right-margin-mobile w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-[0_8px_25px_rgba(68,226,205,0.5)] flex items-center justify-center z-50 Active: scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-highest/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] rounded-t-xl h-20">
+<!-- Active: Map -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(68,226,205,0.4)] Active: scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-sm text-label-sm">Map</span>
+</a>
+<!-- Inactive: Collection -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors Active: scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Collection</span>
+</a>
+<!-- Inactive: Quests -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors Active: scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-label-sm text-label-sm">Quests</span>
+</a>
+<!-- Inactive: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors Active: scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

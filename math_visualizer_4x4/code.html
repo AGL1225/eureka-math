@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Junior Explorer - Math Fun</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#00497c",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#d1e4ff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#47a7ff",
+                        "surface-container": "#eceef1",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#005230",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container-high": "#e6e8eb",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fdcf45",
+                        "on-surface-variant": "#404752",
+                        "surface-tint": "#0061a3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#584400",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdcf45",
+                        "on-surface-variant": "#404752",
+                        "surface-tint": "#0061a3",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#584400",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#eec138",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface": "#f7f9fc",
+                        "background": "#f7f9fc",
+                        "on-primary-fixed": "#001d36",
+                        "tertiary-container": "#41b77b",
+                        "tertiary": "#006d41",
+                        "on-secondary-container": "#715800",
+                        "secondary": "#755b00",
+                        "primary": "#0061a3",
+                        "on-primary-container": "#003b65",
+                        "on-tertiary-fixed": "#002110",
+                        "outline": "#707883",
+                        "surface-bright": "#f7f9fc",
+                        "outline-variant": "#c0c7d4",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#9dcaff",
+                        "surface-dim": "#d8dadd",
+                        "on-tertiary-container": "#004226",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#69dc9c",
+                        "surface-variant": "#e0e3e6",
+                        "surface-container-highest": "#e0e3e6",
+                        "tertiary-fixed": "#86f9b7",
+                        "surface-container-low": "#f2f4f7",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#9dcaff",
+                        "secondary-fixed": "#ffe08e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-tablet": "40px",
+                        "gutter": "16px",
+                        "touch-target-min": "56px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "label-bold": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                        "body-md": ["18px", { "lineHeight": "26px", "fontWeight": "500" }],
+                        "label-bold": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .squishy-button {
+            border-bottom-width: 4px;
+        }
+        .squishy-button:active {
+            border-bottom-width: 0px;
+            transform: translateY(4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col pb-32">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-on-background w-full top-0 sticky shadow-[0_4px_0_0_rgba(0,97,163,0.1)] z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed-dim hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined font-headline-lg-mobile text-headline-lg-mobile" data-icon="house">house</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Junior Explorer</h1>
+<div class="bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 font-label-bold text-label-bold flex items-center gap-1 shadow-sm">
+                ⭐ 125
+            </div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow px-margin-mobile pt-8 max-w-lg mx-auto w-full">
+<!-- Lesson Header -->
+<div class="text-center mb-8">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Why 4x4 is 16?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Tap a row to count the groups!</p>
+</div>
+<!-- Multiplication Grid -->
+<div class="bg-surface-container-low rounded-lg p-6 shadow-[0_8px_0_0_rgba(0,0,0,0.05)] border-2 border-outline-variant relative">
+<div class="grid grid-cols-4 gap-4">
+<!-- Group 1 -->
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<!-- Group 2 -->
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<!-- Group 3 -->
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<!-- Group 4 -->
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="aspect-square bg-white rounded-xl shadow-[0_4px_0_0_rgba(71,167,255,0.3)] border-2 border-primary-container flex items-center justify-center hover:scale-105 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-4xl text-error" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+</div>
+<!-- Result Card -->
+<div class="mt-8 bg-tertiary-container text-on-tertiary-container p-6 rounded-lg shadow-[0_8px_0_0_#005230] text-center">
+<div class="font-headline-lg text-headline-lg mb-2">4 + 4 + 4 + 4 = 16</div>
+<div class="font-body-md text-body-md opacity-90">That's the same as 4 times 4!</div>
+</div>
+<!-- Feedback Character Bubble -->
+<div class="mt-12 flex items-end gap-4">
+<div class="w-16 h-16 bg-secondary-container rounded-full flex-shrink-0 flex items-center justify-center border-4 border-white shadow-md">
+<span class="material-symbols-outlined text-4xl text-on-secondary-container" data-icon="mood">mood</span>
+</div>
+<div class="bg-white p-4 rounded-xl rounded-bl-none shadow-[4px_4px_0_0_rgba(0,0,0,0.05)] border-2 border-surface-container-high relative">
+<p class="font-body-md text-body-md">You're a math wizard! Multiplication is just adding groups together!</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="mt-12 px-4">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-bold text-label-bold text-primary">Lesson Progress</span>
+<span class="font-label-bold text-label-bold text-primary">80%</span>
+</div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden border-2 border-white shadow-inner">
+<div class="h-full bg-secondary w-[80%] rounded-full shadow-[inset_-2px_0_4px_rgba(0,0,0,0.1)]"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_0_0_rgba(0,0,0,0.05)] rounded-t-lg">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="videogame_asset">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</div>
+</nav>
+</body></html>

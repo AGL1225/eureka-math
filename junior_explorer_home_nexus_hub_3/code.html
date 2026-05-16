@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#d1e4ff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#47a7ff",
+                    "surface-container": "#eceef1",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#005230",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-high": "#e6e8eb",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fdcf45",
+                    "on-surface-variant": "#404752",
+                    "surface-tint": "#0061a3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#eec138",
+                    "inverse-on-surface": "#eff1f4",
+                    "surface": "#f7f9fc",
+                    "background": "#f7f9fc",
+                    "on-primary-fixed": "#001d36",
+                    "tertiary-container": "#41b77b",
+                    "tertiary": "#006d41",
+                    "on-secondary-container": "#715800",
+                    "secondary": "#755b00",
+                    "primary": "#0061a3",
+                    "on-primary-container": "#003b65",
+                    "on-tertiary-fixed": "#002110",
+                    "outline": "#707883",
+                    "surface-bright": "#f7f9fc",
+                    "outline-variant": "#c0c7d4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#9dcaff",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary-container": "#004226",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#69dc9c",
+                    "surface-variant": "#e0e3e6",
+                    "surface-container-highest": "#e0e3e6",
+                    "tertiary-fixed": "#86f9b7",
+                    "surface-container-low": "#f2f4f7",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#9dcaff",
+                    "secondary-fixed": "#ffe08e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-tablet": "40px",
+                    "gutter": "16px",
+                    "touch-target-min": "56px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"],
+                    "label-bold": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-xl": ["Quicksand"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["18px", {"lineHeight": "26px", "fontWeight": "500"}],
+                    "label-bold": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .path-mask {
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+        @keyframes popup-bounce {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-popup {
+            animation: popup-bounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Audio Assets -->
+<audio id="bg-music" loop="" src="https://actions.google.com/sounds/v1/science_fiction/glitchy_digital_interface.ogg"></audio>
+<audio id="click-sound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-on-background shadow-[0_4px_0_0_rgba(0,97,163,0.1)] flex justify-between items-center px-margin-mobile py-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-4 border-primary overflow-hidden shadow-sm active:scale-95 transition-transform">
+<img alt="User Avatar" id="user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7uzEjuZD5UzTyH9i-ZsauvUeJyzzefPjK3uRi8pI2GLcPAx7dOTV4atI4Z3J_CUbFHGshLzbDQSkZQmkJzx7ISx7o_foNGpfrkjYD1IhnL2JNc9Yu1L-xV7wDxmYFDyhAEQ9fBcS0ngZ2w7k0EwZFkxm7eNUsSZ-IMuGVMQpBwULMQ-vYDUBRyeBVtjGNuTraBRRJOpQbPyFmoMI0n6J42b86EdDV5Vx2BkloYYoUEo8zS7dMcPUw6EM3Sr5rphOfg73IlTNcw"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim leading-none" id="user-name">Junior Explorer</h1>
+<span class="text-[12px] font-bold text-outline uppercase tracking-widest mt-0.5" id="user-level">Level 1</span>
+</div>
+</div>
+<div class="flex items-center bg-secondary-container px-4 py-2 rounded-full border-b-4 border-on-secondary-container/20 active:translate-y-[4px] transition-all cursor-pointer" onclick="playSound()">
+<span class="text-xl mr-1">⭐</span>
+<span class="font-label-bold text-on-secondary-container" id="user-stars">125</span>
+</div>
+</header>
+<!-- Main Game Canvas (The Winding Path) -->
+<main class="flex-1 relative overflow-hidden bg-gradient-to-b from-blue-100 to-green-100">
+<!-- Background Landscape Elements -->
+<div class="absolute inset-0 opacity-40 pointer-events-none">
+<div class="absolute top-10 left-10 text-6xl">☁️</div>
+<div class="absolute top-40 right-10 text-5xl">☁️</div>
+<div class="absolute bottom-60 left-20 text-7xl">🌲</div>
+<div class="absolute bottom-40 right-20 text-7xl">🌳</div>
+</div>
+<!-- The Path Scroll Container -->
+<div class="h-full w-full overflow-y-auto pb-32 pt-10 scroll-smooth no-scrollbar">
+<div class="relative w-full max-w-md mx-auto h-[1200px]">
+<!-- SVG Path Line -->
+<svg class="absolute inset-0 w-full h-full" fill="none" viewbox="0 0 400 1200" xmlns="http://www.w3.org/2000/svg">
+<path class="opacity-30" d="M200 1150 C 350 1000, 50 850, 200 700 S 350 400, 200 250 S 50 100, 200 0" stroke="#47a7ff" stroke-dasharray="30 40" stroke-linecap="round" stroke-width="20"></path>
+</svg>
+<!-- Level 5 (Locked) -->
+<div class="absolute top-[50px] left-1/2 -translate-x-1/2 flex flex-col items-center">
+<div class="w-20 h-20 bg-outline-variant rounded-full flex items-center justify-center border-b-4 border-outline text-white shadow-lg">
+<span class="material-symbols-outlined text-4xl">lock</span>
+</div>
+<span class="mt-2 font-label-bold text-outline">Level 5</span>
+</div>
+<!-- Level 4 (Locked) -->
+<div class="absolute top-[300px] left-[70%] -translate-x-1/2 flex flex-col items-center">
+<div class="w-20 h-20 bg-outline-variant rounded-full flex items-center justify-center border-b-4 border-outline text-white shadow-lg">
+<span class="material-symbols-outlined text-4xl">lock</span>
+</div>
+<span class="mt-2 font-label-bold text-outline">Level 4</span>
+</div>
+<!-- Level 3 (Locked) -->
+<div class="absolute top-[550px] left-[30%] -translate-x-1/2 flex flex-col items-center">
+<div class="w-20 h-20 bg-outline-variant rounded-full flex items-center justify-center border-b-4 border-outline text-white shadow-lg">
+<span class="material-symbols-outlined text-4xl">lock</span>
+</div>
+<span class="mt-2 font-label-bold text-outline">Level 3</span>
+</div>
+<!-- Level 2 (Current Next) -->
+<div class="absolute top-[800px] left-[65%] -translate-x-1/2 flex flex-col items-center" onclick="navigateTo('{{DATA:SCREEN:SCREEN_55}}')">
+<div class="w-24 h-24 bg-tertiary-container rounded-full flex items-center justify-center border-b-8 border-on-tertiary-container/30 text-white shadow-xl hover:scale-105 active:translate-y-1 transition-all cursor-pointer">
+<span class="text-headline-xl font-bold">2</span>
+</div>
+<span class="mt-2 font-label-bold text-tertiary">Shapes</span>
+</div>
+<!-- Level 1 (Unlocked/Active) -->
+<div class="absolute top-[1000px] left-[50%] -translate-x-1/2 flex flex-col items-center">
+<!-- Mascot Floating near level 1 -->
+<div class="absolute -top-16 -right-16 w-20 h-20 animate-bounce">
+<img alt="Math-Bot Mascot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQuQnHljFyfX4kZ42VnnHSyR3Ue-JK-47KAEzppc8sxdpptc4GvvdN-QsVnNzt6QXVeO2Lr8b36daFCbtLDNs77nRYSFNUk4GhhzpL4ruN_C6h7nZD5irS63cfJczYyvAX1PfzOKkBbJp1kvlOpsZTZDLFjPWOYhYGE7o-zjlenPI1-QRZZMx6_AxiSNk4476rps-H3vGFmwFqMoT7esnrWnGkZWG1KHz-BaJpkdV5fXHYqcxz9IwivuezqF1wlSD9dWwMFqkPA"/>
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center bg-white shadow-md border border-primary/20 rounded-lg px-3 py-1 whitespace-nowrap">
+<span class="font-label-bold text-primary text-sm">Nexus-7</span>
+<span class="text-[10px] uppercase font-bold text-outline-variant leading-none">Head of Explorers</span>
+</div>
+</div>
+<button class="w-32 h-32 bg-primary-container text-white rounded-full flex flex-col items-center justify-center border-b-[10px] border-on-primary-fixed-variant shadow-2xl hover:scale-110 active:translate-y-[6px] active:border-b-4 transition-all group" onclick="navigateTo('{{DATA:SCREEN:SCREEN_34}}')">
+<span class="text-headline-xl font-black group-active:scale-90 transition-transform">1</span>
+<span class="font-label-bold uppercase tracking-wider">Adventure</span>
+</button>
+<span class="mt-4 font-label-bold text-primary-container text-lg bg-white/80 px-4 py-1 rounded-full">Counting Fun</span>
+</div>
+</div>
+</div>
+<!-- Floating Feedback Popup -->
+<div class="fixed bottom-32 left-4 z-40 max-w-[200px] bg-white p-4 rounded-lg shadow-xl border-2 border-surface-container-high hidden opacity-0" id="welcome-popup">
+<div class="absolute -bottom-3 left-6 w-6 h-6 bg-white rotate-45 border-b-2 border-r-2 border-surface-container-high"></div>
+<p class="text-label-bold text-on-surface-variant leading-tight">Ready to explore, <span id="popup-name">Explorer</span>?</p>
+</div>
+<button class="fixed bottom-32 right-6 z-40 w-16 h-16 bg-secondary-container rounded-full border-b-4 border-on-secondary-container/20 flex items-center justify-center shadow-lg active:translate-y-1 transition-all group" onclick="playSound()" title="Monster Collection">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl group-hover:scale-110">inventory_2</span>
+</button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-lg rounded-t-lg">
+<!-- Play (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 active:translate-y-1 active:shadow-none transition-all duration-75" href="#" onclick="playSound()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</a>
+<!-- Learn -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl active:translate-y-1 transition-all" href="#" onclick="playSound()">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</a>
+<!-- Awards -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl active:translate-y-1 transition-all" href="#" onclick="playSound()">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</a>
+<!-- Map -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl active:translate-y-1 transition-all" href="#" onclick="navigateTo('{{DATA:SCREEN:SCREEN_65}}')">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</a>
+</nav>
+<!-- Thick Progress Bar (Experience) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 w-[80%] max-w-sm h-5 bg-surface-container-highest rounded-full border-2 border-white shadow-inner overflow-hidden z-40">
+<div class="h-full bg-secondary-container rounded-full relative overflow-hidden transition-all duration-1000" id="exp-bar" style="width: 35%;">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+<script>
+    // Audio Control
+    function playSound() {
+        const sound = document.getElementById('click-sound');
+        sound.currentTime = 0;
+        sound.play().catch(e => console.log('Audio blocked by browser'));
+    }
+
+    function initAudio() {
+        const music = document.getElementById('bg-music');
+        music.volume = 0.2;
+        // Interaction needed to play audio in many browsers
+        document.body.addEventListener('click', () => {
+            if (music.paused) music.play();
+        }, { once: true });
+    }
+
+    // Navigation Helper
+    function navigateTo(screenId) {
+        playSound();
+        setTimeout(() => {
+            if (screenId) {
+                // In a real app, this would handle the route change
+                console.log('Navigating to:', screenId);
+                // window.location.href = `screen_${screenId}.html`; 
+            }
+        }, 150);
+    }
+
+    // Sync Profile Data
+    function syncProfile() {
+        const profile = JSON.parse(localStorage.getItem('activeProfile') || '{"name": "Junior Explorer", "level": 1, "stars": 125}');
+        document.getElementById('user-name').innerText = profile.name;
+        document.getElementById('popup-name').innerText = profile.name;
+        document.getElementById('user-level').innerText = `Level ${profile.level}`;
+        document.getElementById('user-stars').innerText = profile.stars;
+    }
+
+    // Sync Experience Bar
+    function updateExpBar() {
+        const quests = JSON.parse(localStorage.getItem('completedQuests') || '[]');
+        const totalPossible = 10; // Demo value
+        const progress = Math.min((quests.length / totalPossible) * 100, 100) || 35; // Default 35 if empty
+        document.getElementById('exp-bar').style.width = `${progress}%`;
+    }
+
+    // Lifecycle
+    window.addEventListener('load', () => {
+        syncProfile();
+        updateExpBar();
+        initAudio();
+
+        // Popup Animation
+        const popup = document.getElementById('welcome-popup');
+        setTimeout(() => {
+            popup.classList.remove('hidden');
+            popup.classList.add('animate-popup');
+        }, 800);
+    });
+</script>
+</body></html>

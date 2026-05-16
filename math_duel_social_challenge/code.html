@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#002113",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffeedd",
+                        "secondary-container": "#6cf8bb",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#737686",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#2563eb",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#004ac6",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#784b00",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#006c49",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-container": "#996100",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "xl": "64px",
+                        "margin-desktop": "48px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vs-gradient {
+            background: linear-gradient(135deg, #004ac6 0%, #006c49 100%);
+        }
+        .xp-bar-glow {
+            box-shadow: 0 0 12px rgba(108, 248, 187, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top AppBar (JSON Authority) -->
+<header class="flex justify-between items-center px-margin-mobile py-sm w-full z-50 bg-surface-container-low dark:bg-surface-container-lowest shadow-sm fixed top-0 left-0">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Siahn profile" class="w-full h-full object-cover" data-alt="A warm and friendly profile portrait of a young student named Siahn, featuring soft natural lighting and a cheerful expression. The background is a clean, blurred academic setting with soft blue and green accents that match the Eureka Math brand colors. The photography style is modern, professional, and inviting for an educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDVAWaO8ySUR5APMyi90VcaMeH0lcnAFGWAW0FXPx5PD_6moTA_GIKe-causV-IttoLHbgPliMw5RzIgACFSprBapPa5UCHLK1ZYgq1STrffCRPqHM0vV81czliCSw2SZ--E5t4Sza-hkMXbH7wwvMIjGbSjwIUQKnKoj78y65qAE_OfLnRvhbSgKt60qqcN0kXiPENtZGZi6499aHznUo0n1k9cJqKEdt7H48eY_NtfDVtAEwyHJC01GdLx676WtxIHdTOXx-g"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Eureka Math</span>
+</div>
+<div class="flex items-center gap-xs">
+<button class="bg-surface-container-high px-md py-xs rounded-full font-label-caps text-label-caps text-primary hover:bg-surface-container-high transition-colors">Grade 5</button>
+<span class="material-symbols-outlined text-primary">settings</span>
+</div>
+</header>
+<main class="flex-grow pt-20 pb-32 px-margin-mobile max-w-4xl mx-auto w-full">
+<!-- Battle Header / Scoreboard -->
+<div class="grid grid-cols-3 items-center mb-lg gap-gutter">
+<!-- Player 1 (Siahn) -->
+<div class="flex flex-col items-center">
+<div class="relative mb-sm">
+<div class="w-20 h-20 rounded-full border-4 border-primary p-1 bg-surface shadow-lg">
+<img alt="Siahn" class="w-full h-full rounded-full object-cover" data-alt="A detailed digital avatar of a young student named Siahn, rendered in a modern 3D cartoon style with vibrant textures. Siahn is wearing a blue academic hoodie, and the lighting is energetic and high-contrast. The color palette features deep primary blues and soft whites to maintain consistency with the educational UI brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpxhHV18uI8zzeam2TOu4yiR-Q-V8B6VYQFt2yzNEl4gwd4HPf2oKUhbntvKeDZ49ufIFqIA-2YTTXAWhKBMbTg7EMtE3EqdEv4RCoGD47OCSsEv6DvhN6jiynTUYcyJISXYi_6t-opCi8NyFBb27kowbrlp9agRtMO632Mqzmq18JnJGxd-0F1-1He5vQEjPAyEe7b46Ojdc-FYlhMa5rKNj1WggbwASSKUWI9-cjGdWtavLVcbBPSG46hpoqjH6ZFA1w8m36Q"/>
+</div>
+<div class="absolute -bottom-2 bg-primary text-white px-md py-xs rounded-full font-label-caps text-label-caps shadow-sm">Siahn</div>
+</div>
+<div class="text-display-lg-mobile font-display-lg-mobile text-primary">12</div>
+</div>
+<!-- VS Badge -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full vs-gradient flex items-center justify-center shadow-xl mb-sm ring-4 ring-white">
+<span class="font-display-lg-mobile text-display-lg-mobile text-white italic">VS</span>
+</div>
+<div class="bg-error-container text-on-error-container px-md py-1 rounded-full font-label-caps text-label-caps">01:42</div>
+</div>
+<!-- Player 2 (Eunu) -->
+<div class="flex flex-col items-center">
+<div class="relative mb-sm">
+<div class="w-20 h-20 rounded-full border-4 border-secondary p-1 bg-surface shadow-lg">
+<img alt="Eunu" class="w-full h-full rounded-full object-cover" data-alt="A polished digital portrait of a young student named Eunu with a focused and competitive expression. The style is a hybrid of modern digital painting and flat vector elements, featuring a vibrant teal and green color scheme. The lighting is dynamic, highlighting the student's face as if reflected from a glowing math battle screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxz8Ye9ASlY7sS_X9NgDsImb-2CATXmuKfZ4aLvJxEar5byQhddt1-FS1hkV-1RKbyMik4nbaVIGHAjrgnB5porbUhfyBQxGu_nRD-Lj7HEhbwm3K61ioFeiLGz1M5viijjjupf1RRFOBWy_AVGkr8j8V4yF65SBiv5KNk1gTZusE9RhHGFyBt6AUTTWHGqqWVLMn0bFpO5CHAKE1qy8uQp2XjAwC222y1gbQbDjGALxVVFRWR51UYPrdUVAJgGT2e6QZfN5ZrMw"/>
+</div>
+<div class="absolute -bottom-2 bg-secondary text-white px-md py-xs rounded-full font-label-caps text-label-caps shadow-sm">Eunu</div>
+</div>
+<div class="text-display-lg-mobile font-display-lg-mobile text-secondary">08</div>
+</div>
+</div>
+<!-- Progress/XP Energy Tubes -->
+<div class="space-y-md mb-xl">
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden border border-outline-variant relative">
+<div class="absolute top-0 left-0 h-full bg-primary xp-bar-glow transition-all duration-500" style="width: 60%;"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-label-caps text-[8px] uppercase text-on-surface opacity-50">Momentum Stage 3</span>
+</div>
+</div>
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden border border-outline-variant relative">
+<div class="absolute top-0 right-0 h-full bg-secondary-fixed-dim xp-bar-glow transition-all duration-500" style="width: 40%;"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-label-caps text-[8px] uppercase text-on-surface opacity-50">Climbing Rank 1</span>
+</div>
+</div>
+</div>
+<!-- Central Math Sandbox (The Challenge) -->
+<div class="bg-surface-container-lowest rounded-lg border-2 border-outline-variant p-lg shadow-sm mb-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="absolute top-0 right-0 w-1 h-full bg-secondary"></div>
+<div class="text-center mb-md">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Identify the Missing Operator</span>
+</div>
+<div class="flex items-center justify-center gap-gutter mb-lg">
+<div class="w-20 h-20 flex items-center justify-center bg-surface-container-high rounded-lg text-display-lg-mobile font-display-lg-mobile text-on-surface shadow-[0_4px_0_0_#c3c6d7]">24</div>
+<div class="w-20 h-20 flex items-center justify-center border-4 border-dashed border-primary-container rounded-lg bg-primary-container/10">
+<span class="text-display-lg-mobile font-display-lg-mobile text-primary">?</span>
+</div>
+<div class="w-20 h-20 flex items-center justify-center bg-surface-container-high rounded-lg text-display-lg-mobile font-display-lg-mobile text-on-surface shadow-[0_4px_0_0_#c3c6d7]">8</div>
+<div class="text-display-lg-mobile font-display-lg-mobile text-outline">=</div>
+<div class="w-20 h-20 flex items-center justify-center bg-secondary-container rounded-lg text-display-lg-mobile font-display-lg-mobile text-on-secondary-container shadow-[0_4px_0_0_#00714d]">3</div>
+</div>
+<!-- Numeric/Operator Pads (Builder Layout Style) -->
+<div class="grid grid-cols-4 gap-md max-w-md mx-auto">
+<button class="aspect-square flex flex-col items-center justify-center bg-surface border-2 border-outline rounded-lg hover:bg-surface-container-high active:scale-95 transition-all shadow-[0_4px_0_0_#737686]">
+<span class="material-symbols-outlined text-display-lg-mobile">add</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center bg-surface border-2 border-outline rounded-lg hover:bg-surface-container-high active:scale-95 transition-all shadow-[0_4px_0_0_#737686]">
+<span class="material-symbols-outlined text-display-lg-mobile">remove</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center bg-surface border-2 border-outline rounded-lg hover:bg-surface-container-high active:scale-95 transition-all shadow-[0_4px_0_0_#737686]">
+<span class="material-symbols-outlined text-display-lg-mobile">close</span>
+</button>
+<button class="aspect-square flex flex-col items-center justify-center bg-primary border-2 border-primary rounded-lg text-white hover:bg-primary/90 active:scale-95 transition-all shadow-[0_4px_0_0_#003ea8]">
+<span class="material-symbols-outlined text-display-lg-mobile" style="font-variation-settings: 'FILL' 1;">percent</span>
+</button>
+</div>
+</div>
+<!-- Recent Activity Toast (Asymmetric Layout) -->
+<div class="flex justify-between items-center bg-inverse-surface text-inverse-on-surface p-md rounded-lg shadow-xl translate-y-4">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-md">bolt</span>
+</div>
+<span class="font-body-md text-body-md">Siahn just earned a <strong class="text-secondary-fixed">Combo Streak!</strong></span>
+</div>
+<span class="font-label-caps text-label-caps opacity-70">Just now</span>
+</div>
+</main>
+<!-- Bottom Navigation (JSON Authority) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg docked full-width bottom-0 rounded-t-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="backpack">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</div>
+</nav>
+</body></html>
