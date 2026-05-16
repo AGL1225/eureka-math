@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potion Lab: Mystery of 10s</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .potion-glow {
+            filter: drop-shadow(0 0 15px rgba(0, 74, 198, 0.4));
+        }
+        .empire-depth {
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .liquid-wave {
+            border-radius: 40% 45% 40% 45%;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "primary": "#004ac6",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0053db",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#434655",
+                        "on-primary-fixed": "#00174b",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary-container": "#2563eb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#737686",
+                        "inverse-surface": "#213145",
+                        "secondary": "#006c49",
+                        "tertiary": "#784b00",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-container": "#996100",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "display-lg-mobile": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center px-margin-mobile py-sm w-full z-50 bg-surface-container-low dark:bg-surface-container-lowest shadow-sm docked full-width top-0">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A bright and friendly close-up portrait of a young student with a warm smile, set against a soft-focus classroom background. The lighting is sunny and optimistic, reflecting the Eureka Math 'Empire of Senses' style with vibrant colors and clear, high-contrast features. The overall mood is encouraging and curious, perfect for a personalized educational user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChRooHHYEv7o-CvwQrEJPsKEz6e4BI1HFuoJXSKrhMxEwt1PqHRoCbHoD4PVWwT4XkL0yAHtvx36MkRwFK87KJLhgbJLZyS5-n3RRPSZ8otWgjx_b2nzC_OB5d-7-yCHHVYIF7E5Ln2pHvyaK5QSYZ59DCSPy3lgc4jdfoFyyHbCrzkT0gP2PrkA8cM_QWwKJ2XCqG9EvYWsbqrb8CRWWW3K5-06hi3Yv-5pmwBptwRdgCj3MG0oqGDU1EdOGQM9wjXwxjhNAeRw"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Eureka Math</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-xl font-bold flex items-center gap-xs shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">grade</span>
+            Grade 5
+        </button>
+</header>
+<main class="min-h-screen pt-24 pb-32 px-margin-mobile flex flex-col items-center">
+<!-- Potion Recipe Card -->
+<div class="w-full max-w-md bg-surface-container-highest rounded-lg p-md mb-lg border-b-4 border-primary-container empire-depth">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary">Potion Recipe</h2>
+<div class="flex items-center bg-white px-3 py-1 rounded-full shadow-inner border border-outline-variant">
+<span class="material-symbols-outlined text-tertiary mr-1" data-weight="fill">favorite</span>
+<span class="font-bold text-headline-md text-on-surface">54</span>
+<span class="text-on-surface-variant ml-1 font-bold">HP</span>
+</div>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Mix 5 tens and 4 ones to create the Master Elixir!</p>
+</div>
+<!-- Central Alchemist Station -->
+<div class="relative w-full max-w-lg aspect-square flex items-center justify-center mb-xl">
+<!-- Background Magic Glow -->
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+<!-- The Beaker -->
+<div class="relative w-64 h-80 border-[10px] border-surface-container-high rounded-b-[4rem] rounded-t-[1rem] flex items-end justify-center overflow-hidden shadow-xl bg-white/20 backdrop-blur-sm">
+<!-- Liquid Fill -->
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-primary to-primary-container potion-glow transition-all duration-700 ease-in-out" style="height: 54%;">
+<div class="absolute -top-4 left-0 w-full h-8 liquid-wave bg-primary-container/40"></div>
+</div>
+<!-- Floating Place Value Particles -->
+<div class="absolute inset-0 p-gutter flex flex-col-reverse flex-wrap gap-xs content-start items-center">
+<!-- Representing 5 Tens (Red Drops) -->
+<div class="flex flex-col gap-xs mb-md">
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center border-2 border-white shadow-lg text-white font-bold text-xs">10</div>
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center border-2 border-white shadow-lg text-white font-bold text-xs">10</div>
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center border-2 border-white shadow-lg text-white font-bold text-xs">10</div>
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center border-2 border-white shadow-lg text-white font-bold text-xs">10</div>
+<div class="w-8 h-8 bg-error rounded-full flex items-center justify-center border-2 border-white shadow-lg text-white font-bold text-xs">10</div>
+</div>
+<!-- Representing 4 Ones (Blue Drops) -->
+<div class="flex flex-wrap gap-xs justify-center max-w-[100px]">
+<div class="w-4 h-4 bg-primary rounded-full border border-white shadow-md"></div>
+<div class="w-4 h-4 bg-primary rounded-full border border-white shadow-md"></div>
+<div class="w-4 h-4 bg-primary rounded-full border border-white shadow-md"></div>
+<div class="w-4 h-4 bg-primary rounded-full border border-white shadow-md"></div>
+</div>
+</div>
+<!-- Measurement Marks -->
+<div class="absolute left-0 top-0 h-full w-4 flex flex-col justify-between py-gutter px-1">
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+<div class="h-0.5 w-full bg-outline-variant"></div>
+</div>
+</div>
+<!-- Floating XP Counter -->
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-surface-bright rounded-2xl p-sm shadow-lg border-2 border-primary-fixed scale-110">
+<div class="text-label-caps font-label-caps text-on-surface-variant mb-xs">CURRENT STRENGTH</div>
+<div class="text-display-lg-mobile font-display-lg-mobile text-primary">54</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-xs overflow-hidden">
+<div class="bg-primary w-[54%] h-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ingredient Interaction Area -->
+<div class="w-full max-w-md grid grid-cols-2 gap-gutter mb-lg">
+<!-- Red Drop (10) -->
+<button class="bg-surface-container-high p-md rounded-lg flex flex-col items-center gap-sm active:scale-90 transition-transform group border-b-4 border-error/30">
+<div class="w-16 h-16 bg-error rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[32px]" data-weight="fill">water_drop</span>
+</div>
+<div class="text-center">
+<div class="font-bold text-on-surface">Red Drop</div>
+<div class="text-label-caps font-label-caps text-error">+10 HP</div>
+</div>
+</button>
+<!-- Blue Drop (1) -->
+<button class="bg-surface-container-high p-md rounded-lg flex flex-col items-center gap-sm active:scale-90 transition-transform group border-b-4 border-primary/30">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[32px]" data-weight="fill">water_drop</span>
+</div>
+<div class="text-center">
+<div class="font-bold text-on-surface">Blue Drop</div>
+<div class="text-label-caps font-label-caps text-primary">+1 HP</div>
+</div>
+</button>
+</div>
+<!-- Action Button -->
+<button class="w-full max-w-sm bg-primary text-on-primary py-md rounded-xl font-display-lg-mobile text-headline-md shadow-lg border-b-[6px] border-primary-container active:border-b-0 active:translate-y-[6px] transition-all flex items-center justify-center gap-base">
+<span class="material-symbols-outlined">auto_fix_high</span>
+            Check Recipe
+        </button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant rounded-t-lg shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<!-- Decorative Corner Icons -->
+<div class="fixed top-24 left-0 -translate-x-1/2 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">science</span>
+</div>
+<div class="fixed bottom-24 right-0 translate-x-1/2 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">auto_stories</span>
+</div>
+</body></html>

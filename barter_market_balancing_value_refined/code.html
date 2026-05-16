@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    }
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .bounce-subtle {
+      animation: none; /* Requested no animations */
+    }
+    .shadow-empire {
+      box-shadow: 0 4px 0 0 rgba(0, 74, 198, 0.3);
+    }
+    .shadow-puffy {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+    .glass-empire {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#2a1700",
+            "surface-dim": "#cbdbf5",
+            "surface-container-low": "#eff4ff",
+            "primary-fixed-dim": "#b4c5ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-surface": "#0b1c30",
+            "primary": "#004ac6",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-fixed": "#002113",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "surface-tint": "#0053db",
+            "surface-container": "#e5eeff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-fixed": "#ffddb8",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#f8f9ff",
+            "surface-variant": "#d3e4fe",
+            "primary-fixed": "#dbe1ff",
+            "on-surface-variant": "#434655",
+            "on-primary-fixed": "#00174b",
+            "on-background": "#0b1c30",
+            "background": "#f8f9ff",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-container": "#ffeedd",
+            "on-primary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary-container": "#2563eb",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "outline": "#737686",
+            "inverse-surface": "#213145",
+            "secondary": "#006c49",
+            "tertiary": "#784b00",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#eeefff",
+            "tertiary-container": "#996100",
+            "outline-variant": "#c3c6d7",
+            "secondary-container": "#6cf8bb",
+            "inverse-primary": "#b4c5ff",
+            "inverse-on-surface": "#eaf1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "12px",
+            "margin-mobile": "16px",
+            "gutter": "24px",
+            "md": "24px",
+            "xs": "4px",
+            "base": "8px",
+            "lg": "40px",
+            "xl": "64px",
+            "margin-desktop": "48px"
+          },
+          "fontFamily": {
+            "body-lg": ["Quicksand"],
+            "display-lg": ["Quicksand"],
+            "display-lg-mobile": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "label-caps": ["Quicksand"],
+            "body-md": ["Quicksand"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md perspective-1000 overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation (Shared Component Strategy) -->
+<header class="bg-surface-container-low shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A charming, high-quality portrait of a young student with a friendly expression, rendered in a soft-focus digital painting style. The lighting is warm and inviting, using a palette of soft blues and oranges. This character serves as the avatar for a primary school educational math platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFNLurJfLwS0tjEF_BZOiYeqBY8Q6rHvGDHL-xL12Oi43umEFce_wwZknQAh8vLOm3-aqJWvjXld3jwEVNwEwu-WrNTnmuj4-drX0yMgpM04inWjQhQsyPdGJZ6cbEFopCl1bGDkP-HzMgUBsDkeDJrcz4DVmQsveLpEo3QYlaKUNxRvgd0D2E6OLsK_j8Kah-jDs6lQ-DAWUQ69tUzPZfnnt1OCaBXvxNKb1w15_hiJJFr08aNScjw7rv_rEd2uhO3OWnemy5_g"/>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary">Eureka Math</h1>
+</div>
+<div class="flex items-center gap-sm">
+<div class="bg-surface-container-high px-4 py-2 rounded-full flex items-center gap-2 border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-caps text-label-caps text-primary">GRADE 1-3</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Game Canvas (Empire Theme: Tactile & Illustrated) -->
+<main class="flex-1 relative overflow-hidden">
+<!-- Village Market Background -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A whimsical, vibrantly illustrated village market square designed for children. The art style is soft and skeuomorphic with thick outlines and warm, sun-drenched lighting. Colorful market stalls with striped awnings sell oversized wooden toys and bright fruits. The ground is made of smooth, large cobblestones in a friendly pastel blue-gray palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbID0oxjmYqWPhwb1LJHj-rPezOlHew-1FRw8HevmhRE7W1ZHVwEMuqFd5QHy1ojBbaCOxYdZANAMmhsq7Gz_gwiUpmjpDqSnyUtJ4_LMKBpx2GilNC9VMFAIZ_Ts4ucD1NBQSXv8Gz4oa-ISgQ_n4-h5kNZVf9pzfSmFqeugVThCGwEOuzX2R6wb5_5E7EYEwzlvbYpI5D1T0PLFMnt93zkoKbuXjRgp9ll458tuZkBFoq28f-DKUk-JITGe-CTLSIATO1Al6OA"/>
+<div class="absolute inset-0 bg-primary/10 backdrop-blur-[2px]"></div>
+</div>
+<!-- Gameplay Content -->
+<div class="relative z-10 h-full flex flex-col items-center py-xl px-margin-mobile">
+<!-- Progress/Goal Bar -->
+<div class="w-full max-w-2xl bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-md shadow-puffy border-2 border-white mb-xl text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Balancing Value</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Can you make both sides equal? One Nickel is worth 5 Pennies!</p>
+</div>
+<!-- The Balance Scale -->
+<div class="relative flex-1 w-full max-w-4xl flex flex-col items-center justify-center">
+<!-- The Scale Pivot & Beam -->
+<div class="relative w-full max-w-lg">
+<!-- Beam -->
+<div class="absolute left-1/2 top-0 -translate-x-1/2 w-full h-6 bg-tertiary-container rounded-full border-4 border-on-tertiary-fixed shadow-empire transform -rotate-3 transition-transform duration-500"></div>
+<!-- Fulcrum/Stand -->
+<div class="absolute left-1/2 top-4 -translate-x-1/2 w-12 h-64 bg-tertiary-container rounded-t-full border-4 border-on-tertiary-fixed shadow-empire"></div>
+<div class="absolute left-1/2 top-[240px] -translate-x-1/2 w-40 h-8 bg-on-tertiary-fixed rounded-full"></div>
+<!-- Left Tray (Nickel Side) -->
+<div class="absolute left-0 top-6 -translate-x-1/2 flex flex-col items-center gap-xs">
+<div class="w-2 h-20 bg-on-tertiary-fixed-variant"></div>
+<div class="w-48 h-12 bg-white rounded-b-full border-4 border-primary shadow-puffy flex items-center justify-center relative">
+<!-- 5 Cent Nickel -->
+<div class="w-20 h-20 bg-surface-dim rounded-full border-4 border-outline absolute -top-16 shadow-empire flex flex-col items-center justify-center">
+<span class="font-bold text-outline text-2xl">5¢</span>
+<span class="text-[10px] uppercase font-bold text-outline">Nickel</span>
+</div>
+</div>
+</div>
+<!-- Right Tray (Penny Drop Zone) -->
+<div class="absolute right-0 top-10 translate-x-1/2 flex flex-col items-center gap-xs">
+<div class="w-2 h-16 bg-on-tertiary-fixed-variant"></div>
+<div class="w-48 h-12 bg-white/60 rounded-b-full border-4 border-dashed border-primary shadow-lg flex items-center justify-center relative">
+<!-- Drop Zone Content -->
+<div class="absolute -top-20 w-full flex flex-wrap justify-center gap-1 px-2">
+<!-- Pennies would appear here when dropped -->
+<div class="w-12 h-12 bg-tertiary-fixed rounded-full border-2 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform hover:scale-110 cursor-pointer">
+<span class="font-bold text-on-tertiary-fixed text-sm">1¢</span>
+</div>
+<div class="w-12 h-12 bg-tertiary-fixed rounded-full border-2 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform hover:scale-110 cursor-pointer">
+<span class="font-bold text-on-tertiary-fixed text-sm">1¢</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-primary opacity-60">DROP PENNIES HERE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Interaction Area (Coin Pouch) -->
+<footer class="bg-surface-container-high px-margin-mobile py-md z-50 rounded-t-lg shadow-lg">
+<div class="max-w-4xl mx-auto flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-base">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+          Coin Pouch
+        </h3>
+<div class="flex gap-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">2/5</div>
+</div>
+</div>
+<!-- Penny Tray -->
+<div class="flex flex-wrap justify-center gap-gutter bg-surface-container-lowest p-md rounded-xl border-2 border-dashed border-outline-variant">
+<!-- Penny Items -->
+<div class="group cursor-grab active:cursor-grabbing flex flex-col items-center gap-xs">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full border-4 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform transition-transform group-hover:scale-110 active:scale-95">
+<span class="font-display-lg-mobile text-headline-md text-on-tertiary-fixed">1¢</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Penny</span>
+</div>
+<div class="group cursor-grab active:cursor-grabbing flex flex-col items-center gap-xs">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full border-4 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform transition-transform group-hover:scale-110 active:scale-95">
+<span class="font-display-lg-mobile text-headline-md text-on-tertiary-fixed">1¢</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Penny</span>
+</div>
+<div class="group cursor-grab active:cursor-grabbing flex flex-col items-center gap-xs">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full border-4 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform transition-transform group-hover:scale-110 active:scale-95">
+<span class="font-display-lg-mobile text-headline-md text-on-tertiary-fixed">1¢</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Penny</span>
+</div>
+<div class="group cursor-grab active:cursor-grabbing flex flex-col items-center gap-xs">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full border-4 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform transition-transform group-hover:scale-110 active:scale-95 opacity-40">
+<span class="font-display-lg-mobile text-headline-md text-on-tertiary-fixed">1¢</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Used</span>
+</div>
+<div class="group cursor-grab active:cursor-grabbing flex flex-col items-center gap-xs">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-full border-4 border-on-tertiary-fixed shadow-empire flex items-center justify-center transform transition-transform group-hover:scale-110 active:scale-95 opacity-40">
+<span class="font-display-lg-mobile text-headline-md text-on-tertiary-fixed">1¢</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Used</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-caps text-label-caps uppercase">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-caps text-label-caps uppercase">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="backpack">backpack</span>
+<span class="font-label-caps text-label-caps uppercase">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-caps text-label-caps uppercase">Stats</span>
+</div>
+</nav>
+<!-- Success Notification (Hidden by default, used for game state illustration) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-md">
+<div class="bg-surface rounded-lg p-lg shadow-xl border-4 border-secondary max-w-md text-center scale-110">
+<div class="w-24 h-24 bg-secondary-container rounded-full mx-auto flex items-center justify-center mb-md border-4 border-secondary">
+<span class="material-symbols-outlined text-on-secondary-container text-6xl" data-icon="done_all">done_all</span>
+</div>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-secondary">Balanced!</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">You proved that 1 Nickel equals 5 Pennies. Great work!</p>
+<button class="w-full bg-primary py-md rounded-xl text-white font-headline-md shadow-empire active:scale-95 transition-transform">
+        NEXT LEVEL
+      </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-container": "#2563eb",
+                        "primary": "#004ac6",
+                        "secondary-container": "#6cf8bb",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-container": "#996100",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "on-primary-container": "#eeefff",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-tint": "#0053db",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed": "#002113",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary": "#784b00",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#737686",
+                        "on-surface": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#00714d",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-background": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "gutter": "24px",
+                        "xl": "64px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(11, 28, 48, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(180, 197, 255, 0.1);
+        }
+        .graph-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm bg-surface-container-low dark:bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full border-2 border-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated close-up portrait of Seoah, a young teenage girl with an intelligent and focused expression. The lighting is low-key and dramatic, with cool blue rim lights reflecting off her skin, suggesting she is in a high-tech control room. The visual style is sleek and cinematic, utilizing deep shadows and sharp focus to evoke a sense of architectural mastery and strategic thinking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQdUer-06ygqxXGPQVN9VknZ30GLXjHJzi9CYJ7eWu-9ow2VGb_PiFXlIQjZvuWOTDox8IcMA1VTUrilAJNbli3Oesy2igRISW5zIF_OEcJWZdNZZaOtASE_Pu-5oHjJVY0mp7cOLIN9ryTK_cHy6AHMKEMjWFtA3IKgdXBvxYLc0Y-9jNGeNsWa0zDFZCy61Y9i1_GS8IbGFfw_ixYR3cLwgSlhNonui6F5OxK-Hcr6aYjjK4MMazCNUBtyTwijd93_vurHTwmA"/>
+</div>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed">Eureka Math</span>
+</div>
+<div class="flex items-center gap-xs px-4 py-1.5 rounded-full bg-surface-container-high dark:bg-surface-container-highest transition-colors active:scale-95">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Grade 8</span>
+<span class="material-symbols-outlined text-primary text-[18px]">expand_more</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-7xl mx-auto space-y-lg">
+<!-- Hero Section: Primary Simulation -->
+<section class="relative h-[420px] rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover brightness-50 transition-transform duration-700 group-hover:scale-105" data-alt="A sprawling, high-tech cityscape at dusk seen through a data-rich HUD overlay. Glowing neon lines trace the skeletal structure of futuristic skyscrapers, symbolizing growth and compound interest. The atmosphere is professional and sophisticated, using a palette of deep navy, electric blue, and subtle emerald green. Digital ticker tapes and mathematical symbols float in the air, creating a strategy simulator aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtGcFg0XC53uppu0TjbLqpxWxwm5Kx_vBBErl58tBYMlWhSDHqmXNWMgYqTIkUQMCz-L_-vxcEsor698eLctmH0P7mHltVU1DFwjVus7wvWxefWTK9FBDIUPANOiwltGO0r-L2oHUzfZ_5XYAEeE5odIudLqsjWSIegTn3qRG-PoAVSmXK1O5QIESOVDYE5h9nNWuc7-HYN3UGapbspMiry4XR-fpHnc0gqAhCyVeH0TOArntItddku1QSXMt6ML89DfjxQoR2Ig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-lg flex flex-col justify-end">
+<div class="space-y-xs">
+<span class="text-secondary-fixed font-label-caps tracking-widest bg-secondary/20 px-3 py-1 rounded-full inline-block border border-secondary/30">ACTIVE SIMULATION</span>
+<h1 class="font-display-lg text-display-lg text-white">Millionaire Simulator: Compound Interest</h1>
+<p class="text-primary-fixed-dim max-w-xl font-body-lg">Master the architecture of wealth. Deploy capital across high-yield sectors and visualize the exponential growth of your empire through precise mathematical models.</p>
+</div>
+<div class="mt-md flex gap-md">
+<button class="bg-primary-container text-on-primary-container font-headline-md px-8 py-3 rounded-lg flex items-center gap-sm transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        RESUME SESSION
+                    </button>
+<button class="glass-panel text-white font-headline-md px-8 py-3 rounded-lg flex items-center gap-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+                        ANALYTICS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats & Wealth Chart Dashboard -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Wealth Chart -->
+<div class="md:col-span-8 glass-panel rounded-lg p-md">
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim">query_stats</span>
+<h2 class="font-headline-md text-primary-fixed-dim">Wealth Projection Engine</h2>
+</div>
+<div class="flex gap-xs">
+<button class="px-3 py-1 rounded bg-primary/20 text-primary-fixed text-xs font-bold border border-primary/30">10Y</button>
+<button class="px-3 py-1 rounded hover:bg-white/10 text-outline text-xs font-bold transition-colors">20Y</button>
+<button class="px-3 py-1 rounded hover:bg-white/10 text-outline text-xs font-bold transition-colors">MAX</button>
+</div>
+</div>
+<div class="h-[240px] w-full relative flex items-end">
+<!-- SVG Chart Representation -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 800 240">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2563eb" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#2563eb" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 240 Q100 230 200 210 T400 160 T600 80 T800 0 V240 H0 Z" fill="url(#chartGradient)"></path>
+<path class="graph-line" d="M0 240 Q100 230 200 210 T400 160 T600 80 T800 0" fill="none" stroke="#2563eb" stroke-linecap="round" stroke-width="4"></path>
+<circle cx="800" cy="0" fill="#2563eb" r="6"></circle>
+</svg>
+<!-- Grid Lines overlay -->
+<div class="absolute inset-0 grid grid-cols-4 grid-rows-4 pointer-events-none opacity-10">
+<div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-b border-white"></div>
+<div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-b border-white"></div>
+<div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-r border-b border-white"></div><div class="border-b border-white"></div>
+</div>
+</div>
+<div class="flex justify-between mt-sm text-outline font-label-caps">
+<span>JAN 2024</span><span>2028</span><span>2032</span><span>TARGET: $1.2M</span>
+</div>
+</div>
+<!-- Detailed Stats Panel -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="glass-panel flex-1 rounded-lg p-md border-l-4 border-l-secondary">
+<span class="font-label-caps text-outline">CURRENT ROI</span>
+<div class="flex items-baseline gap-xs mt-xs">
+<span class="font-display-lg text-secondary-fixed-dim">12.4%</span>
+<span class="material-symbols-outlined text-secondary text-sm">trending_up</span>
+</div>
+<div class="w-full bg-white/5 h-1.5 rounded-full mt-md overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full w-[85%]"></div>
+</div>
+<p class="text-xs text-outline mt-sm">Efficiency exceeds Grade 8 benchmark.</p>
+</div>
+<div class="glass-panel flex-1 rounded-lg p-md border-l-4 border-l-primary">
+<span class="font-label-caps text-outline">NET INTEREST</span>
+<div class="flex items-baseline gap-xs mt-xs">
+<span class="font-display-lg text-primary-fixed-dim">$4,280</span>
+<span class="text-xs text-outline">/MO</span>
+</div>
+<div class="flex gap-xs mt-md">
+<div class="px-2 py-1 bg-primary/10 rounded text-[10px] text-primary-fixed border border-primary/20">LOW RISK</div>
+<div class="px-2 py-1 bg-white/5 rounded text-[10px] text-outline border border-white/10">STABLE</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modules Section -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-white flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">grid_view</span>
+                    AVAILABLE ARCHITECTURES
+                </h3>
+<a class="text-primary-fixed font-label-caps hover:underline" href="#">VIEW ALL CATALOG</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Bridge Engineering -->
+<div class="glass-panel rounded-lg p-sm group cursor-pointer hover:bg-white/5 transition-all">
+<div class="flex gap-md">
+<div class="w-32 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A blueprint-style technical drawing of a suspension bridge with digital white lines against a dark blueprint background. Glowing nodes indicate stress points and structural load calculations. The image is minimal, precise, and professional, reflecting high-end engineering design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Ms9L-xQbL-0NLlqZJAeexvXfZzdKsI2YKvteeq0Xs3C1xK-vFw2ZHFAyDdiAiQP1VzS8Dj4hKVHHx-yB0e0pAii4LpN-89skXKJ2E0Ni1-vjFHI8OoEFfUu8zXVItfNGaZXFlWUvoFHFVzAG4eIqymQsoT6c7I6tqeO-0PP00-rHtoZlGJiZKCrMESwJn2czxmzbAQgETq9OFJ9M6yiE3WPZ1g72_tRnCoxOnb8TaUDrGch-q2U5ugMNnJ_tBra0GOn6y1lk0Q"/>
+</div>
+<div class="flex flex-col justify-between py-xs">
+<div>
+<h4 class="font-headline-md text-white">Bridge Engineering</h4>
+<p class="text-sm text-outline mt-1">Structural load analysis and geometry of trusses. Calculate stress vectors to prevent collapse.</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">timer</span>
+<span class="text-xs text-outline">45 MIN</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">workspace_premium</span>
+<span class="text-xs text-outline">G8 LEVEL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mars Rover Hacking -->
+<div class="glass-panel rounded-lg p-sm group cursor-pointer hover:bg-white/5 transition-all">
+<div class="flex gap-md">
+<div class="w-32 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A sophisticated digital visualization of a Mars rover on a dusty red planet surface, rendered in a wireframe dark-mode style. The rover is surrounded by floating telemetry data and complex algorithms in neon green. The scene is illuminated by the rover's own scanners, creating a high-tech survival strategy atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcEfud_bR9Ae2PkFV-yetg7D3IRKJcI8nGscr_fyjAQU-sEfFgR8e14qOnXbqU2lkfTCvsdC4sw1Rim6PobeSekMCeQ4n-84-D62DsELyBiQzN4KfLAAOZwJxZ7D5xv8-Skzdlix_E8wzqFMx1SwsArlJCyxeDjosdCBS_CQ_Gs4ksOnMjXJEMP0RcQtXVUXWJpBj5z7fp65vDriFsEWV_O3W9zMAw84k02i1BpwM8Ueb6KUjsiVZl1VAX70WzuudpQu2r72yBSw"/>
+</div>
+<div class="flex flex-col justify-between py-xs">
+<div>
+<h4 class="font-headline-md text-white">Mars Rover Hacking</h4>
+<p class="text-sm text-outline mt-1">Coordinate geometry and signal processing. Re-align satellite arrays using system logic.</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">timer</span>
+<span class="text-xs text-outline">60 MIN</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">workspace_premium</span>
+<span class="text-xs text-outline">ADVANCED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high dark:bg-surface-container-highest border-t border-outline-variant shadow-lg rounded-t-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps mt-1">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-caps text-label-caps mt-1">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps mt-1">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps mt-1">Stats</span>
+</div>
+</nav>
+</body></html>

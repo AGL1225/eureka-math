@@ -1,0 +1,262 @@
+<html lang="en"><head></head><body class="bg-magical min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop overflow-x-hidden">```html
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math World - Profile Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- PWA Meta Tags -->
+<link href="{{DATA:DOCUMENT:DOCUMENT_7}}" rel="manifest"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk" rel="apple-touch-icon"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#737686",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-container": "#00714d",
+                    "tertiary": "#784b00",
+                    "primary-fixed": "#dbe1ff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-surface": "#0b1c30",
+                    "surface": "#f8f9ff",
+                    "secondary": "#006c49",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-surface": "#213145",
+                    "surface-container-low": "#eff4ff",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-variant": "#d3e4fe",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline-variant": "#c3c6d7",
+                    "on-surface-variant": "#434655",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-primary-container": "#eeefff",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#004ac6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#996100",
+                    "surface-tint": "#0053db",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary-fixed-variant": "#653e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "margin-desktop": "48px",
+                    "xl": "64px",
+                    "base": "8px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Quicksand"],
+                    "display-lg-mobile": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "body-md": ["Quicksand"],
+                    "body-lg": ["Quicksand"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Quicksand', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-magical {
+            background-color: #0b1c30;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(120, 75, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 108, 73, 0.05) 0%, transparent 70%),
+                url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 32m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0' fill='%232563eb' fill-opacity='0.1'/%3E%3Cpath d='M0 0l4 4m60 60l-4-4M64 0l-4 4M0 64l4-4' stroke='%232563eb' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .profile-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            perspective: 1000px;
+        }
+        .profile-card:hover {
+            transform: translateY(-12px) rotateX(4deg);
+        }
+        .profile-card:active {
+            transform: translateY(-4px) scale(0.98);
+        }
+        .glow-primary:hover { box-shadow: 0 0 25px rgba(37, 99, 235, 0.4), 0 12px 24px rgba(0, 0, 0, 0.2); }
+        .glow-secondary:hover { box-shadow: 0 0 25px rgba(0, 108, 73, 0.4), 0 12px 24px rgba(0, 0, 0, 0.2); }
+        .glow-tertiary:hover { box-shadow: 0 0 25px rgba(120, 75, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.2); }
+        
+        @keyframes soft-pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .animate-soft-pulse {
+            animation: soft-pulse 3s infinite ease-in-out;
+        }
+        
+        .level-badge {
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .avatar-container {
+            mask-image: radial-gradient(circle, white 100%, transparent 100%);
+        }
+    </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Profile Selection Logic
+  const profileCards = document.querySelectorAll('.profile-card[data-profile-id]');
+  profileCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const name = card.querySelector('h3').textContent;
+      const avatar = card.querySelector('img').src;
+      const level = card.querySelector('.level-badge').textContent.trim();
+      
+      // Save to localStorage
+      localStorage.setItem('selectedExplorer', JSON.stringify({ 
+        name, 
+        avatar, 
+        level,
+        id: card.dataset.profileId 
+      }));
+      
+      // Navigate to Home Screen
+      window.location.href = '{{DATA:SCREEN:SCREEN_47}}';
+    });
+  });
+
+  // Add New Explorer Logic
+  const addCard = document.querySelector('.add-explorer-card');
+  if (addCard) {
+    addCard.addEventListener('click', () => {
+      window.location.href = '{{DATA:SCREEN:SCREEN_6}}';
+    });
+  }
+});
+</script>
+<header class="w-full flex justify-center mb-xl relative">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full h-32 w-full mx-auto max-w-2xl"></div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg bg-gradient-to-b from-white to-primary-fixed-dim bg-clip-text text-transparent drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+        Eureka Math World
+    </h1>
+</header>
+<main class="max-w-6xl w-full flex flex-col items-center">
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-surface-container-lowest mb-lg text-center drop-shadow-md">
+        Who's Exploring Today?
+    </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter w-full">
+<!-- Siahn Card -->
+<div class="profile-card bg-surface/5 backdrop-blur-md border border-white/10 p-base rounded-lg flex flex-col items-center group glow-primary cursor-pointer relative" data-profile-id="siahn">
+<div class="absolute -top-3 -right-3">
+<div class="level-badge px-3 py-1 rounded-full text-white font-bold text-sm shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm text-primary-fixed" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    Lv. 12
+                </div>
+</div>
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary-container to-primary p-sm mb-base relative overflow-hidden shadow-[inset_0_2px_10px_rgba(0,0,0,0.3)]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<img alt="Siahn Avatar" class="w-full h-full object-cover relative z-10 scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-md text-white mb-lg">Siahn</h3>
+<button class="w-full py-sm px-md bg-primary text-on-primary font-bold rounded-full shadow-[0_6px_0_0_rgba(0,39,102,1)] active:shadow-none active:translate-y-1 transition-all group-hover:bg-primary-container">
+                Select
+            </button>
+</div>
+<!-- Eunu Card -->
+<div class="profile-card bg-surface/5 backdrop-blur-md border border-white/10 p-base rounded-lg flex flex-col items-center group glow-secondary cursor-pointer relative" data-profile-id="eunu">
+<div class="absolute -top-3 -right-3">
+<div class="level-badge px-3 py-1 rounded-full text-white font-bold text-sm shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    Lv. 8
+                </div>
+</div>
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-secondary-container to-secondary p-sm mb-base relative overflow-hidden shadow-[inset_0_2px_10px_rgba(0,0,0,0.3)]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<img alt="Eunu Avatar" class="w-full h-full object-cover relative z-10 scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-md text-white mb-lg">Eunu</h3>
+<button class="w-full py-sm px-md bg-secondary text-on-secondary font-bold rounded-full shadow-[0_6px_0_0_rgba(0,75,51,1)] active:shadow-none active:translate-y-1 transition-all group-hover:bg-on-secondary-container">
+                Select
+            </button>
+</div>
+<!-- Seoah Card -->
+<div class="profile-card bg-surface/5 backdrop-blur-md border border-white/10 p-base rounded-lg flex flex-col items-center group glow-tertiary cursor-pointer relative" data-profile-id="seoah">
+<div class="absolute -top-3 -right-3">
+<div class="level-badge px-3 py-1 rounded-full text-white font-bold text-sm shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined !text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    Lv. 15
+                </div>
+</div>
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-tertiary-fixed to-tertiary p-sm mb-base relative overflow-hidden shadow-[inset_0_2px_10px_rgba(0,0,0,0.3)]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<img alt="Seoah Avatar" class="w-full h-full object-cover relative z-10 scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-md text-white mb-lg">Seoah</h3>
+<button class="w-full py-sm px-md bg-tertiary-container text-on-tertiary-container font-bold rounded-full shadow-[0_6px_0_0_rgba(101,62,0,1)] active:shadow-none active:translate-y-1 transition-all group-hover:bg-tertiary">
+                Select
+            </button>
+</div>
+<!-- Add New Card -->
+<div class="add-explorer-card profile-card bg-white/5 border-4 border-dashed border-white/20 p-base rounded-lg flex flex-col items-center justify-center min-h-[320px] transition-all cursor-pointer group hover:bg-white/10 hover:border-white/40">
+<div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed mb-md shadow-inner animate-soft-pulse ring-4 ring-white/5">
+<span class="material-symbols-outlined !text-[56px] transition-transform group-hover:rotate-90" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<h3 class="font-headline-md text-white/70 text-center group-hover:text-white transition-colors">Add New Explorer</h3>
+</div>
+</div>
+</main>
+<footer class="mt-xl py-lg">
+<button class="font-label-caps text-label-caps text-primary-fixed hover:text-white flex items-center gap-sm transition-all active:scale-95 bg-white/5 px-6 py-3 rounded-full border border-white/10 hover:bg-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined !text-[20px]">settings</span>
+        Manage Profiles
+    </button>
+</footer>
+
+```</body></html>

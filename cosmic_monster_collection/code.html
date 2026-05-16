@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Junior Explorer: Advanced Monster Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#6900b3",
+                        "inverse-primary": "#494bd6",
+                        "on-surface": "#dae2fd",
+                        "tertiary": "#ddb7ff",
+                        "outline-variant": "#464554",
+                        "outline": "#908fa0",
+                        "surface-tint": "#c0c1ff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-fixed": "#2c0051",
+                        "surface-container": "#171f33",
+                        "primary-fixed": "#e1e0ff",
+                        "primary-container": "#8083ff",
+                        "on-secondary-fixed-variant": "#005047",
+                        "secondary-container": "#03c6b2",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "primary": "#c0c1ff",
+                        "on-tertiary-container": "#400071",
+                        "tertiary-container": "#b76dff",
+                        "inverse-on-surface": "#283044",
+                        "on-primary": "#1000a9",
+                        "surface-variant": "#2d3449",
+                        "on-primary-container": "#0d0096",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#00201c",
+                        "surface-container-highest": "#2d3449",
+                        "on-background": "#dae2fd",
+                        "surface-container-high": "#222a3d",
+                        "surface-dim": "#0b1326",
+                        "secondary": "#44e2cd",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#004d44",
+                        "tertiary-fixed-dim": "#ddb7ff",
+                        "surface-container-low": "#131b2e",
+                        "surface": "#0b1326",
+                        "background": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "margin-desktop": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "lg": "40px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "label-lg": ["Quicksand"],
+                        "display-md": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-md": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #0b1326;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 0 0 rgba(192, 193, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-background bg-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 z-50 flex justify-between items-center w-full px-margin-mobile h-16 bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-md">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-variant/50 p-2 rounded-full transition-transform active:scale-95">menu</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Grade 6: Mystic Peaks</h1>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed hover:bg-surface-variant/50 p-2 rounded-full transition-transform active:scale-95">stars</button>
+</header>
+<main class="mt-20 px-margin-mobile max-w-7xl mx-auto">
+<!-- Search and Filter Header -->
+<section class="mb-lg space-y-md">
+<div class="flex flex-col md:flex-row gap-sm items-center">
+<div class="relative w-full md:flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl bg-surface-container-high border-none text-on-surface focus:ring-2 focus:ring-secondary/50 placeholder:text-outline/50 font-body-md text-body-md" placeholder="Search the collection..." type="text"/>
+</div>
+<div class="flex gap-xs w-full md:w-auto">
+<button class="flex-1 md:flex-none px-md py-3 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center gap-xs text-label-lg font-label-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Element
+                    </button>
+<button class="flex-1 md:flex-none px-md py-3 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center gap-xs text-label-lg font-label-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">grade</span>
+                        Grade
+                    </button>
+</div>
+</div>
+<!-- Elemental Chips (Fast Filters) -->
+<div class="flex gap-sm overflow-x-auto pb-2 scrollbar-hide">
+<div class="px-md py-1.5 rounded-full bg-secondary/10 text-secondary border border-secondary/20 flex items-center gap-xs whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm">ALL</span>
+</div>
+<div class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center gap-xs whitespace-nowrap hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+<span class="font-label-sm text-label-sm">COSMIC</span>
+</div>
+<div class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center gap-xs whitespace-nowrap hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">ac_unit</span>
+<span class="font-label-sm text-label-sm">ICE</span>
+</div>
+<div class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center gap-xs whitespace-nowrap hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm">FIRE</span>
+</div>
+<div class="px-md py-1.5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center gap-xs whitespace-nowrap hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">diamond</span>
+<span class="font-label-sm text-label-sm">METAL</span>
+</div>
+</div>
+</section>
+<!-- Collection Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Nebula Phoenix (New) -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl border-tertiary/30">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUl29jMXqm-s1M2OV0DATJdm5E5aGb0CjYcrSDaitZaMnZ9ZvLHpG3Z5KJgozWC7TxPH2K20Sz6hKLW-FgOey7WTjBehnT-8gny1MBX3NyeMZSD5OdbDJXQj9qj0zjedBjIpP6ihavz8uh6BQh3XfLRe1Qxxo1udpT0mF4dZGmtScmw4l6go2I12DePKy1nvuQ9NHGG0hcBfZV1dO-tELgnkmIPRaX_wzTxjUfBP4GWFOTwLW3N05HnXwHVOx8abq3aekxZzdxaw'); background-size: 200%; background-position: 15% 45%;"></div>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 65</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Nebula Phoenix</h3>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Uses swirling stardust to solve complex cosmic equations.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 8+</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">MYTHIC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Supernova Drake (New) -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl border-secondary/20">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUl29jMXqm-s1M2OV0DATJdm5E5aGb0CjYcrSDaitZaMnZ9ZvLHpG3Z5KJgozWC7TxPH2K20Sz6hKLW-FgOey7WTjBehnT-8gny1MBX3NyeMZSD5OdbDJXQj9qj0zjedBjIpP6ihavz8uh6BQh3XfLRe1Qxxo1udpT0mF4dZGmtScmw4l6go2I12DePKy1nvuQ9NHGG0hcBfZV1dO-tELgnkmIPRaX_wzTxjUfBP4GWFOTwLW3N05HnXwHVOx8abq3aekxZzdxaw'); background-size: 200%; background-position: 65% 45%;"></div>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 70</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Supernova Drake</h3>
+<span class="material-symbols-outlined text-secondary">local_fire_department</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Ignites algebraic logic with the power of a dying star.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 8+</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">LEGENDARY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Black Hole Cat (New) -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUl29jMXqm-s1M2OV0DATJdm5E5aGb0CjYcrSDaitZaMnZ9ZvLHpG3Z5KJgozWC7TxPH2K20Sz6hKLW-FgOey7WTjBehnT-8gny1MBX3NyeMZSD5OdbDJXQj9qj0zjedBjIpP6ihavz8uh6BQh3XfLRe1Qxxo1udpT0mF4dZGmtScmw4l6go2I12DePKy1nvuQ9NHGG0hcBfZV1dO-tELgnkmIPRaX_wzTxjUfBP4GWFOTwLW3N05HnXwHVOx8abq3aekxZzdxaw'); background-size: 200%; background-position: 85% 75%;"></div>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 55</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Black Hole Cat</h3>
+<span class="material-symbols-outlined text-secondary">rocket_launch</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Absorbs complex variables into a single event horizon.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 7</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">RARE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gravity Slime (New) -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUl29jMXqm-s1M2OV0DATJdm5E5aGb0CjYcrSDaitZaMnZ9ZvLHpG3Z5KJgozWC7TxPH2K20Sz6hKLW-FgOey7WTjBehnT-8gny1MBX3NyeMZSD5OdbDJXQj9qj0zjedBjIpP6ihavz8uh6BQh3XfLRe1Qxxo1udpT0mF4dZGmtScmw4l6go2I12DePKy1nvuQ9NHGG0hcBfZV1dO-tELgnkmIPRaX_wzTxjUfBP4GWFOTwLW3N05HnXwHVOx8abq3aekxZzdxaw'); background-size: 200%; background-position: 40% 85%;"></div>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 42</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Gravity Slime</h3>
+<span class="material-symbols-outlined text-secondary">public</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Manipulates gravitational pulls to balance numerical scales.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 6</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">EPIC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cosmic Owl -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl border-secondary/20">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A majestic owl with feathers made of starry space nebulas, its eyes are glowing gold orbs. It sits on a branch made of crystal equations. The scene is dark, rich, and mysterious with purple and indigo lighting. Sophisticated game asset style with high-end texture work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaVUnSgLLiT0bFp2PVJmigGI0NxbPlqZMeiwJfbgpZaOHE_jqwsSrneikzoEpDjoAdvo3MZIgAuxce_tKx0EwRKLeLDtw4D3S25pg4LYsvmxMKF6qBKlGWs1-lth0qIwc6SI1cCCxjnx8Spg9YtvjN1omvwg6ubabLaj4scAzu2X_IpqEBL_qvgrmTNzPAdGVsRmB3vKlgLujxYyAKb4GGbilHYC2uJVKi27jXbK2mAybIfuM3zkQlH_Iu9r-f8rV6TwXyOjQamQ"/>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 52</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Cosmic Owl</h3>
+<span class="material-symbols-outlined text-secondary">rocket_launch</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Decodes stellar coordinate planes and multi-axis geometry.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 8</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">LEGENDARY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mystic Dragon -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl border-tertiary/20">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="An ethereal, serpent-like dragon weaving through floating mathematical symbols and floating ruins. Its scales shimmer with iridescent light. The environment is a deep, dark blue celestial sky. Soft glowing purple accents create an 'earned maturity' and advanced atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkExwM89k_LdQgYeDdGFMsoiJfcZ3wGmxbtmXc39XiPYbKFTNhlafB1OIau5iMcQpKHRcNLaIs_vhCxtNZGY3LeN4cKdzKWF1GUuI_7N8SLD0vrqtsQV7zOn7y2F7Vy_kbJNdkvMQ0ucP99lhpaCB9QnICWA0GCKuLsLrl8h2eUDwieA2eUqmpfpU92TKjOIzic5l89LafDEkQpItySINFjvuv14B39bYxCO61k4TvgxNMS4HxRUZ1m9taNrCNl-bPBy9acS6X7w"/>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 60</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Mystic Dragon</h3>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Solves ancient algebraic riddles using quadratic breath.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 8+</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">MYTHIC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ice Penguin -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A futuristic ice penguin monster with translucent crystalline armor, standing on a floating glacier under a dark indigo sky with celestial nebula patterns. The style is 3D digital art with soft cinematic lighting and glowing cyan accents that match the teal secondary color palette. The penguin's eyes glow with intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0AaGD2ZcDLALMSDOHNHLzeaape7DG4Cq03e4nzdxbRtebr25JUAAF2J37d29GfWUAkycfJwgAyrN2PfsxmLl4g-8WjyT9h3J2s4_ATqARH-nVSlifycF5iNVeAtgylek51qPNU8FOozYj7Rtb-ZfPFuyA0O23tviZYe7kcpGrmHo11B7FJ6hnYnlB9lE-B7u_Uwgl7nhP7dAwri9JezC9EQ-4Lyr9NzWFrjfCtQbIHKP4KeiI0uTRgJ4SxAk2bKon88Ma0KBigg"/>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 45</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Ice Penguin</h3>
+<span class="material-symbols-outlined text-secondary">ac_unit</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Solves complex fractional temperature shifts with icy precision.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 6</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">RARE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Metallic Rhino -->
+<div class="glass-card inner-glow rounded-xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform duration-300 shadow-xl">
+<div class="h-48 relative overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A heavy armored rhinoceros monster composed of chrome and brushed steel, charging through a geometric digital landscape. Low angle shot showcasing its immense power and reflective surfaces. The lighting is dramatic, catching the hard edges of its metallic hide. Deep indigo and cool silver color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCya2Egrb2kVdgvTM-rJ1SeN2jORSYx_1HQ0AvoVUTyGboPkQswUcpr-jOMhGw3z-GWf8rfcwsIh3qPxuelBq3HPVhaXgvsPd2V0IQaezgZNSgsvh0mJqXyu-R38anfaPO65OSWAtj7UEkHPjUsjh_SAxpAGhsGFWzPo9_pfHWAeICEjKI5GDvrW9FoCpvtX6pOYyIzTs62W9c3CKbPeEJpIrDQmyLfkagm5olxJzNFcQGRABoCcslD7Upvv9qyRAvwZaS4Oi7GeA"/>
+<div class="absolute top-3 right-3 px-3 py-1 bg-secondary text-on-secondary-container rounded-full font-label-sm text-label-sm shadow-lg">LVL 48</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Metallic Rhino</h3>
+<span class="material-symbols-outlined text-secondary">diamond</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastery: Calculates high-density volume and mass ratios in combat.</p>
+<div class="pt-sm border-t border-white/5 flex justify-between items-center">
+<span class="text-secondary font-label-sm text-label-sm">GRADE 7</span>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">EPIC</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-highest/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-90 duration-150">map</span>
+<span class="font-label-sm text-label-sm">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(68,226,205,0.4)] transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Collection</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-90 duration-150">assignment</span>
+<span class="font-label-sm text-label-sm">Quests</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-active:scale-90 duration-150">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Math Base: Customization</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .isometric-grid {
+            background-image: 
+                linear-gradient(30deg, #c3c6d7 12%, transparent 12.5%, transparent 87%, #c3c6d7 87.5%, #c3c6d7),
+                linear-gradient(150deg, #c3c6d7 12%, transparent 12.5%, transparent 87%, #c3c6d7 87.5%, #c3c6d7),
+                linear-gradient(30deg, #c3c6d7 12%, transparent 12.5%, transparent 87%, #c3c6d7 87.5%, #c3c6d7),
+                linear-gradient(150deg, #c3c6d7 12%, transparent 12.5%, transparent 87%, #c3c6d7 87.5%, #c3c6d7),
+                linear-gradient(60deg, #d3e4fe 25%, transparent 25.5%, transparent 75%, #d3e4fe 75%, #d3e4fe),
+                linear-gradient(60deg, #d3e4fe 25%, transparent 25.5%, transparent 75%, #d3e4fe 75%, #d3e4fe);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+        .isometric-card {
+            transform: rotateX(60deg) rotateZ(-45deg);
+            transform-style: preserve-3d;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#002113",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffeedd",
+                        "secondary-container": "#6cf8bb",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#737686",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#2563eb",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#004ac6",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#784b00",
+                        "on-surface": "#0b1c30",
+                        "secondary": "#006c49",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-container": "#996100",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "xl": "64px",
+                        "margin-desktop": "48px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-container-low dark:bg-surface-container-lowest shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A stylized 3D avatar of a young student explorer with futuristic glasses and a blue tech vest. The character has a cheerful expression, set against a soft blue and white background. The lighting is bright and optimistic, reflecting a modern educational app aesthetic with vibrant primary blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrNtlersqhaMJ9bkVePt-wfGRIvUzzHl2KEwcec7fuhNeTg-O_vrqckvtPIO55L97ghna0cPi9AdeaIU5dfojrU4uhG69uPweixhqP43MW2mwIzjKyC9MyHZ3oCu5SbyGac9n3OoikUyw1l6z0PEyWpuUW8AnY0d0Md3xfK2DUfI30FJ6j_3gUvXFSJqrtDFVFEBiu1C8IA3Rw6UhdQ5ehxBXAo84AZdTEYI7J-u-6fRidGYjazRuj5g0Qu5G5tedQEnJdoF4Sng"/>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed">Eureka Math</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-md items-center">
+<span class="text-primary font-bold font-label-caps text-label-caps">Map</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps">Skills</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps">Backpack</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps">Stats</span>
+</div>
+<div class="bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-bold">
+                Grade 5
+            </div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 relative flex overflow-hidden">
+<!-- Sidebar Shop/Inventory -->
+<aside class="w-80 bg-surface-container-high border-r border-outline-variant z-40 flex flex-col p-md gap-md overflow-y-auto">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-primary">Artifacts</h2>
+<div class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span class="font-bold">1,250</span>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="flex-1 py-2 bg-white rounded-md shadow-sm font-bold text-primary">Store</button>
+<button class="flex-1 py-2 text-on-surface-variant hover:bg-surface-variant rounded-md transition-colors">My Bag</button>
+</div>
+<!-- Artifact List -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-sm rounded-lg border border-outline-variant hover:border-primary transition-all group cursor-pointer active:scale-95">
+<div class="w-full h-32 bg-surface-variant rounded-md mb-sm flex items-center justify-center overflow-hidden">
+<img alt="Geometry Statue" class="h-20 drop-shadow-lg" data-alt="A futuristic 3D geometry statue shaped like a glowing translucent pyramid floating above a sleek metallic base. The pyramid is etched with golden mathematical formulas and sparkles with digital particles. Set in a bright, clean light-mode environment with soft blue shadows and white surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWF0i-25GIcb8t3ZLPz7U4FTuuBgcUi1i2UL--zhNuZdYcHFhJvy4NNgvN7r0A7IyDjXUIzgvxZGRfMM8z6v6BTxu_NET5yRnDBrTv0UxZA5PlOtj_kDrf_uuKXNvIKltYnrrCMdZPhJ91VamgJonx1QDrbyyFhCYaePApnfi9Y8HSbx7llJ6hx0mQsdRTrtPFjp297a9CqzfXpT2zSSQm2bNT1WkLI1PgLp5QDyux6xY6ZOleIEyXPjXKEoQqgT0JJhoIpbSXHQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-on-surface">Prism Monolith</h3>
+<p class="text-xs text-on-surface-variant">Boosts Geometry XP</p>
+</div>
+<div class="text-primary font-bold">400</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-sm rounded-lg border border-outline-variant hover:border-primary transition-all group cursor-pointer active:scale-95">
+<div class="w-full h-32 bg-surface-variant rounded-md mb-sm flex items-center justify-center overflow-hidden">
+<img alt="Coding Server" class="h-20 drop-shadow-lg" data-alt="A futuristic coding server rack with glowing green LED indicators and semi-transparent holographic screens displaying binary code. The design is sleek and minimalist, primarily white and silver with vibrant blue and green accents. It has a high-tech, architect-mode aesthetic for older students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8dIfjFwUC7fEKV63RRV3JBD5FMZPk1n2O0335DdYBgpKV6y8zDJMXGfXoyKA4mCyRNeV0WHcuPQjPpbzocfotu201DllqTj7m0qR058FDG0LavIwJOFI_JFZzvTJcn3WgBCOllNavyz0V9ng7yH2SGtuE35XNMRk7XNJdJy1R3m9aMqK5TiCT16lfwDqQGAMLbfTMAAsG-D3j8WOcyzjGdAfpyyg2jRhNx8rYK-gpQTwoyL_QWCvqS4cVGg95nxAlPHtZ_Eqhg"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-on-surface">Logic Core</h3>
+<p class="text-xs text-on-surface-variant">Unlocks Scripting</p>
+</div>
+<div class="text-primary font-bold">850</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-sm rounded-lg border border-outline-variant hover:border-primary transition-all group cursor-pointer active:scale-95">
+<div class="w-full h-32 bg-surface-variant rounded-md mb-sm flex items-center justify-center overflow-hidden">
+<img alt="Calculus Hub" class="h-20 drop-shadow-lg" data-alt="A sophisticated mathematical artifact resembling a floating compass and protractor made of crystalline glass. The instrument glows with a soft amber light, casting a warm hue on the surrounding white and light-blue surfaces. The style is modern, precise, and visually stimulating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGYIMSFbrjuASc2BZUUUYBHh-H45_1TmTdo_KdAdMYuH69KB5oWC7rfkFA_eg0ndzRXqWvsdLZ5ta2iQfdN5CQMpnG039HUD5Q_oP7iNO7HWX52i7qLzhqY0lEvCWC4FtxATP2j28CyuEI1kqCrGHXuR-GzJAmqsTwKM42wHfFVBAlYCPcWQYHPEciJSZvW20OMbuhW9xZnYgFQ_30ZU7FjKAcX-j2HY2x_oigZKb7FA3ia2dOs6Xoy9cUdog10KURDgFp6fkIg"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-on-surface">Calculus Hub</h3>
+<p class="text-xs text-on-surface-variant">Advanced Modeling</p>
+</div>
+<div class="text-on-surface-variant italic text-xs">Locked</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Sandbox Environment -->
+<section class="flex-1 relative bg-surface-container-low overflow-hidden cursor-crosshair">
+<!-- Isometric Grid Background -->
+<div class="absolute inset-0 isometric-grid opacity-50"></div>
+<!-- Floating Controls -->
+<div class="absolute top-md right-md flex flex-col gap-sm z-30">
+<button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+<button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">layers</span>
+</button>
+</div>
+<!-- Placed Objects Layer -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative w-[800px] h-[600px]">
+<!-- Example Placed Artifact 1 -->
+<div class="absolute top-1/4 left-1/3 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-grab active:cursor-grabbing">
+<div class="w-32 h-48 flex flex-col items-center">
+<img class="w-full drop-shadow-2xl" data-alt="A 3D isometric view of a futuristic math base artifact. It is a large, white architectural structure with circular cutouts and glowing cyan energy fields inside. The lighting is crisp with soft blue shadows, set against a clean white environment. The overall mood is high-tech and inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2rjA-juB6VqH6n5-SnV0jCHqqMfi6GBQrf83ey6j6aC-PgWO_66ULbTllFOS2sUJfDHIshESyR94xjwpWCorXbIH-3XjCkRuoaarl2kx6q1C7-YBlTj3_ijwvEFTc4XVJrWI1aUuji45ZwCPB5Suq26nDjfwD1l9y9yCgxZ40Z0QRtkvl-qiEBRMEp474E-bduioOxzycjsiFujmm5fOw55H_rNBfr83_u5oIcuMI7g3ZWmSTMG-FACgi5GEX4SkPbahn583B3w"/>
+<div class="mt-2 bg-black/20 backdrop-blur-md text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-widest font-bold">Level 3 Prism</div>
+</div>
+</div>
+<!-- Example Placed Artifact 2 -->
+<div class="absolute top-1/2 left-2/3 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-grab active:cursor-grabbing">
+<div class="w-40 h-40 flex flex-col items-center">
+<img class="w-full drop-shadow-2xl" data-alt="An isometric view of a sleek, white command terminal for a math base. It features holographic data streams of equations and graphs floating above its surface. The terminal has smooth rounded edges and a minimalist glass-like texture, integrated into a bright, futuristic learning space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD77_Zms-_fFu4A9eA52EszZ8lJviESGUpwzgI2D1WZ8Ljo9GunDI1qLoqcI8Mid0FonXyJ1vlrY5fO8oCofh9JHa0DmZSdaQAafgoQPezFNGcy7tY1Ked1Et9PUU5MOn8tWEUblZ-SH-Q7-G2HRCGzvyoSCGm0NlYVIDj-hYsWluA4G_cJwavWOGvy2XSNja8hN60rvowHAcCWXR1bH_KAyMTpGGhYLWYqHiUlyb3gblXUnrQVPjFAHpgfDTPhgitpeMECBPakZw"/>
+<div class="mt-2 bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full uppercase tracking-widest font-bold">Mainframe Active</div>
+</div>
+</div>
+<!-- Grid Highlight (Hover State) -->
+<div class="absolute top-1/3 right-1/4 w-20 h-20 bg-primary/20 border-2 border-primary rounded-lg transform rotateX(60deg) rotateZ(-45deg) pointer-events-none"></div>
+</div>
+</div>
+<!-- Interaction Prompt -->
+<div class="absolute bottom-xl left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md px-md py-sm rounded-full shadow-xl border border-white flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">touch_app</span>
+<span class="font-bold text-on-surface">Drag an artifact to the grid to place it</span>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile/Responsive) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</div>
+</nav>
+<!-- Floating Action Button (Contextual: Save Base) -->
+<button class="fixed bottom-lg right-md md:bottom-md md:right-md bg-primary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl">check</span>
+</button>
+</body></html>

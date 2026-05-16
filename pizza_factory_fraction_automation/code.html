@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-container": "#2563eb",
+                    "primary": "#004ac6",
+                    "secondary-container": "#6cf8bb",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#996100",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container": "#e5eeff",
+                    "on-primary-container": "#eeefff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-tint": "#0053db",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed": "#002113",
+                    "secondary": "#006c49",
+                    "on-surface-variant": "#434655",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary": "#784b00",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline": "#737686",
+                    "on-surface": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "label-caps": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pizza-shadow {
+            box-shadow: 0 10px 0 0 rgba(0,0,0,0.05);
+        }
+        .industrial-grid {
+            background-image: radial-gradient(circle, #c3c6d7 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col industrial-grid">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50 sticky top-0">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Eunu Profile" class="w-full h-full object-cover" data-alt="A clean, high-resolution portrait of a young Korean boy with a friendly expression, styled in a professional school-portrait aesthetic. He is wearing a blue uniform shirt that matches the educational brand colors. The background is a soft, blurred classroom setting with warm, bright morning light filtering through a window." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrv6XyHptYku715IqcXMQXt4kSCKP0i1r4c_8WyJ5mHzU1KgPDyzclGSnsrZzkJ97Bqav1eJKDfn5_pcRDBR9qGmMRixTE8VATcu8monV7QE5XgaO0UWhcI2UgW8O8hDbpkkLb_qXU648QuGrB_1WQ9S0RQRHJAMkwuIObjMiviSel98gFndzchf1M3pI3p3kyyy3y8bGdXB_ycRvYHWNTpR4yhHIfBtzA7wBWuoA1stnzsUniRFRR5ofGBD6qZj88Fn9RY436lw"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Eureka Math</span>
+</div>
+<div class="flex items-center gap-xs">
+<button class="bg-surface-container-high px-4 py-2 rounded-lg font-bold text-primary transition-transform active:scale-90 flex items-center gap-xs">
+<span class="material-symbols-outlined">grade</span>
+                Grade 5
+            </button>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row p-margin-mobile md:p-margin-desktop gap-gutter max-w-7xl mx-auto w-full">
+<!-- Left Column: Tooling & Controls -->
+<aside class="w-full md:w-[280px] flex flex-col gap-md">
+<!-- Ticket Order Section -->
+<div class="bg-white border-2 border-outline-variant p-md rounded-lg shadow-sm flex flex-col gap-sm">
+<div class="flex justify-between items-center border-b border-outline-variant pb-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ORDER #4205</span>
+<span class="material-symbols-outlined text-secondary">receipt_long</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Solve the Fraction Puzzle!</h2>
+<div class="space-y-sm">
+<div class="flex justify-between items-center bg-surface-container rounded-md p-xs">
+<span class="font-body-md font-bold">1/2 Pepperoni</span>
+<span class="material-symbols-outlined text-red-500">fiber_manual_record</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container rounded-md p-xs">
+<span class="font-body-md font-bold">1/4 Mushrooms</span>
+<span class="material-symbols-outlined text-amber-900">lens</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container rounded-md p-xs">
+<span class="font-body-md font-bold">1/4 Cheese</span>
+<span class="material-symbols-outlined text-yellow-400">square</span>
+</div>
+</div>
+</div>
+<!-- Stats & Progress -->
+<div class="bg-primary-container text-on-primary-container p-md rounded-lg shadow-md">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-caps text-label-caps">ASSEMBLY PROGRESS</span>
+<span class="font-bold">50%</span>
+</div>
+<div class="w-full bg-on-primary-container/20 h-4 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed w-1/2 h-full"></div>
+</div>
+<p class="mt-sm font-body-md text-sm opacity-90">Current: 1/4 + 1/4 = 1/2</p>
+</div>
+</aside>
+<!-- Center Column: The Assembly Line (Mathematical Sandbox) -->
+<section class="flex-grow flex flex-col gap-md bg-surface-container-lowest border-2 border-outline-variant rounded-lg p-lg relative overflow-hidden">
+<!-- Factory Texture Overlay -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
+<div class="flex-grow flex items-center justify-center relative">
+<!-- Pizza Base (Skeuomorphic/Builder Style) -->
+<div class="w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#f3e5ab] border-8 border-[#d2b48c] relative pizza-shadow flex items-center justify-center overflow-hidden">
+<!-- Fraction Grid Overlay -->
+<div class="absolute inset-0 border border-black/10 rounded-full"></div>
+<div class="absolute h-full w-[2px] bg-black/5 left-1/2 -translate-x-1/2"></div>
+<div class="absolute w-full h-[2px] bg-black/5 top-1/2 -translate-y-1/2"></div>
+<!-- Pre-filled Toppings (Simulation) -->
+<div class="absolute inset-0 flex">
+<div class="w-1/2 h-full bg-red-100/30 flex items-center justify-center border-r border-black/5">
+<!-- Empty pepperoni half -->
+<span class="font-label-caps text-on-surface-variant opacity-20">1/2 EMPTY</span>
+</div>
+<div class="w-1/2 h-full flex flex-col">
+<div class="h-1/2 w-full bg-amber-100 flex items-center justify-center border-b border-black/5">
+<span class="material-symbols-outlined text-amber-800 scale-150">lens</span>
+<span class="absolute text-xs font-bold text-amber-900 mt-8">1/4</span>
+</div>
+<div class="h-1/2 w-full bg-yellow-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-yellow-600 scale-150" data-weight="fill" style="font-variation-settings: 'FILL' 1;">texture</span>
+<span class="absolute text-xs font-bold text-yellow-700 mt-8">1/4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Calculation UI -->
+<div class="absolute top-0 right-0 bg-white/80 backdrop-blur-md p-md rounded-lg border border-outline shadow-xl flex items-center gap-md">
+<div class="text-center">
+<div class="font-headline-md text-primary">1/4</div>
+<div class="h-[2px] bg-primary w-full my-xs"></div>
+<div class="font-headline-md text-primary">4</div>
+</div>
+<span class="material-symbols-outlined text-primary">add</span>
+<div class="text-center">
+<div class="font-headline-md text-primary">1/4</div>
+<div class="h-[2px] bg-primary w-full my-xs"></div>
+<div class="font-headline-md text-primary">4</div>
+</div>
+<span class="material-symbols-outlined text-primary">drag_handle</span>
+<div class="text-center bg-primary text-white p-xs rounded">
+<div class="font-headline-md">2/4</div>
+<div class="h-[2px] bg-white w-full my-xs"></div>
+<div class="font-headline-md">= 1/2</div>
+</div>
+</div>
+</div>
+<!-- Drag & Drop Topping Station -->
+<div class="bg-surface-container p-md rounded-xl flex justify-center gap-lg">
+<div class="flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center cursor-grab active:scale-95 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-red-500 scale-150" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fiber_manual_record</span>
+</div>
+<span class="font-label-caps text-primary">1/2 UNIT</span>
+</div>
+<div class="flex flex-col items-center gap-xs opacity-50 cursor-not-allowed">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-outline flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-amber-900 scale-150">lens</span>
+</div>
+<span class="font-label-caps text-on-surface-variant">1/4 UNIT</span>
+</div>
+<div class="flex flex-col items-center gap-xs opacity-50 cursor-not-allowed">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-outline flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-yellow-400 scale-150" data-weight="fill" style="font-variation-settings: 'FILL' 1;">texture</span>
+</div>
+<span class="font-label-caps text-on-surface-variant">1/4 UNIT</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Goal & Instruction -->
+<aside class="hidden lg:flex w-[240px] flex-col gap-md">
+<div class="bg-secondary-container p-md rounded-lg">
+<h3 class="font-label-caps text-on-secondary-container mb-xs">FACTORY MANUAL</h3>
+<p class="font-body-md text-on-secondary-container leading-tight">
+                    Drag the <span class="font-bold">1/2 Pepperoni</span> slice onto the empty side of the pizza base to complete the order.
+                </p>
+<div class="mt-md p-xs bg-white/50 rounded flex items-center gap-xs border border-on-secondary-container/20">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+<span class="text-xs italic">Hint: 1/2 is the same as 2/4.</span>
+</div>
+</div>
+<div class="border-2 border-outline-variant rounded-lg p-md bg-white">
+<h3 class="font-label-caps mb-sm">ACHIEVEMENTS</h3>
+<div class="flex flex-wrap gap-xs">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<!-- Desktop Nav Shell Overlay (Subtle) -->
+<div class="hidden md:block fixed bottom-lg right-lg">
+<button class="w-16 h-16 bg-primary text-white rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined scale-150">help</span>
+</button>
+</div>
+</body></html>

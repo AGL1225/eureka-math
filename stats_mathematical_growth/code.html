@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math - Stats &amp; Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .radar-grid {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "secondary-container": "#6cf8bb",
+                      "on-secondary-container": "#00714d",
+                      "surface-container": "#e5eeff",
+                      "secondary": "#006c49",
+                      "on-tertiary-container": "#ffeedd",
+                      "on-error": "#ffffff",
+                      "background": "#f8f9ff",
+                      "tertiary-container": "#996100",
+                      "surface-container-highest": "#d3e4fe",
+                      "inverse-surface": "#213145",
+                      "surface-tint": "#0053db",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-primary-container": "#eeefff",
+                      "outline": "#737686",
+                      "on-primary-fixed": "#00174b",
+                      "primary": "#004ac6",
+                      "on-surface": "#0b1c30",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "primary-container": "#2563eb",
+                      "inverse-primary": "#b4c5ff",
+                      "primary-fixed": "#dbe1ff",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-low": "#eff4ff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-dim": "#cbdbf5",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary": "#784b00",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-surface-variant": "#434655",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c3c6d7",
+                      "surface-bright": "#f8f9ff",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#dce9ff",
+                      "on-secondary-fixed": "#002113",
+                      "on-tertiary-fixed-variant": "#653e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "md": "24px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "48px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-md": ["Quicksand"],
+                      "display-lg-mobile": ["Quicksand"],
+                      "display-lg": ["Quicksand"],
+                      "body-lg": ["Quicksand"],
+                      "label-caps": ["Quicksand"],
+                      "headline-md": ["Quicksand"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-surface-container-low dark:bg-surface-container-lowest shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50 fixed top-0 left-0">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary ring-2 ring-primary-fixed">
+<img alt="Siahn profile" data-alt="A professional, brightly lit headshot of a young student with a friendly expression. The lighting is soft and high-key, emphasizing a clean and optimistic academic atmosphere. The background is a soft, blurred library setting with modern architectural details in cool blue and white tones, matching a premium educational app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_E6GqRLtNUVKENYv7SqI_G3sUDbl2q_jCCld1PHWPE1GsMnCfMWzmD8hftyhBlhKQGah7VT36pit6oLhcw4lFShTMQQIjsRS9I1HmdifbFAWaK0DhXezwquMklHXtf9YMeN7LsSdXVLSJa-c_LJh6aFQ7n3z50WgaKosEYsEpKfKvr1gZCrGHp2rmzveXXfHIndCjPnqJUKcymz6iKwlb0tYodU3uL-FqVeu3C3JpPDzkzzV-nyxC2WGpHgOrIOiq1KwPjls0Q"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Eureka Math</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-bold flex items-center gap-xs scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">school</span>
+            Grade 5
+        </button>
+</header>
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-6xl mx-auto space-y-md">
+<!-- Hero Stats Row (Asymmetric Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Learning Streak Card -->
+<div class="md:col-span-1 bg-white border border-outline-variant p-md rounded-lg shadow-sm flex flex-col justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant font-label-caps uppercase tracking-widest">Daily Streak</span>
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="mt-md">
+<span class="font-display-lg text-display-lg text-tertiary">14</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant ml-xs">Days</span>
+</div>
+<div class="mt-sm flex gap-xs">
+<div class="h-1 flex-1 rounded-full bg-tertiary"></div>
+<div class="h-1 flex-1 rounded-full bg-tertiary"></div>
+<div class="h-1 flex-1 rounded-full bg-tertiary"></div>
+<div class="h-1 flex-1 rounded-full bg-tertiary-fixed"></div>
+<div class="h-1 flex-1 rounded-full bg-tertiary-fixed"></div>
+</div>
+</div>
+<!-- Stars & XP Card (Bento Style) -->
+<div class="md:col-span-2 bg-primary text-on-primary p-md rounded-lg shadow-sm relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-headline-md">System Architect Lv. 12</span>
+<div class="flex items-center bg-white/20 px-3 py-1 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-yellow-300 mr-1" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-bold">2,450 Stars</span>
+</div>
+</div>
+<div class="mt-lg">
+<div class="flex justify-between text-sm mb-2">
+<span>850 / 1,000 XP to Level 13</span>
+<span>85%</span>
+</div>
+<div class="w-full bg-white/20 h-3 rounded-full overflow-hidden p-[2px]">
+<div class="bg-secondary-fixed-dim h-full rounded-full transition-all duration-1000 shadow-[0_0_12px_rgba(78,222,163,0.8)]" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Abstract Blueprint Overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg height="100%" width="100%">
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"></path>
+</pattern>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+</div>
+</div>
+<!-- Radar Chart & Strands Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-md items-stretch">
+<!-- Proficiency Radar Chart (Geometric Prism) -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md flex flex-col items-center justify-center min-h-[400px]">
+<h3 class="font-headline-md text-headline-md text-primary mb-lg self-start">Strand Proficiency</h3>
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Background Hexagon Grids -->
+<div class="absolute w-full h-full border border-outline-variant radar-grid opacity-20"></div>
+<div class="absolute w-[80%] h-[80%] border border-outline-variant radar-grid opacity-30"></div>
+<div class="absolute w-[60%] h-[60%] border border-outline-variant radar-grid opacity-40"></div>
+<div class="absolute w-[40%] h-[40%] border border-outline-variant radar-grid opacity-50"></div>
+<!-- The "Magic System" Data Shape -->
+<svg class="absolute w-full h-full drop-shadow-lg" viewbox="0 0 100 100">
+<polygon fill="rgba(37, 99, 235, 0.2)" points="50,15 85,35 90,75 50,85 10,75 15,35" stroke="#004ac6" stroke-width="1.5"></polygon>
+<circle cx="50" cy="15" fill="#004ac6" r="2"></circle> <!-- Number -->
+<circle cx="85" cy="35" fill="#004ac6" r="2"></circle> <!-- Algebra -->
+<circle cx="90" cy="75" fill="#004ac6" r="2"></circle> <!-- Data -->
+<circle cx="50" cy="85" fill="#004ac6" r="2"></circle> <!-- Spatial -->
+<circle cx="10" cy="75" fill="#004ac6" r="2"></circle> <!-- Financial -->
+<circle cx="15" cy="35" fill="#004ac6" r="2"></circle> <!-- SEL -->
+</svg>
+<!-- Labels -->
+<span class="absolute top-[-24px] font-label-caps text-on-surface-variant">Number</span>
+<span class="absolute top-[25%] right-[-50px] font-label-caps text-on-surface-variant">Algebra</span>
+<span class="absolute bottom-[20%] right-[-40px] font-label-caps text-on-surface-variant">Data</span>
+<span class="absolute bottom-[-24px] font-label-caps text-on-surface-variant">Spatial</span>
+<span class="absolute bottom-[20%] left-[-60px] font-label-caps text-on-surface-variant">Financial</span>
+<span class="absolute top-[25%] left-[-40px] font-label-caps text-on-surface-variant">SEL</span>
+</div>
+</div>
+<!-- Strand List (Architect High Density) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<!-- Number -->
+<div class="bg-white p-sm border-l-4 border-primary rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">Number</span>
+<span class="text-xs font-mono bg-primary-container/10 px-1">92%</span>
+</div>
+<div class="text-xs text-outline mb-2">Fractions, Ratios, Decimals</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-primary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Algebra -->
+<div class="bg-white p-sm border-l-4 border-secondary rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">Algebra</span>
+<span class="text-xs font-mono bg-secondary-container/10 px-1">78%</span>
+</div>
+<div class="text-xs text-outline mb-2">Variables, Coding, Patterns</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-secondary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Data -->
+<div class="bg-white p-sm border-l-4 border-tertiary rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">Data</span>
+<span class="text-xs font-mono bg-tertiary-container/10 px-1">85%</span>
+</div>
+<div class="text-xs text-outline mb-2">Probability, Visualization</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-tertiary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<!-- Spatial Sense -->
+<div class="bg-white p-sm border-l-4 border-primary-fixed-dim rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">Spatial Sense</span>
+<span class="text-xs font-mono bg-primary-container/10 px-1">64%</span>
+</div>
+<div class="text-xs text-outline mb-2">Geometry, Measurement</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-primary-fixed-dim h-full rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<!-- Financial Literacy -->
+<div class="bg-white p-sm border-l-4 border-secondary-fixed-dim rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">Financial Lit.</span>
+<span class="text-xs font-mono bg-secondary-container/10 px-1">45%</span>
+</div>
+<div class="text-xs text-outline mb-2">Money, Interest, Budgets</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- SEL -->
+<div class="bg-white p-sm border-l-4 border-inverse-surface rounded shadow-sm">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-bold text-on-surface">SEL Math</span>
+<span class="text-xs font-mono bg-surface-container-highest px-1">98%</span>
+</div>
+<div class="text-xs text-outline mb-2">Perseverance, Confidence</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full">
+<div class="bg-inverse-surface h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Accomplishments (Glassmorphism Tier) -->
+<div class="pt-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Recent Badges</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="bg-white/40 backdrop-blur-md border border-white/50 p-md rounded-xl flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-600 rounded-full flex items-center justify-center mb-sm shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<span class="font-bold text-on-surface text-sm">Number Sense God</span>
+<span class="text-[10px] text-outline uppercase mt-1">Tier 3 Mastery</span>
+</div>
+<div class="bg-white/40 backdrop-blur-md border border-white/50 p-md rounded-xl flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center mb-sm shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<span class="font-bold text-on-surface text-sm">Shape Shifter</span>
+<span class="text-[10px] text-outline uppercase mt-1">Geometry Quest</span>
+</div>
+<div class="bg-white/40 backdrop-blur-md border border-white/50 p-md rounded-xl flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1">
+<div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-700 rounded-full flex items-center justify-center mb-sm shadow-xl">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="font-bold text-on-surface text-sm">Code Breaker</span>
+<span class="text-[10px] text-outline uppercase mt-1">Logic Strand</span>
+</div>
+<div class="bg-white/40 backdrop-blur-md border border-white/50 p-md rounded-xl flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1 opacity-60">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center mb-sm grayscale">
+<span class="material-symbols-outlined text-outline text-3xl">lock</span>
+</div>
+<span class="font-bold text-on-surface-variant text-sm">Locked</span>
+<span class="text-[10px] text-outline uppercase mt-1">Reach Level 15</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</div>
+</nav>
+<!-- Desktop Sidebar/Nav Overlay (Simulated) -->
+<nav class="hidden md:flex fixed left-0 top-24 h-[calc(100vh-6rem)] w-20 flex-col items-center py-md space-y-lg border-r border-outline-variant bg-surface-container-low">
+<div class="p-3 text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div class="p-3 text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="p-3 text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined">backpack</span>
+</div>
+<div class="p-3 bg-secondary-container text-on-secondary-container rounded-xl shadow-md transition-all cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+</div>
+</nav>
+</body></html>

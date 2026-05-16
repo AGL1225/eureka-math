@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math World - Profile Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#737686",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-container": "#00714d",
+                    "tertiary": "#784b00",
+                    "primary-fixed": "#dbe1ff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-surface": "#0b1c30",
+                    "surface": "#f8f9ff",
+                    "secondary": "#006c49",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-surface": "#213145",
+                    "surface-container-low": "#eff4ff",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-variant": "#d3e4fe",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline-variant": "#c3c6d7",
+                    "on-surface-variant": "#434655",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-primary-container": "#eeefff",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#004ac6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#996100",
+                    "surface-tint": "#0053db",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary-fixed-variant": "#653e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "margin-desktop": "48px",
+                    "xl": "64px",
+                    "base": "8px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Quicksand"],
+                    "display-lg-mobile": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "body-md": ["Quicksand"],
+                    "body-lg": ["Quicksand"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Quicksand', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pattern {
+            background-color: #f8f9ff;
+            background-image: radial-gradient(#d3e4fe 2px, transparent 2px), radial-gradient(#d3e4fe 2px, #f8f9ff 2px);
+            background-size: 64px 64px;
+            background-position: 0 0, 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-pattern min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Top App Bar (Suppressed for focused selection flow, but logo kept as anchor) -->
+<header class="w-full flex justify-center mb-xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">
+            Eureka Math World
+        </h1>
+</header>
+<main class="max-w-6xl w-full flex flex-col items-center">
+<!-- Headline -->
+<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-lg text-center">
+            Who's Exploring Today?
+        </h2>
+<!-- Profile Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter w-full">
+<!-- Siahn Card -->
+<div class="bg-surface p-base rounded-lg shadow-[0_8px_0_0_rgba(0,74,198,0.1)] flex flex-col items-center transition-transform hover:scale-105 active:translate-y-1 group">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-primary-container p-sm mb-base relative overflow-hidden">
+<img alt="Siahn Avatar" class="w-full h-full object-contain" data-alt="A cheerful 3D-styled cartoon boy avatar for a kids math app, featuring messy brown hair and a wide, excited grin. He wears a blue explorer outfit with small golden badges. The background is a soft, vibrant sky blue with playful floating geometric shapes like triangles and circles. High-quality render with soft, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP7iuCO2QgMpssQbysyrHhlOcs5RSmeKgl2Oo6yt4K36zN-YyJvJ8XOBK4OECtj2gnX21vEi2EjjNo2aY5MRV68vxcwBnh4GVlka5n0jlo8P0zyqEt-fRFSqK6fy_1ImxERgvFsMz14nnLFP7aZ828q2sm-gRGXuhuQZQ9S5Y2LAFfpf4Wluj79BX3MdSpWRnjnpnqNqB0zZ9gGDOpOKBrWrnRT2l47WbBoWbMZJ4iJ_Aa7YOMcKl0cIm1Pu_M7HZ-7otXO8rk2A"/>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Siahn</h3>
+<p class="font-label-caps text-label-caps text-outline mb-md">Lv. 12</p>
+<button class="w-full py-sm px-md bg-primary text-on-primary font-bold rounded-full shadow-[0_4px_0_0_rgba(0,39,102,1)] active:shadow-none active:translate-y-1 transition-all">
+                    Select
+                </button>
+</div>
+<!-- Eunu Card -->
+<div class="bg-surface p-base rounded-lg shadow-[0_8px_0_0_rgba(0,108,73,0.1)] flex flex-col items-center transition-transform hover:scale-105 active:translate-y-1 group">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-secondary-container p-sm mb-base relative overflow-hidden">
+<img alt="Eunu Avatar" class="w-full h-full object-contain" data-alt="A friendly 3D cartoon boy avatar with short black hair and large inquisitive eyes, wearing a green utility vest over a white t-shirt. The background is a vibrant, lush spring green with soft floating leaf and diamond shapes. The overall style is clean and tactile with a welcoming, bright light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpIjYmsp7UivPCFou5lqdCV4RxpfsvSjLanpKqtbVpXf-1qr4B7jYxdCP7rwP3sbsqJIg_2ZiTgdjJTXzVdJvUtjfRKAbSmrJbTOiHzmTA2ntnTLvnZTD2sddTWjiUzfi0Q7x7zKfPIIMQc8X3TcTpFGmszERq7GfXVXwqkjN-t_eLMV6dPYg8jkRa1krPdmKpNm_TPAzywjyhmC2CUCljf8npY0_D7evzRUX6Zwj87zGmadRduj5EycX8ZSLDnOUZS-rajKlzw"/>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Eunu</h3>
+<p class="font-label-caps text-label-caps text-outline mb-md">Lv. 8</p>
+<button class="w-full py-sm px-md bg-secondary text-on-secondary font-bold rounded-full shadow-[0_4px_0_0_rgba(0,75,51,1)] active:shadow-none active:translate-y-1 transition-all">
+                    Select
+                </button>
+</div>
+<!-- Seoah Card -->
+<div class="bg-surface p-base rounded-lg shadow-[0_8px_0_0_rgba(120,75,0,0.1)] flex flex-col items-center transition-transform hover:scale-105 active:translate-y-1 group">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-tertiary-fixed p-sm mb-base relative overflow-hidden">
+<img alt="Seoah Avatar" class="w-full h-full object-contain" data-alt="A playful 3D cartoon girl avatar with pigtails and a bright pink headband, wearing a yellow sweater with a math symbol icon. The background is a warm, soft candy pink with floating star and hexagon patterns. High-contrast, tactile design suitable for an educational game, illuminated by soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDspn79kuxgfl3iYZ8Kh5g3QFKzVHxrXkMbttlngXFopPKAbq36yBLMYmzCkhIru06YDBzunhvLMIwyuRpDCWmA5XeIVnsvH_DSHqR9oUkSie2r1P-DuiIGrntjzvhrDsTS6ZEKqQ6qAyfJu5DqDjTo9oW2INLmFG9xVOmBH0t7lwTP3a94KwZx5Y6qAq73xmHwVaCUXqOd9Vh7qIEq-qulgFuGCHdzfyMzV9ZXxh5RGIyuhzPA9TB1OMnkK33EvZersVg67QC2Ng"/>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Seoah</h3>
+<p class="font-label-caps text-label-caps text-outline mb-md">Lv. 15</p>
+<button class="w-full py-sm px-md bg-tertiary-container text-on-tertiary-container font-bold rounded-full shadow-[0_4px_0_0_rgba(101,62,0,1)] active:shadow-none active:translate-y-1 transition-all">
+                    Select
+                </button>
+</div>
+<!-- Add New Card -->
+<div class="bg-surface-variant/30 border-4 border-dashed border-outline-variant p-base rounded-lg flex flex-col items-center justify-center min-h-[320px] transition-transform hover:scale-105 active:translate-y-1 cursor-pointer group">
+<div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container mb-md shadow-inner">
+<span class="material-symbols-outlined !text-[48px]" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface-variant text-center">Add New Explorer</h3>
+</div>
+</div>
+</main>
+<!-- Footer Actions -->
+<footer class="mt-xl py-lg">
+<button class="font-label-caps text-label-caps text-primary hover:underline flex items-center gap-xs transition-all active:scale-95">
+<span class="material-symbols-outlined !text-[18px]" data-icon="settings">settings</span>
+            Manage Profiles
+        </button>
+</footer>
+</body></html>
