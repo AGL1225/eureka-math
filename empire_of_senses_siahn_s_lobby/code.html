@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-container": "#2563eb",
+                    "primary": "#004ac6",
+                    "secondary-container": "#6cf8bb",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#996100",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container": "#e5eeff",
+                    "on-primary-container": "#eeefff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-tint": "#0053db",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed": "#002113",
+                    "secondary": "#006c49",
+                    "on-surface-variant": "#434655",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary": "#784b00",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline": "#737686",
+                    "on-surface": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "label-caps": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .empire-depth {
+            box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .empire-btn-shadow {
+            box-shadow: 0 4px 0 0 rgba(0, 74, 198, 0.4);
+        }
+        .empire-green-shadow {
+            box-shadow: 0 4px 0 0 rgba(0, 108, 73, 0.3);
+        }
+        .potion-glow {
+            filter: drop-shadow(0 0 10px rgba(108, 248, 187, 0.6));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center px-margin-mobile py-sm w-full z-50 bg-surface-container-low shadow-sm fixed top-0 left-0">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden empire-depth">
+<img alt="Siahn's Avatar" data-alt="A charming 3D illustrative portrait of a young boy with expressive eyes and a friendly smile. The style is soft and tactile, reminiscent of high-quality claymation or stylized toy photography. The background is a soft, blurred magical forest in light-mode pastel greens and blues. The overall mood is cheerful, welcoming, and perfectly suited for a first-grade learning adventure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl32jTgdYdzke1QL7zzGmgeJxxGd8C1SXdiZk2Ks3LS1HwW2HYSlApY9pWqVBxtP6z5qTO_Su3e_ilZboRjAjKyAgXVrj9IiQ0rgfqP1ab486X3womZJWZ4xdpIcu5mjYReTMzHE6VpHbHYf-NJC1YX7dggk03fqd4Q3CSJnQ6ibuj5hd6E8Cfr8j-kCaJvUrSwc5zY3KFTIwuZJBFlCGFHn1z2K3zLYsLFkHTlCzP0ABQ9A_JzwDyKSbPOmXfirMhXjBE-wiK1w"/>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary">Eureka Math</h1>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Grade 5</span>
+<div class="flex items-center gap-xs bg-secondary-container px-base py-xs rounded-full empire-green-shadow">
+<span class="material-symbols-outlined text-[18px] text-on-secondary-container" data-weight="fill">monetization_on</span>
+<span class="font-bold text-on-secondary-container">1,240</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin-mobile min-h-screen relative overflow-hidden">
+<!-- Playful Forest Background Elements -->
+<div class="absolute top-0 left-0 w-full h-full -z-10 opacity-30">
+<div class="absolute top-20 -left-10 w-40 h-40 bg-secondary-container rounded-full blur-3xl"></div>
+<div class="absolute bottom-40 -right-10 w-60 h-60 bg-primary-fixed rounded-full blur-3xl"></div>
+</div>
+<!-- Daily Mission Hero -->
+<section class="mt-lg">
+<div class="relative bg-white p-md rounded-lg empire-depth border-2 border-surface-variant overflow-hidden group">
+<div class="absolute top-0 right-0 p-md opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">science</span>
+</div>
+<div class="relative z-10">
+<span class="bg-primary text-white font-label-caps text-label-caps px-md py-xs rounded-full mb-base inline-block">Daily Mission</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Potion Lab: The Mystery of 10s</h2>
+<p class="text-on-surface-variant font-body-md mb-md max-w-[70%]">Help Master Alchemist Seoah mix the perfect base-10 potions to power the village!</p>
+<button class="bg-primary text-white font-bold px-lg py-sm rounded-xl empire-btn-shadow flex items-center gap-base transition-transform active:scale-95">
+                        Start Brewing
+                        <span class="material-symbols-outlined">play_circle</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Stats & Progress -->
+<section class="mt-lg grid grid-cols-2 gap-md">
+<div class="bg-surface-container p-md rounded-lg empire-depth">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Hero Level</p>
+<div class="flex items-center gap-base">
+<span class="text-display-lg-mobile font-display-lg-mobile text-primary">12</span>
+<div class="flex-1">
+<div class="h-4 bg-white rounded-full overflow-hidden border border-outline-variant">
+<div class="h-full bg-primary w-[65%] rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.3)]"></div>
+</div>
+<p class="text-[10px] mt-xs text-right font-bold text-on-surface-variant">1,200 / 2,000 XP</p>
+</div>
+</div>
+</div>
+<div class="bg-tertiary-fixed p-md rounded-lg empire-depth flex flex-col justify-center items-center">
+<span class="material-symbols-outlined text-tertiary text-[40px]" data-weight="fill">map</span>
+<button class="mt-xs text-tertiary font-bold text-headline-md underline decoration-4 decoration-tertiary-container/30">Go to Map</button>
+</div>
+</section>
+<!-- Active Quests (Asymmetric Layout) -->
+<section class="mt-xl">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Active Quests</h3>
+<span class="text-primary font-bold">See All</span>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Barter Market Card -->
+<div class="bg-white p-base rounded-lg empire-depth border-2 border-surface-variant flex gap-md">
+<div class="w-24 h-24 bg-surface-container rounded-md flex-shrink-0 flex items-center justify-center relative">
+<img alt="Barter Market" data-alt="A vibrant and colorful market stall illustrated in a playful, chunky toy-like style. The stall features wooden textures and stacks of bright red apples and golden coins. The lighting is warm and sun-drenched, creating a safe and exciting atmosphere for a young student. High-contrast colors of primary red and secondary greens dominate the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDG-5M2QFmKoeNSjGD1eGrZ_CFf5lKWvk5Jjt-cZ1Ld2s__w_buSAEJUzuyVBi8j4G8gtwpGoTTpc4Mt8hoCFOzdXf3WWC9dJP8dOf2qGR4YG_Ftrl3yWYWq7SIRvYI5VLRwHLFUbmIhAuySJpw2sMUCmGMNvVAnJD4wGOwQ_bRMtNeoy7ie4d2T2JPZH8UsZzO7vb4BQQsilvFUJDxhFLOZVwOUbGvgHYFn2k5YFVGxX3ls2YOR6osXs1cP8P-_HcTUzvVKCK-g"/>
+<span class="absolute -top-2 -left-2 bg-error text-white text-[10px] px-2 py-0.5 rounded-full font-bold">NEW</span>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-bold text-primary">Barter Market</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Trade 5 shiny apples for a secret map piece. Practice subtraction!</p>
+<div class="mt-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-container">stars</span>
+<span class="text-xs font-bold text-on-secondary-container">+50 XP</span>
+</div>
+</div>
+</div>
+<!-- Lost Puppy Card -->
+<div class="bg-white p-base rounded-lg empire-depth border-2 border-surface-variant flex gap-md">
+<div class="w-24 h-24 bg-surface-container rounded-md flex-shrink-0 flex items-center justify-center">
+<img alt="Lost Puppy" data-alt="A soft and fluffy puppy character with large, expressive eyes sitting in a green meadow with stylized, rounded flowers. The illustration style is squishy and tactile with soft organic shapes. The lighting is bright and cheerful, reinforcing a light-mode empire of senses aesthetic. Soft blue shadows ground the character in the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClfLTuEs0mHFR9SZAwt6GxYBupr2Pza4oxTt6FNZ7HMIoQ7cPPjNvCiEgU2uS-XpkIMw96L66h-Nt5CSPPZ4e1IPHr7eSrgopa6WtQ6n24xcZpArufxRHG0iYJPetcl-kB2uBxbntYUiFJsivJOL3MsJ7Wf8Wq_hVvOEU5y_WKIOr-8iPaa_LKknslQxA4ak6s7_5X4eCAToLbTBWT0JUqtzi2SKtf5TAICEeVTrju5ijjmqJMte5xBd7YjphSQsWNuz2A09UcIg"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-bold text-primary">Lost Puppy</h4>
+<p class="text-on-surface-variant text-sm line-clamp-2">Follow the paw prints and count the steps to find the puppy.</p>
+<div class="mt-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-container">stars</span>
+<span class="text-xs font-bold text-on-secondary-container">+30 XP</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Adventure World Call to Action -->
+<section class="mt-xl mb-base">
+<div class="bg-gradient-to-br from-primary to-primary-container p-md rounded-lg text-white empire-depth text-center">
+<span class="material-symbols-outlined text-[48px] mb-sm" data-weight="fill">explore</span>
+<h3 class="font-headline-md text-headline-md mb-base">Adventure Awaits!</h3>
+<p class="font-body-md opacity-90 mb-md">The G1-3 Adventure World is full of math mysteries. Ready to explore?</p>
+<button class="bg-white text-primary font-bold px-lg py-sm rounded-xl empire-depth active:scale-95 transition-transform">
+                    Enter Portal
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant rounded-t-lg shadow-lg">
+<!-- Map - Highlighted because it's the core navigation in G1-3 Lobby -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-weight="fill">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</div>
+</nav>
+</body></html>

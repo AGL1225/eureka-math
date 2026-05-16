@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#d1e4ff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#47a7ff",
+                    "surface-container": "#eceef1",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#005230",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container-high": "#e6e8eb",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fdcf45",
+                    "on-surface-variant": "#404752",
+                    "surface-tint": "#0061a3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#584400",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fdcf45",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef1",
+                    "on-primary-container": "#003b65",
+                    "on-tertiary-fixed": "#002110",
+                    "outline": "#707883",
+                    "surface-bright": "#f7f9fc",
+                    "outline-variant": "#c0c7d4",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#9dcaff",
+                    "surface-dim": "#d8dadd",
+                    "on-tertiary-container": "#004226",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#69dc9c",
+                    "surface-variant": "#e0e3e6",
+                    "surface-container-highest": "#e0e3e6",
+                    "tertiary-fixed": "#86f9b7",
+                    "surface-container-low": "#f2f4f7",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#9dcaff",
+                    "secondary-fixed": "#ffe08e",
+                    "primary": "#0061a3",
+                    "secondary": "#755b00",
+                    "tertiary": "#006d41",
+                    "background": "#f7f9fc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-tablet": "40px",
+                    "gutter": "16px",
+                    "touch-target-min": "56px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Quicksand"],
+                    "body-md": ["Quicksand"],
+                    "label-bold": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-xl": ["Quicksand"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["18px", {"lineHeight": "26px", "fontWeight": "500"}],
+                    "label-bold": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .plump-button {
+            transition: all 0.1s ease-in-out;
+        }
+        .plump-button:active {
+            transform: translateY(4px);
+            box-shadow: none !important;
+        }
+        .floating-badge {
+            filter: drop-shadow(0 10px 15px rgba(0, 97, 163, 0.2));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-background overflow-x-hidden">
+<header class="bg-background dark:bg-on-background shadow-[0_4px_0_0_rgba(0,97,163,0.1)] w-full top-0 sticky flex justify-between items-center px-margin-mobile py-4 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-size: 32px;">house</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Junior Explorer</h1>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-bold text-label-bold flex items-center gap-1 active:translate-y-[4px] duration-100 ease-in-out">
+            ⭐ 125
+        </div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-8 relative">
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-10 left-10 w-8 h-8 bg-primary-container rounded-full opacity-30 blur-sm"></div>
+<div class="absolute top-20 right-20 w-12 h-12 bg-secondary-container rounded-full opacity-30 blur-sm"></div>
+<div class="absolute bottom-40 left-1/4 w-10 h-10 bg-tertiary-container rounded-full opacity-30 blur-sm"></div>
+<div class="absolute top-1/2 right-10 w-16 h-16 bg-error-container rounded-full opacity-20 blur-md"></div>
+</div>
+<div class="z-10 text-center max-w-md w-full">
+<div class="mb-8 relative flex justify-center">
+<div class="absolute -top-10 -left-10 w-24 h-24 bg-secondary opacity-5 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-10 -right-10 w-24 h-24 bg-primary opacity-5 rounded-full blur-2xl"></div>
+<div class="relative group">
+<img alt="Multiplication Master Badge" class="w-60 h-60 floating-badge transform transition-transform duration-300 hover:scale-105" data-alt="A large, vibrant 3D gold medal styled as a 'Multiplication Master' badge for children. It features a shiny metallic gold texture with a friendly cartoon owl wearing glasses in the center. The badge is surrounded by sparkling magical particles and colorful floating confetti in a soft blue and white background. The overall style is high-quality, tactile, and playful, resembling a premium digital achievement sticker with deep, soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr_lERyrjVyoB9y9srb1POfq_Cy3hBD3NC-gq7a40J3oKvuShBi5dFdFQ4T-0VeSlU9RVAyMX3GZB7TBk74Y56sbwgiCQa3MG1IMOqQc1T7_mPq4PgdtwdEX1SJyKUr2Q3EZQAKe8Tr5LejLieKIDIseH9xraR9Srg95cUjPbh5VUyxVTtx7yC2ivhW0MI8cAaWCzg8gnJ3TB5np3aTJejpzojlEE_Ba65NDPF4QRb3u2G8334knOwD2fBz__Hm4yUfGrXo4sZiw"/>
+</div>
+</div>
+<div class="mb-4">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Great Job!</h2>
+<p class="font-headline-lg text-headline-lg text-on-surface-variant">You learned 4x4!</p>
+</div>
+<div class="bg-surface-container rounded-lg p-6 mb-8 border-2 border-outline-variant/30 flex items-center justify-between gap-4">
+<div class="flex flex-col items-start">
+<span class="text-label-bold font-label-bold text-on-surface-variant">Daily Streak</span>
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-secondary">5 Days! 🔥</span>
+</div>
+<div class="h-16 w-[2px] bg-outline-variant/30"></div>
+<div class="flex flex-col items-end">
+<span class="text-label-bold font-label-bold text-on-surface-variant">New XP</span>
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-tertiary">+50 XP</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 w-full">
+<button class="plump-button w-full bg-primary text-on-primary font-headline-lg-mobile text-headline-lg-mobile py-4 rounded-lg shadow-[0_6px_0_0_#003b65] hover:shadow-[0_4px_0_0_#003b65] flex items-center justify-center gap-2">
+                    Next Adventure
+                    <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+<button class="plump-button w-full bg-surface-container-high text-primary font-label-bold text-label-bold py-4 rounded-lg shadow-[0_4px_0_0_#c0c7d4] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">home</span>
+                    Home
+                </button>
+</div>
+</div>
+<div class="fixed bottom-32 left-8 pointer-events-none">
+<div class="bg-surface-container-lowest border-2 border-outline-variant rounded-lg p-4 shadow-lg flex items-center gap-3 animate-bounce">
+<div class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+<div class="text-left">
+<p class="font-label-bold text-label-bold text-on-surface">Amazing!</p>
+<p class="text-sm text-on-surface-variant">Keep it up, Explorer!</p>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_0_0_rgba(0,0,0,0.05)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 active:shadow-none transition-all duration-75" href="#">
+<span class="material-symbols-outlined">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 active:shadow-none transition-all duration-75" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 active:translate-y-1 active:shadow-none transition-all duration-75 shadow-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high active:translate-y-1 active:shadow-none transition-all duration-75" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</a>
+</nav>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none">
+<div class="absolute top-1/4 left-10 text-2xl">✨</div>
+<div class="absolute top-1/3 right-12 text-2xl">🎉</div>
+<div class="absolute bottom-1/4 left-20 text-xl">🌟</div>
+<div class="absolute bottom-1/2 right-20 text-xl">🎈</div>
+</div>
+</body></html>

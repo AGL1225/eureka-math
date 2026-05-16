@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .wood-texture {
+            background-color: #755b00;
+            background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e6e8eb",
+                      "surface-container-highest": "#e0e3e6",
+                      "surface-variant": "#e0e3e6",
+                      "tertiary": "#006d41",
+                      "primary-container": "#47a7ff",
+                      "primary-fixed": "#d1e4ff",
+                      "on-tertiary-fixed-variant": "#005230",
+                      "on-tertiary-fixed": "#002110",
+                      "outline": "#707883",
+                      "on-secondary-container": "#715800",
+                      "secondary": "#755b00",
+                      "surface-container": "#eceef1",
+                      "on-primary-fixed": "#001d36",
+                      "on-background": "#191c1e",
+                      "primary-fixed-dim": "#9dcaff",
+                      "on-primary-fixed-variant": "#00497c",
+                      "secondary-fixed-dim": "#eec138",
+                      "inverse-primary": "#9dcaff",
+                      "tertiary-container": "#41b77b",
+                      "surface-container-low": "#f2f4f7",
+                      "primary": "#0061a3",
+                      "on-secondary-fixed-variant": "#584400",
+                      "on-secondary-fixed": "#241a00",
+                      "surface-bright": "#f7f9fc",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#2d3133",
+                      "tertiary-fixed-dim": "#69dc9c",
+                      "surface-dim": "#d8dadd",
+                      "secondary-fixed": "#ffe08e",
+                      "on-surface": "#191c1e",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "background": "#f7f9fc",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#404752",
+                      "tertiary-fixed": "#86f9b7",
+                      "on-primary-container": "#003b65",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#004226",
+                      "outline-variant": "#c0c7d4",
+                      "surface-tint": "#0061a3",
+                      "surface": "#f7f9fc",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#fdcf45",
+                      "inverse-on-surface": "#eff1f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "touch-target-min": "56px",
+                      "margin-tablet": "40px",
+                      "margin-mobile": "20px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Quicksand"],
+                      "body-md": ["Quicksand"],
+                      "headline-lg-mobile": ["Quicksand"],
+                      "headline-lg": ["Quicksand"],
+                      "label-bold": ["Quicksand"],
+                      "headline-xl": ["Quicksand"]
+              },
+              "fontSize": {
+                      "body-lg": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                      "body-md": ["18px", {"lineHeight": "26px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                      "headline-lg": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "label-bold": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+                      "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-on-background w-full top-0 sticky shadow-[0_4px_0_0_rgba(0,97,163,0.1)] z-50">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<div class="flex items-center gap-2 active:translate-y-[4px] duration-100 ease-in-out">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim font-headline-lg-mobile text-headline-lg-mobile" data-icon="house">house</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Junior Explorer</h1>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-bold text-label-bold flex items-center gap-2 active:translate-y-[4px] duration-100 ease-in-out">
+                ⭐ 125
+            </div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile pt-8 pb-32 max-w-4xl mx-auto w-full">
+<!-- Challenge Header -->
+<div class="text-center mb-8">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Balance the Scale!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Can you find what's inside the mystery box?</p>
+</div>
+<!-- The Scale Arena -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-low rounded-xl border-4 border-outline-variant flex flex-col items-center justify-end p-8 overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute top-4 right-4 bg-tertiary-container/20 p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="lightbulb">lightbulb</span>
+<span class="font-label-bold text-label-bold text-on-tertiary-container">Hint: 3 = 1 + ?</span>
+</div>
+<!-- The Balance Scale Mechanism -->
+<div class="relative w-full max-w-2xl flex flex-col items-center">
+<!-- Main Pivot Crossbar -->
+<div class="relative w-full h-6 bg-[#8B5E3C] rounded-full shadow-[0_6px_0_0_#5D3A20] z-20 flex justify-between items-center px-4">
+<!-- Left Plate Connector -->
+<div class="w-1 h-24 bg-outline-variant absolute left-12 top-0 origin-top"></div>
+<!-- Right Plate Connector -->
+<div class="w-1 h-24 bg-outline-variant absolute right-12 top-0 origin-top"></div>
+</div>
+<!-- The Pivot Point -->
+<div class="w-12 h-12 bg-secondary rounded-full shadow-lg -mt-3 z-30 flex items-center justify-center border-4 border-secondary-fixed">
+<div class="w-3 h-3 bg-secondary-fixed rounded-full"></div>
+</div>
+<!-- Support Base -->
+<div class="w-16 h-48 bg-[#8B5E3C] shadow-[4px_0_0_0_#5D3A20] -mt-2"></div>
+<div class="w-48 h-8 bg-[#8B5E3C] rounded-t-xl shadow-[0_6px_0_0_#5D3A20]"></div>
+<!-- Left Plate -->
+<div class="absolute left-0 top-16 w-32 flex flex-col items-center transition-transform duration-500 translate-y-4">
+<div class="grid grid-cols-2 gap-1 mb-1">
+<img alt="Bear" class="w-12 h-12 object-contain" data-alt="A 3D rendered, cute plastic toy bear in a bright royal blue color. The bear has a friendly expression and a matte, rubbery texture, perfect for a children's educational interface. It sits upright in a playful pose, illuminated by soft studio lighting with gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqI9WSNBdMWjkIFTsIt77_sdnhgp9R_Iz9cJOz6KjXeW-nxWSPRnX2l9D8ChBfPl0cZUc_gD3AGmRwBRfKax4ZkUSgSiyRdTxQ6f4MJtmbQnDFkHhYDFexoETx5pVecTcClt3irk9r50XYx-Iz8Cde6N6XSlrbfZj0IDrsXHUP--uOBTJqGbIDELX9eQiFg9FEP91RuiQMLYY67MjNltZgG2peGqf2KjZ5f8cnW6icehyOtxWVBP3v4q8X-vC1GpuaUq8kuky9hA"/>
+<img alt="Bear" class="w-12 h-12 object-contain" data-alt="A 3D rendered, cute plastic toy bear in a bright royal blue color. The bear has a friendly expression and a matte, rubbery texture, perfect for a children's educational interface. It sits upright in a playful pose, illuminated by soft studio lighting with gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9BVOOCIb5IypcoWoY8KuJ25w04SjYpD480oyYhxBPDqwWpDZ_j5kX7pdQFW5RBzCDQrgil6v-QP-sdbxMaxbZdOyroff7gzUOcM7Jcy6W1ug8DILaPImZSvNpx1zlxxApSNY5BfrjRdFvKmA9EH6InhRHYgw5DO1Y3QACE5Um8OPMacBxMcLUvtsP0q5v_uSZoJgR_Ilou5EFvT-vCqEms9D6dyxd57DDzrZ6ODQNXOcSA9C8-kclAcBAgXp30vEBTNoXwF50Mw"/>
+<img alt="Bear" class="w-12 h-12 object-contain" data-alt="A 3D rendered, cute plastic toy bear in a bright royal blue color. The bear has a friendly expression and a matte, rubbery texture, perfect for a children's educational interface. It sits upright in a playful pose, illuminated by soft studio lighting with gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCprwc3o1Uu18mR5z47Q_Dmn7opzAbwfdccYAMkVsP5bEPABtpcGNB-CU55tJJpxiMBbinFKB8QfHtT-y3zKG4r_63wgOtL8IzsSjKYJ5kd9pKkVKyuFjxeAPEi-6kKYd7swDGmjnFxjPWwe2EbGBZ4OowIw0zKCWmvCJ27lWqbIemBO7yOlrkZ5wGsjRnL3hr3zcmW9oO1hrUzb6GoLOTvAwRpoXP2opUcmEFo0rR_frpI7W9sazL_dooIafW88xtJhAsNWUfQA"/>
+</div>
+<div class="w-32 h-4 bg-surface-container-highest rounded-full border-b-4 border-outline-variant shadow-md"></div>
+</div>
+<!-- Right Plate -->
+<div class="absolute right-0 top-16 w-32 flex flex-col items-center transition-transform duration-500 -translate-y-4">
+<div class="flex items-end gap-1 mb-1">
+<img alt="Bear" class="w-12 h-12 object-contain" data-alt="A 3D rendered, cute plastic toy bear in a bright royal blue color. The bear has a friendly expression and a matte, rubbery texture, perfect for a children's educational interface. It sits upright in a playful pose, illuminated by soft studio lighting with gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHP6UguvNe_p7XW0csXEhut1p__ecEBMsnsEucO-Tl7c0HsxiaU70xkU2FSsGBh7qsY1DYUoJa3WilMlG_1uf9MM8qBqPp-u4OiD25ZxCmJ81HwLm9ImyM2dfber6N55pfnrzUSLfkMYM1jlrEWP_TYwED7ZEPIS1GVI7QxP4IOHq9w2ppbsYp9JOhkmyUeQvD8B1g6z2YIMdzoD0tEK2KWKzO2jEcs1qp5R6vf42iH2rJfuxU8W26M1onRdzEU74RHKZ6oy6oGA"/>
+<!-- Mystery Box -->
+<div class="w-14 h-14 bg-secondary-container border-4 border-secondary flex items-center justify-center rounded-lg shadow-[0_4px_0_0_#755b00] active:translate-y-1 active:shadow-none transition-all">
+<span class="font-headline-xl text-on-secondary-container">?</span>
+</div>
+</div>
+<div class="w-32 h-4 bg-surface-container-highest rounded-full border-b-4 border-outline-variant shadow-md"></div>
+</div>
+</div>
+</div>
+<!-- Inventory / Interaction Area -->
+<div class="mt-8 w-full">
+<h3 class="font-label-bold text-label-bold text-on-surface-variant text-center mb-4 uppercase tracking-wider">Drag to add weights</h3>
+<div class="flex justify-center gap-6">
+<!-- Weight Option 1 -->
+<div class="group flex flex-col items-center gap-2 cursor-grab active:cursor-grabbing">
+<div class="w-20 h-20 bg-white border-2 border-outline-variant rounded-lg flex items-center justify-center shadow-[0_4px_0_0_#c0c7d4] group-active:translate-y-1 group-active:shadow-none transition-all">
+<img alt="Small Bear" class="w-14 h-14 object-contain" data-alt="A 3D rendered, cute plastic toy bear in a bright royal blue color. The bear has a friendly expression and a matte, rubbery texture, perfect for a children's educational interface. It sits upright in a playful pose, illuminated by soft studio lighting with gentle shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGK_GIVT4eGEl_mGe3pjOBsD65t1C1vQ6HCgciJ00qcfYB1eM__-S5MAGzXrA_aVSNTgXPem_KvwM2ozJuUgFhlRb_YXYC8NYDAaAXy81hLeZXyWoXRgMtYokngtmw4ulPqjv5Kk9_Elv8mXswPEVPHF1qH_6LVsTGJGpCppDIec699X-7RnZIanEqTneQPBrvqT8RIDfmwwZaY8ixhGbCC_H3rbVlLq6cdP8pyjrt4jl-TPfDGyXwQMCQnVSj9Rjm1CJXicea_g"/>
+</div>
+<span class="font-label-bold text-primary">Bear (1)</span>
+</div>
+<!-- Weight Option 2 -->
+<div class="group flex flex-col items-center gap-2 cursor-grab active:cursor-grabbing">
+<div class="w-20 h-20 bg-white border-2 border-outline-variant rounded-lg flex items-center justify-center shadow-[0_4px_0_0_#c0c7d4] group-active:translate-y-1 group-active:shadow-none transition-all">
+<div class="w-10 h-10 bg-tertiary rounded-full shadow-[0_4px_0_0_#005230]"></div>
+</div>
+<span class="font-label-bold text-tertiary">Ball (1)</span>
+</div>
+<!-- Weight Option 3 -->
+<div class="group flex flex-col items-center gap-2 cursor-grab active:cursor-grabbing">
+<div class="w-20 h-20 bg-white border-2 border-outline-variant rounded-lg flex items-center justify-center shadow-[0_4px_0_0_#c0c7d4] group-active:translate-y-1 group-active:shadow-none transition-all">
+<div class="w-12 h-6 bg-error rounded-sm shadow-[0_4px_0_0_#93000a]"></div>
+</div>
+<span class="font-label-bold text-error">Brick (2)</span>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="mt-12 bg-primary text-on-primary px-12 py-4 rounded-xl font-headline-lg shadow-[0_6px_0_0_#003b65] hover:scale-105 active:translate-y-[6px] active:shadow-none transition-all">
+            CHECK!
+        </button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_0_0_rgba(0,0,0,0.05)] rounded-t-lg">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-xl px-4 py-2 scale-110 active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="videogame_asset" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="font-label-bold text-label-bold">Play</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Learn</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-bold text-label-bold">Awards</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-2 hover:bg-surface-container-high dark:hover:bg-surface-variant active:translate-y-1 active:shadow-none transition-all duration-75">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-bold text-label-bold">Map</span>
+</div>
+</nav>
+</body></html>

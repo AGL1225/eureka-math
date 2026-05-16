@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#f8f9ff",
+            "secondary-fixed-dim": "#4edea3",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-container": "#00714d",
+            "surface-container": "#e5eeff",
+            "secondary": "#006c49",
+            "on-tertiary-container": "#ffeedd",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "tertiary-container": "#996100",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "surface-tint": "#0053db",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-container": "#eeefff",
+            "outline": "#737686",
+            "on-primary-fixed": "#00174b",
+            "primary": "#004ac6",
+            "on-surface": "#0b1c30",
+            "on-background": "#0b1c30",
+            "on-primary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary-container": "#2563eb",
+            "inverse-primary": "#b4c5ff",
+            "primary-fixed": "#dbe1ff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-low": "#eff4ff",
+            "primary-fixed-dim": "#b4c5ff",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary": "#784b00",
+            "surface-variant": "#d3e4fe",
+            "on-tertiary-fixed": "#2a1700",
+            "on-surface-variant": "#434655",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c3c6d7",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#dce9ff",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-fixed-variant": "#653e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xs": "4px",
+            "md": "24px",
+            "gutter": "24px",
+            "sm": "12px",
+            "margin-mobile": "16px",
+            "margin-desktop": "48px",
+            "lg": "40px",
+            "xl": "64px",
+            "base": "8px"
+          },
+          "fontFamily": {
+            "body-md": ["Quicksand"],
+            "display-lg-mobile": ["Quicksand"],
+            "display-lg": ["Quicksand"],
+            "body-lg": ["Quicksand"],
+            "label-caps": ["Quicksand"],
+            "headline-md": ["Quicksand"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Quicksand', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .trophy-glow {
+      box-shadow: 0 0 20px rgba(0, 74, 198, 0.15);
+    }
+    .badge-card {
+      border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    }
+    .monster-slot {
+      background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(229,238,255,0.5) 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50 sticky top-0">
+<div class="flex items-center gap-sm">
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="A charming digital illustration of a young student avatar with friendly features, styled in a vibrant 3D tactile art style. The character has soft lighting and expressive eyes, set against a clean, minimal background. The aesthetic is warm and encouraging, consistent with a modern educational gaming interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxwIFSZ_xSNOxyx-H4nWG11qtP1Nf8jpFDCMygh-XTrXFADpoNDmnRLlZD9HAVgG2hhI0sGRYbjeqb_2Cdcd7YHHrSC19EeC9OwNPjPU4JN19bH8wYXZfOPR_MaXmrQaPuXdEA1AW4WAo_HKoXZIUF-laQnqpRkWw6dEswfsZGk7x1zeIONnBV_m6R7X0agmQRVmg1iFcDj_Ss6XZ32mvq5dC9IfgXCiK_UYXK5cf-LpmpTa28czKjS9piR7IpHQWHaN90D1mgOw"/>
+<h1 class="font-headline-md text-headline-md text-primary">Eureka Math</h1>
+</div>
+<div class="flex items-center gap-xs bg-primary-container text-on-primary-container px-sm py-xs rounded-full font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+      Grade 5
+    </div>
+</header>
+<main class="px-margin-mobile md:px-margin-desktop py-lg space-y-xl max-w-7xl mx-auto">
+<!-- Hero Header -->
+<section class="text-center space-y-sm">
+<div class="inline-flex items-center justify-center p-md bg-secondary-container rounded-full mb-xs">
+<span class="material-symbols-outlined text-on-secondary-container text-[48px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">Hall of Heroes</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Behold your magnificent collection of mathematical triumphs and the rare creatures you've befriended!</p>
+</section>
+<!-- Rare Monsters Section -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary">WarningDiamond</span>
+          Rare Monsters
+        </h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-sm py-1 rounded-full">3 / 12 FOUND</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- MathBot Slot (Captured) -->
+<div class="monster-slot border-2 border-primary-container p-md rounded-lg flex flex-col items-center text-center space-y-sm group hover:scale-[1.02] transition-transform">
+<div class="w-full aspect-square bg-white rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
+<img class="w-24 h-24" data-alt="A high-detail 3D character design of 'MathBot', a friendly companion robot composed of geometric shapes like spheres and cubes. The robot features glowing teal accents and a digital screen face showing a happy expression. The lighting is soft and cinematic, casting gentle shadows in a clean, professional builder-style studio setting with a light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0JENn5sldpsEFUl8jbsQfAwPYR4gMUz3W4aaTI_Ns4xDt7ZhXwYFwzB5KsHT0G3xPJeBDPNlCs4btDV5URhDHALVIta1VuYNQxng-77iB7vflebhwFI4Pg4hueqHrDmiL1gKPkuR-B5BZ_7yyl9TWFV_fDB1g55wI9_Mm5YgjjEq3B2P5NrzXVOpvUBtf3b9RbVSkNtNTFEpkQx93j81xusr6gaPbC1V68BIW7_PLKGrmCeLuvWiShaUlPqtzlNe98BZsKmH-pw"/>
+<div class="absolute top-2 right-2 bg-secondary text-white p-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">MathBot</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">The Logic Engine</p>
+</div>
+</div>
+<!-- GeoDragon Slot (Captured) -->
+<div class="monster-slot border-2 border-primary-container p-md rounded-lg flex flex-col items-center text-center space-y-sm group hover:scale-[1.02] transition-transform">
+<div class="w-full aspect-square bg-white rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
+<img class="w-24 h-24" data-alt="A vibrant, stylized 3D dragon creature named 'GeoDragon' with wings made of translucent triangular fractals. The dragon is colored in shades of secondary-fixed-dim green and primary-container blue. It is depicted in a playful, bouncy pose within a brightly lit, high-contrast digital environment. The style is modern, tactile, and highly rewarding for a child's achievement screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAlUE8eb8XAn1OXeBvRBRQHg1xhSLF9mSYT0zehMLOChTDCfCX0g47-GX6kh5DgSV0Wv9Zp9lnN0E53ZgyjZay6YFCwu6GJHhJhoD72HbS5w_24IU3fMrHdb9cVyJ3uYbfOS4vrUcZQZJmVwtebhDZtgWu6DC5JqGfv4ZHAFfOcMz5r2XHxorvcfDUQn6Q1cSXxKJ2nXkVvKIuESD-4rM5h46_NqhSbTpmMgAwyytz4u88aBhEOGKN-xIji0eVM5EtuFbgKYj6kA"/>
+<div class="absolute top-2 right-2 bg-secondary text-white p-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">GeoDragon</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">The Angle Weaver</p>
+</div>
+</div>
+<!-- Fractal Feline Slot (Captured) -->
+<div class="monster-slot border-2 border-primary-container p-md rounded-lg flex flex-col items-center text-center space-y-sm group hover:scale-[1.02] transition-transform">
+<div class="w-full aspect-square bg-white rounded-xl overflow-hidden shadow-inner flex items-center justify-center relative">
+<img class="w-24 h-24" data-alt="A sophisticated, minimalist 3D cat character whose fur is composed of intricate repeating fractal patterns. The character uses a refined color palette of silver and primary blue. It sits elegantly on a glassmorphic pedestal in a high-density, modern strategy simulator environment. The lighting is crisp and precise, highlighting the mathematical complexity of its design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA78QnM_WNQqBIzBWXT9MFF9Z-Wq91LvNwa18bQ7IP48_pGGpG1jIxaagvWo909mb9N8To8zNZdJeKVUmZ78FCjgO-vfHZY8hYCvsIxHxZiidv9GHwRveIrmZIin12AG8MtKYwA4gDYfH_ehOhFTEpil4F0VgKM08Wlp-HW1eDa9NqLXf5QLymxnk_ChctrSFga_DxMF187nBFsju_gdFf0gCSTSa0gFL0Y7OpF6Y3sk2372BT7xZIKcBkH9_iOrJwu8alY8h-h1A"/>
+<div class="absolute top-2 right-2 bg-secondary text-white p-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Fractal Cat</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">The Pattern Seer</p>
+</div>
+</div>
+<!-- Locked Slot -->
+<div class="bg-surface-container-highest/30 border-2 border-dashed border-outline-variant p-md rounded-lg flex flex-col items-center text-center space-y-sm opacity-60">
+<div class="w-full aspect-square bg-surface-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[64px] text-outline-variant">lock</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-outline">???</h4>
+<p class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Locked Achievement</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Master Badges Grid -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+          Mastery Badges
+        </h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<!-- Concurrency Master -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-container rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">sync_alt</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Concurrency Master</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Solved 10 simultaneous equations</p>
+</div>
+</div>
+<!-- Budget Boss -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-secondary to-secondary-fixed-dim rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">payments</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Budget Boss</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Mastered decimals and interest</p>
+</div>
+</div>
+<!-- Bridge Engineer -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-tertiary-container to-tertiary-fixed-dim rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">architecture</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Bridge Engineer</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Perfect score in Geometry units</p>
+</div>
+</div>
+<!-- Fraction Fighter -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-error to-error-container rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">pie_chart</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Fraction Fighter</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Conquered 50 mixed fractions</p>
+</div>
+</div>
+<!-- Time Traveler -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-inverse-surface to-outline rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">schedule</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Time Traveler</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Solved 20 complex time problems</p>
+</div>
+</div>
+<!-- Logic Legend -->
+<div class="badge-card bg-surface-container-lowest p-md rounded-lg flex gap-md items-center shadow-sm hover:shadow-md transition-all">
+<div class="w-16 h-16 bg-gradient-to-br from-on-primary-fixed-variant to-primary-fixed-dim rounded-full flex items-center justify-center text-white shrink-0 trophy-glow">
+<span class="material-symbols-outlined text-[32px]">psychology</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-bold text-on-surface">Logic Legend</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Unlocked the mystery sequence</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant rounded-t-lg shadow-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined text-[24px]">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined text-[24px]">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</div>
+</nav>
+</body></html>

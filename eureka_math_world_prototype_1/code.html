@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Selection - Eureka Math World</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#005236",
+                      "primary-container": "#2563eb",
+                      "primary": "#004ac6",
+                      "secondary-container": "#6cf8bb",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-container": "#996100",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "surface-variant": "#d3e4fe",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container": "#e5eeff",
+                      "on-primary-container": "#eeefff",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "surface-tint": "#0053db",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-error": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "outline-variant": "#c3c6d7",
+                      "on-secondary-fixed": "#002113",
+                      "secondary": "#006c49",
+                      "on-surface-variant": "#434655",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "tertiary": "#784b00",
+                      "surface-bright": "#f8f9ff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "background": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "outline": "#737686",
+                      "on-surface": "#0b1c30",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#00714d",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-container": "#ffeedd",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-background": "#0b1c30"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "40px",
+                      "gutter": "24px",
+                      "xl": "64px",
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "sm": "12px",
+                      "md": "24px",
+                      "base": "8px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Quicksand"],
+                      "body-lg": ["Quicksand"],
+                      "label-caps": ["Quicksand"],
+                      "display-lg": ["Quicksand"],
+                      "headline-md": ["Quicksand"],
+                      "body-md": ["Quicksand"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .empire-shadow {
+            box-shadow: 0px 8px 0px 0px rgba(0, 74, 198, 0.2);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md overflow-x-hidden">
+<!-- Profile Selection Canvas -->
+<main class="flex flex-col items-center justify-center min-h-screen px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Header Section -->
+<header class="text-center mb-xl space-y-xs">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight">
+                Welcome to Eureka Math World
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Choose your path to explore
+            </p>
+</header>
+<!-- Bento Grid / Cards Container -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full max-w-6xl">
+<!-- Siahn: Empire of Senses (G1-3) -->
+<button class="group flex flex-col items-center text-center p-md bg-surface-container-low rounded-xl empire-shadow hover:scale-105 active:scale-95 transition-all duration-300">
+<div class="relative w-48 h-48 mb-md">
+<img alt="Siahn Avatar" class="w-full h-full rounded-full border-4 border-primary p-xs bg-white" data-alt="A bright and cheerful 3D-styled illustrated character with a playful expression, set against a soft blue circular background. The character has vibrant energy, capturing the 'Empire of Senses' aesthetic with thick organic outlines and high-saturation colors. The overall mood is warm, welcoming, and tactile, designed for younger learners in a playful mathematical world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLUOVCW9uyyQFqLQSP_hFRa0H7vZMqPbM1v1mgTw6ATY1lBj9mwi4Zx6O8Gba_0kSabRunkf0FE2NGmFNqB78Zg3eEhz3vJeYh-XCYZK4fyi6PwFlZnWgrG1q6MDBtsWGfCCoW03WILE5l7Cv4DXyea256KFvPXigtIDoDoSoB4ZlfKqo7LXkxkMOWMgP4U-9SMMjliJQMR6yMSx1ycKyi5Lygye8VZZ9o-HJICOvbzfjvlVecWgt6TF2RjkHx-n1MvTX7qdZk2g"/>
+<div class="absolute bottom-2 right-2 bg-secondary-container text-on-secondary-container p-xs rounded-full shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">child_care</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Siahn</h2>
+<span class="font-label-caps text-label-caps px-base py-xs bg-primary-container text-on-primary-container rounded-full mb-base">Grade 1-3</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic">World: Empire of Senses</p>
+<div class="mt-md w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-primary shadow-[0px_0px_8px_rgba(0,74,198,0.5)]"></div>
+</div>
+</button>
+<!-- Eunu: Builder of Order (G4-6) -->
+<button class="group flex flex-col items-center text-center p-md bg-white border-2 border-outline-variant rounded-none hover:border-primary hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden">
+<!-- Blueprint pattern background for Builder -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#004ac6 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative w-48 h-48 mb-md z-10">
+<img alt="Eunu Avatar" class="w-full h-full rounded-none border-2 border-outline p-xs bg-surface-container" data-alt="A professional and clean vector avatar of a student with a focused expression, wearing modern glasses, set against a lavender background. The style is geometric and grid-aligned, echoing the 'Builder of Order' aesthetic. The lighting is neutral and even, conveying a sense of logic, construction, and modern mathematical problem-solving for junior grades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJjfoXkuamHv6nzlCo2nSARpaf1ksDGF1wtTIT3foDZ-v3V0YQTbILxBo5VwE1OMFyalyD8qmA2g42gLVChOkSBLVh1cwd4R63dXYX_Mo-p-9Txzo1Yk2KmLEmcvvUFyKTUcRXXPV39ppVHOgHl-SUV31DRNVkFWBCSST_xGp3FYHGKEaalbny0PbEzz9DkUVpJfCBGtA2pNePALWmHjMoOhXueNGdGXm7gmBrdBIiqcpzwEhfeQyEgrWwM8cfwwUdH6x8g2szeA"/>
+<div class="absolute -top-2 -left-2 bg-primary text-white p-xs rounded-none border border-white">
+<span class="material-symbols-outlined text-[18px]">build</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs z-10">Eunu</h2>
+<span class="font-label-caps text-label-caps px-base py-xs border border-on-surface-variant text-on-surface-variant rounded-none mb-base z-10">Grade 4-6</span>
+<p class="font-body-md text-body-md text-on-surface-variant italic z-10">World: Builder of Order</p>
+<div class="mt-md w-full grid grid-cols-5 gap-xs z-10">
+<div class="h-2 bg-primary"></div>
+<div class="h-2 bg-primary"></div>
+<div class="h-2 bg-primary"></div>
+<div class="h-2 bg-primary"></div>
+<div class="h-2 bg-surface-variant"></div>
+</div>
+</button>
+<!-- Seoah: System Architect (G7-8) -->
+<button class="group flex flex-col items-center text-center p-md bg-inverse-surface rounded-lg glass-card hover:bg-on-surface hover:shadow-2xl transition-all duration-300">
+<div class="relative w-48 h-48 mb-md">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary-container opacity-20 rounded-full blur-xl"></div>
+<img alt="Seoah Avatar" class="w-full h-full rounded-full border border-white/40 p-xs relative z-10" data-alt="A sophisticated, minimalist hand-drawn style avatar of a student with a calm, analytical expression. The portrait is rendered in elegant black and white lines against a deep, dark glassmorphic background with subtle glowing accents. The lighting is dramatic and precise, reflecting the 'System Architect' aesthetic of high-stakes mathematical strategy and engineering excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUBNBbz8haBwaIpiZvz1LifVo4gfE_2YX81T8IjA8Ou-95bd-znF57wvwgsrAAhD4shJmHZ5Gkl100u_o6DyVzFmWYcsjNCwVk7mGxErJtbAx673c3b9IoQcfxYy2dEUhMShza-DamV7PKTHUVIWrh4vA0D-WWWK5a3xQJjhd4PkaQCxsaAdyyYaw30ZBpZMvLhr_ySAaPpVdBsFvurXYHp_OMQIZUPZUca3O4GXfPe-I5XA45xyp29zV0ZJrDCls1in1rM0Xxg"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-xs">Seoah</h2>
+<span class="font-label-caps text-label-caps px-base py-xs bg-white/10 text-white border border-white/20 rounded-full mb-base">Grade 7-8</span>
+<p class="font-body-md text-body-md text-surface-variant italic">World: System Architect</p>
+<div class="mt-md w-full flex items-center justify-between px-xs">
+<span class="w-1.5 h-4 bg-secondary-fixed"></span>
+<span class="w-1.5 h-6 bg-secondary-fixed"></span>
+<span class="w-1.5 h-3 bg-secondary-fixed"></span>
+<span class="w-1.5 h-8 bg-secondary-fixed"></span>
+<span class="w-1.5 h-5 bg-secondary-fixed"></span>
+<span class="w-1.5 h-7 bg-white/20"></span>
+<span class="w-1.5 h-4 bg-white/20"></span>
+</div>
+</button>
+</div>
+<!-- Footer Actions -->
+<footer class="mt-xl flex flex-col items-center space-y-md">
+<button class="group flex items-center space-x-base px-lg py-md bg-white border border-outline rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+<span class="font-headline-md text-on-surface">Add New Profile</span>
+</button>
+<div class="flex items-center space-x-md text-on-surface-variant">
+<button class="hover:text-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Manage Accounts</span>
+</button>
+<span class="h-4 w-px bg-outline-variant"></span>
+<button class="hover:text-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span>Parent Portal</span>
+</button>
+</div>
+</footer>
+</main>
+<!-- Decorative Elements (Theme based) -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] left-[-5%] w-64 h-64 rounded-full bg-primary opacity-[0.03] blur-3xl"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-96 h-96 rounded-full bg-secondary opacity-[0.03] blur-3xl"></div>
+</div>
+</body></html>

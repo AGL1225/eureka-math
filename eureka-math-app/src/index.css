@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-sans;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-card-hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+}
+
+/* Cosmic background effects */
+.cosmic-bg {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top right, rgba(109, 40, 217, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at bottom left, rgba(0, 229, 255, 0.1) 0%, transparent 40%);
+}
+
+.cosmic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}

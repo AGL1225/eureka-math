@@ -1,0 +1,61 @@
+# Junior Explorer: Grade 4-8 Advanced Curriculum Roadmap
+
+## Grade 4: The Mystery of Large Numbers & Shapes
+1. **Place Value Palace:** Working with numbers up to 10,000.
+2. **Mental Math Arena:** Quick addition and subtraction strategies.
+3. **Decimal Dunes:** Introduction to tenths and hundredths.
+4. **Fraction Forest:** Equivalent fractions and comparing sizes.
+5. **Multiplication Meadow:** Multiplying 2-digit by 2-digit numbers.
+6. **Division Deep:** Simple division with remainders.
+7. **Pattern Peaks:** Growing and shrinking patterns.
+8. **Shape Shifter Lab:** Identifying quadrilaterals and symmetry.
+9. **Time Traveler:** Converting units of time (seconds to hours).
+10. **Data Harbor:** Reading and creating stem-and-leaf plots.
+
+## Grade 5: The Ratio & Rate Expedition
+1. **Millionaire Mansion:** Working with numbers up to 1,000,000.
+2. **Decimal Duel:** Multiplying and dividing decimals by 10, 100, 1000.
+3. **The Fraction Bridge:** Improper fractions and mixed numbers.
+4. **Ratio Reef:** Introduction to ratios and equivalent ratios.
+5. **Percentage Park:** Understanding percentages as hundredths.
+6. **Operator Oasis:** Order of operations (simple brackets).
+7. **Geometric Grotto:** Measuring angles and identifying triangles.
+8. **Transformation Tower:** Slides (translations) and flips (reflections).
+9. **Capacity Canyon:** Estimating and measuring volume and capacity.
+10. **Probability Pit:** Using fractions to describe probability.
+
+## Grade 6: The Logic & Algebra Labyrinth
+1. **Prime Peak:** Prime and composite numbers.
+2. **Integer Iceberg:** Introduction to positive and negative integers.
+3. **Ratio Runway:** Unit rates and real-world ratios.
+4. **Algebraic Altar:** Using variables to represent unknowns (3x + 1 = 7).
+5. **Coordinate Cloud:** Plotting points on a 4-quadrant grid.
+6. **Surface Area Station:** Calculating surface area of prisms.
+7. **Volume Vault:** Volume of triangular prisms.
+8. **Circle Circuit:** Diameter, radius, and circumference.
+9. **Mean Meadow:** Calculating mean, median, and mode.
+10. **Pattern Palace:** Describing patterns using algebraic expressions.
+
+## Grade 7: The Proportional Reasoning Realm
+1. **Power Point:** Introduction to exponents and square roots.
+2. **Integer Inferno:** Adding and subtracting integers.
+3. **Decimal Den:** Operations with all types of decimals.
+4. **Fraction Fortress:** Adding and subtracting fractions with different denominators.
+5. **Percent Peak:** Calculating percent of a number (taxes, discounts).
+6. **Equation Engine:** Solving multi-step equations.
+7. **Angle Academy:** Parallel lines and transversals.
+8. **Pi Planet:** Area of a circle and applications of Pi.
+9. **Data Discovery:** Comparing different types of graphs (Box plots).
+10. **Theoretical Theater:** Theoretical vs Experimental probability.
+
+## Grade 8: The Linear & Pythagorean Path
+1. **Scientific Sky:** Scientific notation for very large/small numbers.
+2. **Integer Abyss:** Multiplying and dividing integers.
+3. **Rational Road:** Operations with positive and negative fractions.
+4. **Pythagorean Plaza:** Using the Pythagorean theorem in 3D.
+5. **Volume Volcano:** Volume of cylinders, cones, and spheres.
+6. **Algebraic Aviary:** Factoring and expanding simple expressions.
+7. **Linear Lake:** Graphing linear relations (y = mx + b).
+8. **Equation Everest:** Solving equations with variables on both sides.
+9. **Geometric Galaxy:** Dilations and complex transformations.
+10. **Data Science Station:** Correlation and lines of best fit.
