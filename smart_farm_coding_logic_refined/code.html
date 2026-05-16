@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "primary": "#004ac6",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#0053db",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#434655",
+                        "on-primary-fixed": "#00174b",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "primary-container": "#2563eb",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#737686",
+                        "inverse-surface": "#213145",
+                        "secondary": "#006c49",
+                        "tertiary": "#784b00",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-container": "#996100",
+                        "outline-variant": "#c3c6d7",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "display-lg-mobile": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .code-block {
+            clip-path: polygon(0% 0%, 80% 0%, 85% 20%, 95% 20%, 100% 40%, 100% 100%, 0% 100%);
+        }
+        .block-notch {
+            clip-path: polygon(0 0, 30% 0, 35% 15%, 65% 15%, 70% 0, 100% 0, 100% 100%, 70% 100%, 65% 85%, 35% 85%, 30% 100%, 0 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<header class="flex justify-between items-center px-margin-mobile py-sm w-full z-50 bg-surface-container-low dark:bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Siahn's Profile" data-alt="A professional high-quality portrait of a young student with a friendly expression, captured with soft natural lighting in a bright modern educational setting. The style is clean and contemporary, reflecting a Builder of Order aesthetic with crisp details and a warm, encouraging atmosphere that fits the Eureka Math visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4_CNhdzm_lmPnckZliUfGHunE_QoOkNypAiqJZhrlD46tLc0iU796KHj0jmfmGQNqGB3EwA1v1cBUv_iSpzY0eT2Ww8ZmIndyBURDeYuaLjNtfJLfRFuUJ3lVRXEKoDLiyyesJq3EYsD_2bwlY_YeB-kjqXj9nZP6z-y9PamRunsRgxevCNqGklf5_M9Ew1FlHOAfW0NrEkux7Dw2PCOiYtQSpwsh3AVqCmT5Kn8wwxRoC68nlptou8xZH-tWPloD5JKOtheX1w"/>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary">Eureka Math</h1>
+</div>
+<div class="flex items-center gap-base px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-primary">grade</span>
+<span class="font-headline-md text-headline-md text-primary">Grade 5</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<section class="flex-1 relative bg-surface-container h-[397px] md:h-auto border-b md:border-b-0 md:border-r border-outline-variant overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#004ac6 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="absolute top-md left-md z-10 flex flex-col gap-xs">
+<div class="bg-surface-bright/90 backdrop-blur-md p-sm rounded-lg border border-outline-variant shadow-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">CURRENT WEATHER</span>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl">cloudy_snowing</span>
+<span class="font-headline-md text-headline-md">Scattered Rain</span>
+</div>
+</div>
+</div>
+<div class="w-full h-full flex items-center justify-center p-lg">
+<div class="relative w-full max-w-2xl aspect-video bg-white/20 rounded-lg border-2 border-dashed border-primary/30 flex items-center justify-center">
+<img alt="Smart Farm View" class="w-full h-full object-cover rounded-lg" data-alt="A clean, stylized isometric 3D illustration of a futuristic smart farm. Rows of vibrant green crops are visible under sleek glass domes. The lighting is bright and technical, with blueprint-style UI overlays showing data points like moisture and temperature. The aesthetic is a 'Builder of Order' tycoon style with a professional, clean, and organized layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxL2cHghn6vBNWcNa3GUQTN79nLHgfJdF1rRrDomnTYiKr-l6fMcRrr5tHCWxkQ0vgxZSOW7J7pC-HIEbXOxfosgXE7fMfdJpQBGETE1uOOv7WBG-MkuF_JHnxTe50zzY94L2srmE1SRFyqHDWphHpGKg8nXEyriJlLWRNCyYtZvKP2_1ru1yu3HZHN8vrGiiEQBXtmbEN9IzKrFI1AwMjQCi1H_LAhqxYGBu7FpQ9WBcPFPXsK6k2UlJWLKXDAuHbIqC86vjQlA"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<div class="grid grid-cols-3 gap-md">
+<div class="p-sm bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border-b-4 border-secondary text-center">
+<span class="material-symbols-outlined text-secondary block text-3xl">eco</span>
+<span class="font-label-caps text-label-caps text-secondary">HEALTHY</span>
+</div>
+<div class="p-sm bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border-b-4 border-error text-center opacity-50">
+<span class="material-symbols-outlined text-error block text-3xl">potted_plant</span>
+<span class="font-label-caps text-label-caps text-error">WITHERING</span>
+</div>
+<div class="p-sm bg-white/80 backdrop-blur-sm rounded-lg shadow-lg border-b-4 border-primary text-center">
+<span class="material-symbols-outlined text-primary block text-3xl">water_drop</span>
+<span class="font-label-caps text-label-caps text-primary">HYDRATED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-md right-md">
+<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-headline-md text-headline-md shadow-lg flex items-center gap-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Run Simulation
+                </button>
+</div>
+</section>
+<section class="flex-1 bg-surface-container-high flex flex-col h-[486px] md:h-auto">
+<div class="p-md bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">terminal</span>
+                    Logic Sandbox
+                </h2>
+<div class="flex gap-xs">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined">undo</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<aside class="w-full md:w-48 bg-surface-container-low border-b md:border-b-0 md:border-r border-outline-variant p-sm flex md:flex-col gap-sm overflow-x-auto md:overflow-y-auto">
+<div class="min-w-[120px] bg-tertiary text-on-tertiary-container p-sm block-notch cursor-grab hover:brightness-110">
+<span class="font-label-caps text-label-caps opacity-80">CONDITION</span>
+<div class="font-bold">IF</div>
+</div>
+<div class="min-w-[120px] bg-secondary text-on-secondary-container p-sm block-notch cursor-grab hover:brightness-110">
+<span class="font-label-caps text-label-caps opacity-80">ACTION</span>
+<div class="font-bold">THEN</div>
+</div>
+<div class="min-w-[120px] bg-tertiary text-on-tertiary-container p-sm block-notch cursor-grab hover:brightness-110">
+<span class="font-label-caps text-label-caps opacity-80">LOGIC</span>
+<div class="font-bold">ELSE</div>
+</div>
+</aside>
+<div class="flex-1 p-md overflow-y-auto bg-surface-container-lowest space-y-xs">
+<div class="flex items-center gap-base">
+<div class="flex-1 bg-tertiary text-on-tertiary-container p-md block-notch flex items-center justify-between shadow-md">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md">IF</span>
+<div class="bg-white/20 px-4 py-2 rounded border border-white/30 font-bold">weather == rain</div>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="pl-lg border-l-4 border-outline-variant py-sm space-y-xs">
+<div class="flex items-center gap-base">
+<div class="flex-1 bg-secondary text-on-secondary-container p-md block-notch flex items-center justify-between shadow-md">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md">THEN</span>
+<div class="bg-white/20 px-4 py-2 rounded border border-white/30 font-bold">Close Roof</div>
+</div>
+<span class="material-symbols-outlined">settings_input_component</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<div class="flex-1 bg-tertiary text-on-tertiary-container p-md block-notch shadow-md">
+<span class="font-headline-md text-headline-md">ELSE</span>
+</div>
+</div>
+<div class="pl-lg border-l-4 border-outline-variant py-sm">
+<div class="w-full h-16 border-2 border-dashed border-outline rounded-lg flex items-center justify-center bg-surface-container-low group cursor-pointer hover:bg-primary-container/10 transition-colors">
+<div class="flex items-center gap-sm text-outline group-hover:text-primary">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-body-lg text-body-lg">Drop 'Turn on Sprinkler' here</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<div class="h-16 md:hidden"></div>
+</body></html>

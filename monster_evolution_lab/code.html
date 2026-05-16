@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monster Evolution: Lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(115, 118, 134, 0.2);
+        }
+        .blueprint-grid {
+            background-image: radial-gradient(circle, #c3c6d7 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#002113",
+                      "inverse-surface": "#213145",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#ffeedd",
+                      "secondary-container": "#6cf8bb",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#00714d",
+                      "surface-container-high": "#dce9ff",
+                      "outline": "#737686",
+                      "surface-container-low": "#eff4ff",
+                      "primary-container": "#2563eb",
+                      "surface": "#f8f9ff",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#d3e4fe",
+                      "surface-tint": "#0053db",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed-dim": "#4edea3",
+                      "inverse-primary": "#b4c5ff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-background": "#0b1c30",
+                      "inverse-on-surface": "#eaf1ff",
+                      "secondary-fixed": "#6ffbbe",
+                      "surface-dim": "#cbdbf5",
+                      "on-surface-variant": "#434655",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "primary": "#004ac6",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#784b00",
+                      "on-surface": "#0b1c30",
+                      "secondary": "#006c49",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#e5eeff",
+                      "primary-fixed": "#dbe1ff",
+                      "tertiary-container": "#996100",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "sm": "12px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "xl": "64px",
+                      "margin-desktop": "48px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Quicksand"],
+                      "display-lg": ["Quicksand"],
+                      "label-caps": ["Quicksand"],
+                      "headline-md": ["Quicksand"],
+                      "body-md": ["Quicksand"],
+                      "body-lg": ["Quicksand"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden blueprint-grid">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile py-sm w-full z-50 bg-surface-container-low shadow-sm fixed top-0 left-0">
+<div class="flex items-center gap-sm">
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="A detailed portrait of a youthful student avatar named Seoah, featuring large expressive eyes and a friendly smile. The background is a soft blue gradient consistent with a modern educational interface. The lighting is bright and optimistic, reflecting a high-quality 3D render style with smooth textures and warm highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANnc9pQrYSmz2QLS03hGysDHlvZ8yNIIlZAEwlcNcprvrCIWF35c6t0hkUQ2drg94G8NWPspnGy3ZRC--ltb7igu8Om_MUFiyblE_iZLUlKckQ7wq9HDrdZhNwn4zI9Jad5JvhKMnaGmGZ-ifGoZZiUjM7jIpMQHTeQtWSBiuq1ax_bBgsFhRuWTIPcLHxj2EMob7mFaO0yIaN4EcLPAcEYmu5kWKghJu32zVyltb5SqScsSsq-zLZjSD5C0ZtOiXe0u1sk9bg8A"/>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary">Eureka Math</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-4 py-2 rounded-full border border-outline-variant transition-transform active:scale-95">
+<span class="font-headline-md text-headline-md text-primary">Grade 5</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter min-h-screen">
+<!-- Left Column: Monster Chamber -->
+<section class="md:col-span-7 flex flex-col gap-md">
+<div class="relative bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant shadow-lg h-[500px] flex items-center justify-center">
+<!-- Background Environment -->
+<div class="absolute inset-0 opacity-10 blueprint-grid"></div>
+<!-- Glow Effect -->
+<div class="absolute w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20"></div>
+<!-- Main Monster Display -->
+<div class="relative z-10 flex flex-col items-center">
+<img class="w-64 h-64 object-contain" data-alt="A highly detailed 3D rendering of MathBot, a friendly robot with a square head and glowing blue digital eyes. Its body is made of polished white ceramic with bright blue mechanical joints and floating geometric accents. It stands in a high-tech laboratory chamber with soft teal lighting and floating holographic mathematical symbols like multiplication signs and equations. The overall atmosphere is encouraging and futuristic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYv9D4LmX8LPGNfj4tNfR6JlklPI_LA7q-i20xgpCTXpZbE6i7kLe4yx4ATxpOeyQmMwk5ifTWVxXS76bWbTwWkclBX55QAG_YIgQCjeRYH0SMSl9mRoUF_gIyQKFZxEtPNyaWpZuGwwsiLpL--JvogjuvHvck5DSeEmmiSIdW6OrScHyCLbu6xGfZJcnJtEX7G6_-y5TZ5wMssXXlPnLTt9LvdN2HcmgFQyGJcpVlic5JXoy-5-F2rQql3IiEaAbQ-N-pVmW-og"/>
+<div class="mt-lg text-center">
+<h2 class="font-display-lg text-display-lg text-on-surface">MathBot v2.4</h2>
+<div class="inline-flex items-center gap-xs px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full mt-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">electric_bolt</span>
+<span class="font-label-caps text-label-caps">STABLE FREQUENCY</span>
+</div>
+</div>
+</div>
+<!-- Floating Data Points -->
+<div class="absolute top-8 left-8 glass-panel p-4 rounded-lg flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Logic Core</span>
+<span class="font-headline-md text-headline-md text-primary">94%</span>
+</div>
+<div class="absolute bottom-8 right-8 glass-panel p-4 rounded-lg flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Growth Sync</span>
+<span class="font-headline-md text-headline-md text-secondary">0.82x</span>
+</div>
+</div>
+<!-- Evolution Path - Asymmetric Layout -->
+<div class="bg-surface-container-high p-md rounded-lg flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined">account_tree</span> Evolution Blueprint
+                </h3>
+<div class="flex items-center justify-between gap-md overflow-x-auto py-sm">
+<!-- Current -->
+<div class="flex flex-col items-center gap-sm min-w-[100px]">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm border-2 border-primary">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary text-center">Active: Bot</span>
+</div>
+<div class="h-[2px] flex-grow bg-outline-variant relative">
+<div class="absolute top-1/2 left-0 h-[2px] bg-primary w-full shadow-[0_0_8px_rgba(37,99,235,0.5)]"></div>
+</div>
+<!-- Next -->
+<div class="flex flex-col items-center gap-sm min-w-[100px]">
+<div class="w-20 h-20 rounded-full bg-surface-container-lowest border-4 border-dashed border-primary flex items-center justify-center text-primary relative">
+<span class="material-symbols-outlined text-[40px]">memory</span>
+<div class="absolute -top-2 -right-2 bg-error text-on-error w-8 h-8 rounded-full flex items-center justify-center text-[18px]">
+<span class="material-symbols-outlined">lock</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-center">Next: AI Nexus</span>
+</div>
+<div class="h-[2px] flex-grow bg-outline-variant"></div>
+<!-- Final -->
+<div class="flex flex-col items-center gap-sm min-w-[100px] opacity-40">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center text-outline">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-center">Final: Architect</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Requirements & Lab Controls -->
+<aside class="md:col-span-5 flex flex-col gap-md">
+<!-- Mastery Progress Card -->
+<div class="glass-panel p-md rounded-lg flex flex-col gap-lg shadow-sm">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Concept Mastery</h3>
+<p class="text-on-surface-variant mt-xs">Complete core modules to initiate evolution.</p>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Progress Item 1 -->
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">Multiplication Prowess</span>
+<span class="font-label-caps text-label-caps text-primary">42/50</span>
+</div>
+<div class="h-4 bg-surface-container rounded-full overflow-hidden p-0.5 border border-outline-variant">
+<div class="h-full bg-primary rounded-full" style="width: 84%"></div>
+</div>
+<p class="text-[12px] text-on-surface-variant italic flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span> Solve 8 more multiplication problems
+                        </p>
+</div>
+<!-- Progress Item 2 -->
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">Long Division Logic</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim text-on-secondary-container">COMPLETE</span>
+</div>
+<div class="h-4 bg-secondary-container rounded-full overflow-hidden p-0.5 border border-secondary">
+<div class="h-full bg-secondary rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Progress Item 3 -->
+<div class="flex flex-col gap-sm opacity-60">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">Geometric Synthesis</span>
+<span class="font-label-caps text-label-caps text-outline">LOCKED</span>
+</div>
+<div class="h-4 bg-surface-container rounded-full overflow-hidden p-0.5 border border-outline-variant border-dashed">
+</div>
+</div>
+</div>
+</div>
+<!-- Lab Tech Specs -->
+<div class="bg-inverse-surface text-inverse-on-surface p-md rounded-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-fixed">biotech</span>
+<h4 class="font-headline-md text-headline-md">Laboratory Vitals</h4>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-white/5 p-3 rounded-md border border-white/10">
+<span class="block font-label-caps text-label-caps text-white/50 mb-1">ENERGY CELLS</span>
+<span class="font-headline-md text-headline-md text-secondary-fixed">1,240 XP</span>
+</div>
+<div class="bg-white/5 p-3 rounded-md border border-white/10">
+<span class="block font-label-caps text-label-caps text-white/50 mb-1">STABILIZER</span>
+<span class="font-headline-md text-headline-md text-white">OPTIMAL</span>
+</div>
+</div>
+<!-- Main Action Button -->
+<button class="w-full mt-sm py-lg rounded-xl flex flex-col items-center justify-center gap-sm bg-outline text-white/50 cursor-not-allowed group transition-all" disabled="">
+<span class="material-symbols-outlined text-[48px] transition-transform duration-500">upgrade</span>
+<div class="text-center">
+<span class="block font-headline-md text-headline-md">EVOLVE</span>
+<span class="font-label-caps text-label-caps">REQUIRES FULL MASTERY</span>
+</div>
+</button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs bg-surface-container-high border-t border-outline-variant shadow-lg md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<!-- Desktop Sidebar/Nav Mockup (Hidden on mobile) -->
+<div class="hidden md:flex fixed left-0 top-0 h-full w-20 flex-col items-center py-24 gap-lg bg-surface-container-low border-r border-outline-variant z-40">
+<div class="p-3 text-on-surface-variant hover:text-primary cursor-pointer"><span class="material-symbols-outlined text-[32px]">map</span></div>
+<div class="p-3 text-on-surface-variant hover:text-primary cursor-pointer"><span class="material-symbols-outlined text-[32px]">menu_book</span></div>
+<div class="p-3 bg-secondary-container text-on-secondary-container rounded-xl shadow-md"><span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">biotech</span></div>
+<div class="p-3 text-on-surface-variant hover:text-primary cursor-pointer"><span class="material-symbols-outlined text-[32px]">leaderboard</span></div>
+</div>
+</body></html>

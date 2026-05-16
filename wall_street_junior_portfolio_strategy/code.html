@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-bright": "#f8f9ff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#434655",
+                        "on-surface": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#00174b",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary-container": "#ffeedd",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#eeefff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#784b00",
+                        "tertiary-container": "#996100",
+                        "primary-container": "#2563eb",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "surface": "#f8f9ff",
+                        "primary": "#004ac6",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container": "#e5eeff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline": "#737686",
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-surface": "#213145",
+                        "on-secondary-container": "#00714d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "md": "24px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Quicksand"],
+                        "label-caps": ["Quicksand"],
+                        "display-lg": ["Quicksand"],
+                        "display-lg-mobile": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Quicksand', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center w-full px-margin-mobile h-16 bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-md">
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-base rounded-full hover:bg-surface-variant/50 transition-transform active:scale-95 duration-200">menu</button>
+<h1 class="font-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Grade 6: Mystic Peaks</h1>
+</div>
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-base rounded-full hover:bg-surface-variant/50 transition-transform active:scale-95 duration-200">stars</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto space-y-lg">
+<!-- Hero Section: System Architect Dashboard -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Main Growth Projection Chart Card -->
+<div class="glass-panel rounded-xl p-md shadow-sm relative overflow-hidden h-[400px] flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Wealth Architect Pro</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">30-Year Asset Growth Curve</p>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-secondary block">ESTIMATED NET WORTH AT 30</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">$1,245,800</span>
+</div>
+</div>
+<!-- Visualization Placeholder -->
+<div class="flex-grow flex items-end gap-1 px-base relative">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+<div class="w-full h-full relative">
+<!-- SVG Curve simulation -->
+<svg class="w-full h-full preserve-3d" viewbox="0 0 400 150">
+<path class="text-secondary opacity-80" d="M0,150 Q100,140 200,80 T400,20" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary opacity-40" d="M0,150 Q100,145 200,120 T400,90" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+<div class="absolute bottom-0 left-0 w-full flex justify-between px-xs border-t border-outline-variant/30 pt-xs">
+<span class="font-label-caps text-label-caps text-outline">Age 14</span>
+<span class="font-label-caps text-label-caps text-outline">Age 22</span>
+<span class="font-label-caps text-label-caps text-outline">Age 30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Strategic Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/20">
+<div class="flex items-center gap-base mb-sm">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<h3 class="font-label-caps text-label-caps">Volatility Index</h3>
+</div>
+<p class="font-headline-md text-headline-md">Medium</p>
+<div class="w-full bg-outline-variant/30 h-1 rounded-full mt-sm">
+<div class="bg-secondary h-1 rounded-full w-2/3 shadow-[0_0_8px_rgba(0,108,73,0.5)]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/20">
+<div class="flex items-center gap-base mb-sm">
+<span class="material-symbols-outlined text-primary">hub</span>
+<h3 class="font-label-caps text-label-caps">Diversification</h3>
+</div>
+<p class="font-headline-md text-headline-md">High (84%)</p>
+<div class="w-full bg-outline-variant/30 h-1 rounded-full mt-sm">
+<div class="bg-primary h-1 rounded-full w-[84%] shadow-[0_0_8px_rgba(0,74,198,0.5)]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-md border border-outline-variant/20">
+<div class="flex items-center gap-base mb-sm">
+<span class="material-symbols-outlined text-tertiary">bolt</span>
+<h3 class="font-label-caps text-label-caps">Risk Multiplier</h3>
+</div>
+<p class="font-headline-md text-headline-md">1.4x Growth</p>
+<div class="w-full bg-outline-variant/30 h-1 rounded-full mt-sm">
+<div class="bg-tertiary h-1 rounded-full w-1/2 shadow-[0_0_8px_rgba(120,75,0,0.5)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Allocation Controls Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="glass-panel rounded-xl p-md shadow-sm h-full flex flex-col">
+<h2 class="font-headline-md text-headline-md mb-md">Portfolio Builder</h2>
+<div class="space-y-lg flex-grow">
+<!-- Asset: Savings -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-body-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary">savings</span>
+                                    High-Yield Savings
+                                </label>
+<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-base py-xs rounded-full">45%</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-secondary" type="range" value="45"/>
+<p class="text-[10px] text-outline italic">Risk: Low | Growth: 4.5% APY</p>
+</div>
+<!-- Asset: Stocks -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-body-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">show_chart</span>
+                                    Diversified Stocks
+                                </label>
+<span class="font-label-caps text-label-caps bg-primary-container text-on-primary-container px-base py-xs rounded-full">40%</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="40"/>
+<p class="text-[10px] text-outline italic">Risk: Moderate | Growth: 10% Avg.</p>
+</div>
+<!-- Asset: Crypto -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-body-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary">currency_bitcoin</span>
+                                    Crypto Assets
+                                </label>
+<span class="font-label-caps text-label-caps bg-tertiary-container text-on-tertiary-container px-base py-xs rounded-full">15%</span>
+</div>
+<input class="w-full h-1.5 bg-outline-variant rounded-lg appearance-none cursor-pointer accent-tertiary" type="range" value="15"/>
+<p class="text-[10px] text-outline italic">Risk: High | Growth: Extreme/Volatile</p>
+</div>
+</div>
+<button class="w-full mt-lg py-md bg-on-surface text-background font-headline-md text-headline-md rounded-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all">
+                        Execute Strategy
+                    </button>
+</div>
+</div>
+</section>
+<!-- Market Events & News (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-panel p-md rounded-xl flex items-center gap-md">
+<img alt="Financial news" class="w-32 h-32 rounded-lg object-cover" data-alt="A macro photograph of a financial news terminal displaying complex glowing line graphs and data points in a high-tech trading floor. The lighting is moody with cool blue and cyan tones, creating a professional fintech atmosphere. Shallow depth of field focuses on the sharp white data lines against a blurred dark technical background. The style is minimalist and high-precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5N2uKLCA-PTqPaWFlDpeFVM1YlFdB0iq1brTMwV3q6zL_-6TchtVKIVv_6Livj7rxu7qJDccp3p8L7o2yNT6nJgZ8aHyAmOAsBvEdjGIj1fcfcQ2R0t5bITcw0TzY6bXTHojrVk1NndigTiKot5t5j99t2osOI2VUW9d2H5vngQ9RY1CpdYBpRQJ1Uc332lj1tBRUYG_cfY9wCmpw5fCg3h3i2X3uGLfSjfMVXrjXEhKrHiwCKHoGAzD3a7Or6qlWEsDto-uswA"/>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-xs">Economic Update</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Central Bank announces rate hike. Interest on savings increases by 0.5%. How will this affect your compound interest curve?</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-md rounded-xl flex flex-col justify-center text-center border-l-4 border-secondary">
+<span class="font-label-caps text-label-caps text-secondary mb-xs">DAILY CHALLENGE</span>
+<h4 class="font-headline-md text-headline-md">Compound Magic</h4>
+<p class="font-body-md text-body-md">Invest $100 today to reach $1,000 in 25 years.</p>
+<button class="mt-md text-primary font-bold hover:underline">Start Challenge</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-highest/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">map</span>
+<span class="font-label-sm text-label-sm">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(68,226,205,0.4)] active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Collection</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">assignment</span>
+<span class="font-label-sm text-label-sm">Quests</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors group active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

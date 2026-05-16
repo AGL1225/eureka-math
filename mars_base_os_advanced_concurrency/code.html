@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed": "#6ffbbe",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#dbe1ff",
+            "on-surface-variant": "#434655",
+            "on-surface": "#0b1c30",
+            "background": "#f8f9ff",
+            "on-primary-fixed-variant": "#003ea8",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-dim": "#cbdbf5",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#00174b",
+            "surface-variant": "#d3e4fe",
+            "on-tertiary-container": "#ffeedd",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "on-primary-container": "#eeefff",
+            "surface-container-highest": "#d3e4fe",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#c3c6d7",
+            "on-primary": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-high": "#dce9ff",
+            "tertiary": "#784b00",
+            "tertiary-container": "#996100",
+            "primary-container": "#2563eb",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "surface-tint": "#0053db",
+            "surface": "#f8f9ff",
+            "primary": "#004ac6",
+            "primary-fixed-dim": "#b4c5ff",
+            "on-background": "#0b1c30",
+            "inverse-primary": "#b4c5ff",
+            "surface-container": "#e5eeff",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "tertiary-fixed": "#ffddb8",
+            "outline": "#737686",
+            "secondary": "#006c49",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "inverse-surface": "#213145",
+            "on-secondary-container": "#00714d"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xs": "4px",
+            "base": "8px",
+            "md": "24px",
+            "margin-desktop": "48px",
+            "gutter": "24px",
+            "sm": "12px",
+            "lg": "40px",
+            "xl": "64px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "headline-md": ["Quicksand"],
+            "label-caps": ["Quicksand"],
+            "display-lg": ["Quicksand"],
+            "display-lg-mobile": ["Quicksand"],
+            "body-md": ["Quicksand"],
+            "body-lg": ["Quicksand"],
+            "mono": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c3c6d7;
+      border-radius: 10px;
+    }
+    .glass-panel {
+      background: rgba(239, 244, 255, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .code-editor {
+      background: #0b1c30;
+      color: #eeefff;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col h-full w-80 bg-surface-container-low shadow-2xl z-40">
+<div class="flex flex-col h-full py-md">
+<!-- Profile Header -->
+<div class="px-md mb-lg">
+<div class="flex items-center gap-base">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container">
+<img alt="Aria Stormbound" data-alt="A sophisticated digital portrait of a female futuristic engineer with glowing blue accents on her suit, set against a dark architectural background of a Martian command center. The lighting is cinematic with high-contrast shadows and sharp, precise lines in an architect-style minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJQrsGz3w47M3iGVGljag48VJ3H0C6XATEoqIg6bxOpVY9VU3hlIAwmrNeuZ64bznOMR1eJAojouA4pN-YVAv7hvrxlPj3WoR2G-g5vO7rmL8QajVpdRSna7hpLhjNyEVeJ9XlzhikFTTGe2jv6_a5S78aVPdMB7Gs-brD8l25_4O5nCEqOh0jRVLphRNo1L0qjwReEZ9KmmBshvpBD_rKYVGbF-tKDg-ZKe8XqPp160ZXUtDrE4dwgDG1rxqNqKVC8U8NcC-Og"/>
+</div>
+<div>
+<h3 class="text-on-surface font-bold">Aria Stormbound</h3>
+<p class="text-on-surface-variant text-sm">Level 42 Arcanist</p>
+</div>
+</div>
+<div class="mt-sm px-base py-xs bg-surface-container-high rounded text-xs text-on-surface-variant inline-block">
+          Rank: Gold III
+        </div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1">
+<div class="space-y-1">
+<a class="flex items-center gap-md px-md py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 transition-all Active: translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span class="font-body-md">World Map</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant mx-2 hover:bg-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body-md">Leaderboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant mx-2 hover:bg-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span class="font-body-md">Artifacts</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant mx-2 hover:bg-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative min-w-0 h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface-container/80 backdrop-blur-md text-primary flex justify-between items-center w-full px-margin-mobile md:px-gutter h-16 border-b border-outline-variant/30 z-30 docked full-width top-0 shadow-md">
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined p-2 hover:bg-surface-variant/50 rounded-full transition-all" data-icon="menu">menu</button>
+<h1 class="font-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Grade 6: Mystic Peaks</h1>
+</div>
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined p-2 hover:bg-surface-variant/50 rounded-full transition-all" data-icon="stars">stars</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<div class="hidden md:flex items-center gap-sm">
+<span class="text-xs font-bold text-secondary uppercase tracking-wider">Mission Stability: 98.4%</span>
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[98.4%]"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Workspace Container (Bento Grid) -->
+<div class="flex-1 p-margin-mobile md:p-gutter overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Code Editor Panel (Large Column) -->
+<section class="lg:col-span-7 flex flex-col glass-panel rounded-xl overflow-hidden shadow-lg border border-outline-variant/20">
+<div class="px-md py-sm bg-surface-container-high/50 flex justify-between items-center border-b border-outline-variant/20">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="code">code</span>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant">OS_CORE_LOGIC.JS</h2>
+</div>
+<div class="flex gap-xs">
+<button class="px-sm py-1 bg-primary text-on-primary rounded text-xs font-bold hover:scale-95 transition-transform flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+              COMPILE
+            </button>
+<button class="p-1 text-on-surface-variant hover:bg-surface-variant rounded">
+<span class="material-symbols-outlined text-sm" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<div class="flex-1 code-editor p-md font-mono text-sm custom-scrollbar overflow-auto leading-relaxed">
+<div class="flex gap-md">
+<div class="text-on-surface-variant/40 select-none text-right w-8">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15
+            </div>
+<div class="flex-1">
+<span class="text-secondary-fixed-dim">async function</span> <span class="text-primary-fixed-dim">optimizeMining</span>(rovers) {<br/>
+                <span class="text-on-surface-variant/60">// Concurrent mining logic for Mars Sector 7</span><br/>
+                <span class="text-secondary-fixed-dim">const</span> missions = rovers.<span class="text-tertiary-fixed-dim">map</span>(rover =&gt; {<br/>
+                  <span class="text-secondary-fixed-dim">return</span> <span class="text-primary-fixed-dim">rover</span>.<span class="text-tertiary-fixed-dim">navigate</span>({<br/>
+                    target: <span class="text-on-tertiary-container">'CORE_DEPOSIT'</span>,<br/>
+                    avoidCollision: <span class="text-secondary-fixed-dim">true</span><br/>
+                  });<br/>
+                });<br/><br/>
+                <span class="text-secondary-fixed-dim">await</span> <span class="text-primary-fixed-dim">Promise</span>.<span class="text-tertiary-fixed-dim">all</span>(missions);<br/>
+                <span class="text-primary-fixed-dim">console</span>.<span class="text-tertiary-fixed-dim">log</span>(<span class="text-on-tertiary-container">"Resources Secured."</span>);<br/>
+              }
+              <div class="inline-block w-[2px] h-4 bg-primary animate-pulse ml-1 align-middle"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Viewport & Status (Right Column) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Viewport -->
+<section class="flex-1 min-h-[300px] glass-panel rounded-xl overflow-hidden shadow-lg relative border border-outline-variant/20">
+<div class="absolute top-4 left-4 z-10">
+<div class="px-sm py-1 bg-on-surface/80 text-white rounded-full text-[10px] font-bold flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+              LIVE FEED: SECTOR_7
+            </div>
+</div>
+<img class="w-full h-full object-cover" data-alt="A futuristic 3D architectural rendering of a Martian mining base at dusk. Glowing orange dust storms swirl around modular habitats and large metallic mining drills. Sleek, robotic rovers with cyan light strips are navigating between metallic crates. The atmosphere is hazy and cinematic with sharp technological details on the machinery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhoq4Rtj4Olba57SIHa6_6szseb4yaT-mR2MU0qqbT5VDeTFnN821MAv-f1rwCKA9DzVf4fc1NsGB7OZUDuPMHM368k8qy7b0s_cqSygvxJcx7P_mHUwx47d9xECrOvjT8eLsQfpWpNx0GdI85rE5inaOr8VEUrQglPAV4jz1UCNbni1pbNy2Yrnm-2wrGG0yQ6PHrvCcMDMzahqiC6qkqIx0cXujOspQ3wG7dq_1WHNBgEYUaezP3ODRsY8pJ6Lza_UF1EC5KfA"/>
+<div class="absolute bottom-4 right-4 z-10 flex gap-xs">
+<button class="w-8 h-8 rounded bg-surface/50 backdrop-blur flex items-center justify-center hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-on-surface text-sm" data-icon="videocam">videocam</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface/50 backdrop-blur flex items-center justify-center hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-on-surface text-sm" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</section>
+<!-- Status Feed -->
+<section class="h-1/3 glass-panel rounded-xl p-md shadow-lg border border-outline-variant/20 flex flex-col">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-sm">SYSTEM TELEMETRY</h3>
+<div class="flex-1 custom-scrollbar overflow-auto space-y-base">
+<div class="flex justify-between items-center text-xs p-base bg-surface-container rounded">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="smart_toy">smart_toy</span>
+<span class="font-bold">Rover-Alpha</span>
+</div>
+<span class="text-on-surface-variant">IDLE - WAITING FOR OPTIMIZATION</span>
+</div>
+<div class="flex justify-between items-center text-xs p-base bg-surface-container rounded">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="smart_toy">smart_toy</span>
+<span class="font-bold">Rover-Beta</span>
+</div>
+<span class="text-secondary font-bold">MINING [78%]</span>
+</div>
+<div class="flex justify-between items-center text-xs p-base bg-surface-container rounded border border-error/20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error text-sm" data-icon="warning">warning</span>
+<span class="font-bold">Rover-Gamma</span>
+</div>
+<span class="text-error font-bold">COLLISION RISK - ACTION REQ</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-highest/90 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.4)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors transition-transform Active: scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm">Map</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors transition-transform Active: scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Collection</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(68,226,205,0.4)] transition-transform Active: scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-sm text-label-sm">Quests</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/80 hover:text-secondary transition-colors transition-transform Active: scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</main>
+</body></html>

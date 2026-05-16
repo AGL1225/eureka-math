@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#261a00",
+                    "error": "#ba1a1a",
+                    "primary-container": "#00a3ff",
+                    "on-surface": "#191c1e",
+                    "secondary": "#006c49",
+                    "surface-bright": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#cfe5ff",
+                    "primary-fixed-dim": "#98cbff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#f9bd22",
+                    "outline-variant": "#bec7d4",
+                    "secondary-container": "#6cf8bb",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-container": "#00714d",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-variant": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eceef0",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6f7883",
+                    "tertiary-fixed": "#ffdf9f",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-tertiary-container": "#443100",
+                    "surface-tint": "#00629d",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#001d33",
+                    "on-primary-container": "#00375a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed-variant": "#004a77",
+                    "tertiary": "#795900",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#c69400",
+                    "primary": "#00629d",
+                    "on-surface-variant": "#3f4852",
+                    "inverse-primary": "#98cbff",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-md": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neumorphic-card {
+            background: #ffffff;
+            box-shadow: 8px 8px 16px rgba(0, 98, 157, 0.08), -8px -8px 16px rgba(255, 255, 255, 1);
+            border-radius: 24px;
+        }
+        .neumorphic-inset {
+            background: #f7f9fb;
+            box-shadow: inset 4px 4px 8px rgba(0, 98, 157, 0.05), inset -4px -4px 8px rgba(255, 255, 255, 1);
+            border-radius: 16px;
+        }
+        .soft-3d-button {
+            border-bottom-width: 4px;
+            transition: all 0.1s ease-in-out;
+        }
+        .soft-3d-button:active {
+            transform: translateY(2px);
+            border-bottom-width: 1px;
+        }
+        .glass-header {
+            background: rgba(247, 249, 251, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 glass-header shadow-sm rounded-b-xl px-4 py-4 flex justify-between items-center bg-surface-bright">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden ring-2 ring-white shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A high-quality 3D render of a friendly kid explorer character wearing round glasses and a bright green tech-suit. The character has a cheerful expression, set against a soft, clean white background with professional studio lighting. The style is polished and modern, echoing high-end animation studio character designs with soft textures and vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP6EkDOZywIc88mxGpkWTGiXc_CzyaAa0CooSPRh5cpICtatEhxS-UmECCHq1IERjyqFepzOMmC50gW1zjP0muHhH6iP4kwgSMcqaw-mxjsxnE8Yysn7zCkrsv14PyppjrLKf3tT_4yavhZsTrehVV3yAZyV3w5TO9MEGvVI1_2L9CUmuNMqoyWGFpWAm_6XZaviAL_SkulocRohp4OD8QqrUdkSs2mcA9daozLYoR81PYn5_g4gKUJf1TX8TvSpSxhpvLu1heGQ"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Math Quest</h1>
+</div>
+<div class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm border-b-2 border-secondary">
+            Lv. 12
+        </div>
+</header>
+<main class="pt-24 px-4 max-w-container-max mx-auto">
+<!-- Collection Header & Stats -->
+<div class="mb-8 flex flex-col gap-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Monster Collection</h2>
+<div class="flex gap-4">
+<div class="neumorphic-card flex-1 p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Discovered</p>
+<p class="font-headline-md text-headline-md text-on-surface">24/150</p>
+</div>
+</div>
+<div class="neumorphic-card flex-1 p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-weight="fill">stars</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Rarity Score</p>
+<p class="font-headline-md text-headline-md text-on-surface">840</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-6 scrollbar-hide no-scrollbar">
+<button class="soft-3d-button bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md border-primary-fixed-dim whitespace-nowrap">All Monsters</button>
+<button class="neumorphic-card hover:bg-surface-container-high transition-colors px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant whitespace-nowrap border-b-2 border-surface-dim">Cosmic</button>
+<button class="neumorphic-card hover:bg-surface-container-high transition-colors px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant whitespace-nowrap border-b-2 border-surface-dim">Nature</button>
+<button class="neumorphic-card hover:bg-surface-container-high transition-colors px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant whitespace-nowrap border-b-2 border-surface-dim">Geometry</button>
+<button class="neumorphic-card hover:bg-surface-container-high transition-colors px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant whitespace-nowrap border-b-2 border-surface-dim">Algebra</button>
+</div>
+<!-- Monsters Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Monster Card 1 -->
+<div class="neumorphic-card p-4 group transition-all hover:scale-[1.02] cursor-pointer">
+<div class="neumorphic-inset aspect-square mb-4 relative overflow-hidden flex items-center justify-center">
+<img alt="Cuboid" class="w-48 h-48 object-contain" data-alt="A high-fidelity 3D render of a friendly purple monster composed entirely of stacked geometric cubes. It has large, expressive glowing eyes and a playful expression. The surfaces have a soft matte texture with subtle rim lighting in vibrant cyan. It sits in a bright, airy digital space with a soft contact shadow beneath it, using a primary blue and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe6QWPYWf49HjOjbWCB2kuxj0yRJX8nO4-0oqen_LLaRQUOzxqCHUeLixWccCiPRsH8yPyfcChRqcfUJ_ixgw4WydyF5O3-EOMjh9MYxIp6cxD18rEnzFJKcoNH-wTblxCo2gdFK1X9Cs-sSyJrtqbrkVQbXbprDj0u2Xbsw4oK53oXlhZJ4sHZ6EmH1uLWtXNTKhoSgB12wd6WCC4Vo-Em1iDjZJBjgFct3X3PXXOG9FrCG0F5c6GD03B662RjZPLCM2VM2-hmA"/>
+<div class="absolute top-3 right-3 bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md shadow-sm">
+                        LV. 24
+                    </div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Geometry</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cubo the Great</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-on-surface-variant font-label-md text-label-md">Rare</span>
+<div class="flex gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monster Card 2 -->
+<div class="neumorphic-card p-4 group transition-all hover:scale-[1.02] cursor-pointer">
+<div class="neumorphic-inset aspect-square mb-4 relative overflow-hidden flex items-center justify-center">
+<img alt="Spiralis" class="w-48 h-48 object-contain" data-alt="A premium 3D digital render of a cosmic monster shaped like a glowing spiral galaxy. Translucent floating math symbols and glowing digits orbit its core. The aesthetic is sleek and ethereal, featuring deep blues and vibrant pink highlights. Soft lighting creates a sense of volume and depth, set against a pristine white studio background to emphasize the character's vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0E4TgfxgoNqqelUShm0xhUI0S1ytrNxD2BE1w2EGjBGyAeSSYsSHY79aAKKW140HtOXwGou3gUB24_NSvuLedGWVBOEU_G0JS3LnVcBGPUmT1HjQt01cC7Cjcd2Oj-19r9kzaMuLYB-XvjG9Im_67EfJ3NxkwwuWswVvZOGjvlpMOXfHNtwqPkrwRx1637RJ5udM-fIolcBuyi0f8_d9P_QJa4yz8cvsTNarjar2rHM7wI0u9ELs9CqCnjUTRtmUnVoyjJYDlHA"/>
+<div class="absolute top-3 right-3 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full font-label-md text-label-md shadow-sm">
+                        LV. 42
+                    </div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Algebra</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nebula-X</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-on-surface-variant font-label-md text-label-md">Legendary</span>
+<div class="flex gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Monster Card 3 -->
+<div class="neumorphic-card p-4 group transition-all hover:scale-[1.02] cursor-pointer">
+<div class="neumorphic-inset aspect-square mb-4 relative overflow-hidden flex items-center justify-center">
+<img alt="Fracta" class="w-48 h-48 object-contain" data-alt="A detailed 3D render of a nature-themed monster whose body is composed of intricate green fractal leaf patterns. It has a soft, organic feel with glowing yellow accents along its edges. The creature has big, curious eyes and a friendly demeanor. High-key studio lighting highlights the complex textures, creating a sense of touchable volume on a bright white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwuHMV0bOtdgHvLHqyQqJA80AGJInZOqWC7L5Z0WoX4gWVIie4Sc5A8VKzvAhxdVHLS18TQAFUEWeO_7kbbB1K2kggYh9OUHsQ5WASyNq1DEbWgqlKli2ns9DKtmlMLeeh1Vlm_lAlZv7RmpcMnEcUHxRQ37qjNVN1riJiwCBnrgove6VR_RwJ1FFdL2QNlc_w3eO6hc15botmPPoM0QeAnONPA7rXInawt7J8nNPRz4ZiUHzLwNA0PYJ_D8_A90XWnwkNi_sBJQ"/>
+<div class="absolute top-3 right-3 bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md shadow-sm">
+                        LV. 15
+                    </div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Fractals</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ferny-Pi</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-on-surface-variant font-label-md text-label-md">Common</span>
+<div class="flex gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Locked Monster Card -->
+<div class="neumorphic-card p-4 opacity-75 grayscale bg-surface-container">
+<div class="neumorphic-inset aspect-square mb-4 flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-outline text-6xl">lock</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-outline font-label-md text-label-md uppercase tracking-wider">???</span>
+<h3 class="font-headline-md text-headline-md text-outline">Unknown Monster</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-outline font-label-md text-label-md">Unlock at Lv. 15</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-xl z-50">
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-2 scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label-md text-label-md font-bold">Collection</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-label-md text-label-md">Quests</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:bg-secondary-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button for Sorting (Extra UX) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center soft-3d-button border-b-4 border-on-primary-fixed-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</body></html>

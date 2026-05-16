@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eureka Math World - Who's Exploring Today?</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Nunito+Sans:ital,wght@0,200;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#e1e2eb",
+                      "on-surface": "#e1e2eb",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed": "#ffe083",
+                      "secondary-fixed": "#a2eeff",
+                      "background": "#10131a",
+                      "primary-fixed": "#ebddff",
+                      "on-error": "#690005",
+                      "surface": "#10131a",
+                      "inverse-primary": "#7331df",
+                      "surface-container-high": "#272a31",
+                      "surface-variant": "#32353c",
+                      "secondary": "#5de6ff",
+                      "on-surface-variant": "#ccc3d7",
+                      "surface-bright": "#363940",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-container-lowest": "#0b0e14",
+                      "on-tertiary-fixed": "#231b00",
+                      "secondary-container": "#00cbe6",
+                      "on-secondary-fixed": "#001f25",
+                      "outline-variant": "#4a4455",
+                      "surface-container": "#1d2026",
+                      "tertiary-container": "#cea700",
+                      "on-primary": "#3f008d",
+                      "on-tertiary": "#3c2f00",
+                      "on-primary-container": "#dac5ff",
+                      "on-secondary": "#00363e",
+                      "surface-dim": "#10131a",
+                      "on-tertiary": "#3c2f00",
+                      "on-primary-container": "#dac5ff",
+                      "on-secondary": "#00363e",
+                      "surface-dim": "#10131a",
+                      "on-tertiary-container": "#4e3e00",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "on-primary-fixed-variant": "#5b00c5",
+                      "surface-container-low": "#191c22",
+                      "primary": "#d3bbff",
+                      "surface-container-highest": "#32353c",
+                      "tertiary": "#eec200",
+                      "primary-container": "#6d28d9",
+                      "outline": "#958da1",
+                      "error-container": "#93000a",
+                      "on-background": "#e1e2eb",
+                      "on-primary-fixed": "#250059",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "on-secondary-container": "#00515d",
+                      "tertiary-fixed-dim": "#eec200",
+                      "surface-tint": "#d3bbff",
+                      "primary-fixed-dim": "#d3bbff",
+                      "inverse-on-surface": "#2e3037",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "touch-target-min": "48px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "body-lg": ["Nunito Sans"],
+                      "body-md": ["Nunito Sans"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "body-lg": ["20px", {"lineHeight": "30px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .starfield-bg {
+            background: radial-gradient(circle at center, #1a1e2e 0%, #0b0e14 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .starfield-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 10% 20%, white, transparent),
+                radial-gradient(1.5px 1.5px at 30% 50%, #5de6ff, transparent),
+                radial-gradient(1px 1px at 70% 80%, #d3bbff, transparent),
+                radial-gradient(2px 2px at 90% 10%, #eec200, transparent);
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+        .nebula-glow {
+            background: radial-gradient(600px circle at 50% 50%, rgba(115, 49, 223, 0.15), transparent);
+        }
+        .glass-hud {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 20px rgba(93, 230, 255, 0.4);
+            border-color: #5de6ff;
+        }
+        .corner-accent::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid #5de6ff;
+            border-left: 2px solid #5de6ff;
+        }
+        .corner-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 12px;
+            height: 12px;
+            border-bottom: 2px solid #5de6ff;
+            border-right: 2px solid #5de6ff;
+        }
+        .portal-dash {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23D3BBFF' stroke-width='3' stroke-dasharray='10%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 24px;
+        }
+      </style>
+</head>
+<body class="starfield-bg text-on-surface min-h-screen font-body-md flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-secondary/20 shadow-[0_0_15px_rgba(93,230,255,0.3)] bg-surface/10 dark:bg-surface/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-touch-target-min w-full">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary dark:text-primary">
+                Eureka Math World
+            </h1>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-variant/20 transition-colors active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-touch-target-min flex items-center justify-center" data-icon="settings">settings</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-1 border border-secondary/30">
+<span class="text-label-caps font-label-caps text-secondary">Level 42</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center pt-24 pb-32 px-margin-mobile relative z-10 nebula-glow">
+<!-- Welcome Section -->
+<section class="text-center mb-12">
+<h2 class="font-headline-xl text-headline-xl md:text-[56px] text-on-surface mb-2 tracking-tight">Who's Exploring Today?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant opacity-80">Select your commander to begin the mission.</p>
+</section>
+<!-- Profile Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl">
+<!-- Profile Card 1: Leo the Lion -->
+<button class="glass-hud p-8 rounded-3xl flex flex-col items-center group relative corner-accent transition-all duration-300 card-glow active:scale-95">
+<div class="w-32 h-32 rounded-full mb-6 p-1 border-2 border-secondary overflow-hidden shadow-[0_0_15px_rgba(93,230,255,0.5)]">
+<img alt="Leo the Explorer Lion Profile Avatar" class="w-full h-full object-cover scale-150 transform translate-y-[-10%]" data-alt="A heroic 3D rendered lion in gold-trimmed astronaut explorer gear with a friendly smile, set against a circular deep space background. The character has vibrant fur textures and soft studio lighting that creates a playful and high-quality appearance, fitting a cosmic adventure theme." src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Leo</h3>
+<span class="text-label-caps font-label-caps text-secondary tracking-widest bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">LEVEL 12</span>
+</button>
+<!-- Profile Card 2: Nova the Dragon -->
+<button class="glass-hud p-8 rounded-3xl flex flex-col items-center group relative corner-accent transition-all duration-300 card-glow active:scale-95">
+<div class="w-32 h-32 rounded-full mb-6 p-1 border-2 border-primary overflow-hidden shadow-[0_0_15px_rgba(211,187,255,0.5)]">
+<img alt="Nova the Cosmic Dragon Profile Avatar" class="w-full h-full object-cover scale-150 transform -translate-x-1/4" data-alt="A friendly 3D rendered cosmic dragon with shimmering purple scales and large curious eyes. The character is framed in a circular portrait with soft neon purple backlighting, conveying a magical and adventurous spirit suitable for an educational space journey." src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Nova</h3>
+<span class="text-label-caps font-label-caps text-primary tracking-widest bg-primary/10 px-3 py-1 rounded-full border border-primary/20">LEVEL 28</span>
+</button>
+<!-- Profile Card 3: Sparky the Cyborg -->
+<button class="glass-hud p-8 rounded-3xl flex flex-col items-center group relative corner-accent transition-all duration-300 card-glow active:scale-95">
+<div class="w-32 h-32 rounded-full mb-6 p-1 border-2 border-tertiary overflow-hidden shadow-[0_0_15px_rgba(238,194,0,0.5)]">
+<img alt="Sparky the Cyborg Profile Avatar" class="w-full h-full object-cover scale-150 transform translate-x-1/4" data-alt="A friendly 3D rendered cyborg child with glowing cyan eyes and metallic parts, set in a futuristic portrait. The character has a playful expression and is illuminated by warm gold light, creating a high-tech yet approachable look for a kid-focused learning interface." src="https://lh3.googleusercontent.com/aida/ADBb0uhr1nPXeHiRMYvCjA_FXUcvf307hLr1onsr2hZ0Fu9d7vRp95nb5J5665jORO-KqNDYFiXG7qW-o56Aa1EQX1Us1NMHD7PiIip78SxJuZ38dLMFwHE7usYT-mPCE3VKTXFrsQOfb8DnhrF7ht-mxHeFD5xQNl7OvNWYBNj7sqU8YX2AsanLGzsPLiLHtlH7He8sRsOgW41UHARxiBVZQOoc3TvtjJbCFveIb_joYAEX6jXPdzhcs-Yk"/>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Sparky</h3>
+<span class="text-label-caps font-label-caps text-tertiary tracking-widest bg-tertiary/10 px-3 py-1 rounded-full border border-tertiary/20">LEVEL 05</span>
+</button>
+<!-- Add New Explorer Button -->
+<button class="portal-dash p-8 flex flex-col items-center justify-center group transition-all duration-500 hover:bg-primary-container/10 active:scale-95">
+<div class="w-24 h-24 rounded-full mb-4 flex items-center justify-center border-2 border-dashed border-primary/40 group-hover:border-primary group-hover:bg-primary/20 transition-all shadow-[0_0_0px_rgba(211,187,255,0)] group-hover:shadow-[0_0_30px_rgba(211,187,255,0.4)]">
+<span class="material-symbols-outlined text-4xl text-primary font-bold" data-icon="add">add</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-primary transition-colors">ADD EXPLORER</p>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Filtered Out as per instructions for Splash/Entry screens, but included if viewed as 'Home') -->
+<!-- Suppression: This is a profile selection / login screen. Suppression rule applies: 'Suppressed on transactional/onboarding screens'. -->
+<!-- Footer Branding / Legal -->
+<footer class="mt-auto py-8 text-center opacity-30 px-margin-mobile">
+<p class="text-label-caps font-label-caps text-on-surface tracking-widest">GALACTIC ACADEMY OF MATHEMATICS • SECTOR 7G</p>
+</footer>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-1/4 left-10 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

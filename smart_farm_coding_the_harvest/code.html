@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-container": "#2563eb",
+                    "primary": "#004ac6",
+                    "secondary-container": "#6cf8bb",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#996100",
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container": "#e5eeff",
+                    "on-primary-container": "#eeefff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-tint": "#0053db",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed": "#002113",
+                    "secondary": "#006c49",
+                    "on-surface-variant": "#434655",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary": "#784b00",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline": "#737686",
+                    "on-surface": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "xl": "64px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "label-caps": ["Quicksand"],
+                    "display-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Quicksand', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-bg {
+            background-image: 
+                linear-gradient(to right, rgba(115, 118, 134, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(115, 118, 134, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low dark:bg-surface-container-lowest shadow-sm flex justify-between items-center px-margin-mobile py-sm w-full z-50 sticky top-0">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim overflow-hidden border-2 border-primary">
+<img alt="Eunu" class="w-full h-full object-cover" data-alt="A profile picture of a young cheerful student named Eunu, wearing a modern blue school vest. The style is clean, 3D animated character design with soft lighting and a warm, encouraging atmosphere. High quality digital illustration with a blurred educational classroom background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb9a_A7viWa0WKgY4F561ctDm8DXyzilrol0B-a2UQbcQIS0ueGUZeGlS-npiVz0JIEJy_HSIXO_05x5sW_P4eV0FxLnSmCV-zloh-Ms4IImKymbZeszT-RBCxqVHRwv9hVWusY42ACfvdNOcnXWW3iom2MxUGcjmOHBoPNjZKQpYe8xZYarkmrOYAaxgAHaJmY2u2se95FuDzI_5DF3YzIqGihMS9AUgRAJXsGS9zZNrya1hUJXoVbQhgpXSpYioBpeUMTXk-6Q"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">Eureka Math</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">Grade 5</span>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors">settings</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<!-- Left Side: Block Coding Area (The Builder Toolbox) -->
+<section class="w-full md:w-1/2 flex flex-col border-r border-outline-variant bg-surface blueprint-bg">
+<div class="p-md flex items-center justify-between">
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Automate your Farm!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Drag logic blocks to build your automation engine.</p>
+</div>
+<div class="flex gap-xs">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">verified</span>
+<span class="font-label-caps text-label-caps text-secondary">BUILDER TIER</span>
+</div>
+</div>
+<div class="flex-1 p-md flex flex-col gap-md overflow-y-auto">
+<!-- Condition Block -->
+<div class="bg-primary p-4 rounded-xl shadow-md border-b-4 border-on-primary-fixed-variant flex flex-col gap-sm">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-primary" data-weight="fill">cloud</span>
+<span class="font-headline-md text-headline-md text-on-primary">IF weather == rain</span>
+</div>
+</div>
+<!-- Nested Action Block -->
+<div class="ml-lg bg-secondary-container p-4 rounded-xl shadow-sm border-l-4 border-secondary flex items-center justify-between">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-secondary-container" data-weight="fill">roofing</span>
+<span class="font-body-lg text-body-lg text-on-secondary-container font-semibold">THEN Close Roof</span>
+</div>
+<span class="material-symbols-outlined text-on-secondary-container">drag_indicator</span>
+</div>
+<!-- Else Block -->
+<div class="bg-primary-container p-4 rounded-xl shadow-md border-b-4 border-on-primary-fixed flex flex-col gap-sm">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-primary-container" data-weight="fill">alt_route</span>
+<span class="font-headline-md text-headline-md text-on-primary-container">ELSE</span>
+</div>
+</div>
+<!-- Nested Action Block 2 -->
+<div class="ml-lg bg-surface-container-high p-4 rounded-xl shadow-sm border-l-4 border-outline flex items-center justify-between border-dashed border-2">
+<div class="flex items-center gap-base opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant">water_drop</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant">Drop action here...</span>
+</div>
+</div>
+<!-- Logic Toolbox (Sidebar style) -->
+<div class="mt-xl p-md bg-surface-container-low rounded-lg border border-outline-variant">
+<h3 class="font-label-caps text-label-caps text-outline mb-sm">TOOLBOX</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-on-secondary-fixed-variant text-secondary-fixed p-3 rounded-lg flex items-center gap-base active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">sprinkler</span>
+<span class="font-label-caps text-label-caps">Turn on Sprinkler</span>
+</div>
+<div class="bg-on-secondary-fixed-variant text-secondary-fixed p-3 rounded-lg flex items-center gap-base active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">light_mode</span>
+<span class="font-label-caps text-label-caps">Enable UV Lamps</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: 3D Isometric View (The Simulation Stage) -->
+<section class="w-full md:w-1/2 relative bg-surface-container-highest overflow-hidden">
+<!-- Isometric Farm View -->
+<div class="absolute inset-0 flex items-center justify-center p-md">
+<div class="relative w-full aspect-square max-w-[500px]">
+<!-- Background Layer -->
+<div class="absolute inset-0 rounded-lg shadow-xl overflow-hidden bg-secondary-fixed-dim border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="A high-tech 3D isometric smart farm scene with precise geometric rows of vibrant green lettuce and strawberries. The farm features retractable glass roof structures and chrome irrigation pipes. The lighting is bright and clear like a professional architectural visualization. Soft blue and green tones dominate, creating a clean, modern, and educational atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpJGRPHYbzbvKs2kVX_EYRqGBdQhjKPq4bSeDJciOB-2P_IgcM1edTQOCsTYd47omlRZM9ZtIVDcykcoZJu4nUsSEZPsCKVR8rl_nvN9Xc2-9Ee2dRvZqHu1p1CwrkwByoi7Lbz_NvBc6Xie2heqwKpw6OmGGBKrLTjTme5OE4ElGHV8xqDn9vXxv4ReHLppk795h9MO93Sz03yT8O9xeniR_dez1h64iwM_uyrfFAKom0YnanSql1l44B1Jy5Z8Ra91pN6Mn5WA"/>
+</div>
+<!-- HUD Elements -->
+<div class="absolute top-4 left-4 flex flex-col gap-xs">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-sm border border-outline-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">thermostat</span>
+<div>
+<div class="font-label-caps text-label-caps text-outline">TEMP</div>
+<div class="font-headline-md text-headline-md text-on-surface">24°C</div>
+</div>
+</div>
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-sm border border-outline-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-weight="fill">rainy</span>
+<div>
+<div class="font-label-caps text-label-caps text-outline">WEATHER</div>
+<div class="font-headline-md text-headline-md text-on-surface">Rainy</div>
+</div>
+</div>
+</div>
+<!-- Overlay Success Badge (Logic Visualization Placeholder) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-white/80 backdrop-blur-lg p-xl rounded-full border-4 border-secondary shadow-2xl flex flex-col items-center gap-base transform scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-[64px] text-secondary" data-weight="fill">verified_user</span>
+<span class="font-headline-md text-headline-md text-on-secondary-container">Automation Success!</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Run Simulation Button -->
+<div class="absolute bottom-lg left-1/2 -translate-x-1/2 w-full max-w-xs px-margin-mobile">
+<button class="w-full bg-primary text-on-primary py-md px-xl rounded-xl shadow-lg border-b-4 border-on-primary-fixed-variant flex items-center justify-center gap-sm hover:translate-y-1 hover:border-b-0 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-weight="fill">play_arrow</span>
+<span class="font-headline-md text-headline-md">RUN SIMULATION</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Only for top-level destinations) -->
+<nav class="bg-surface-container-high border-t border-outline-variant fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-xs md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-caps text-label-caps">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-weight="fill">menu_book</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">backpack</span>
+<span class="font-label-caps text-label-caps">Backpack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+</nav>
+<!-- Desktop Navigation Cluster (Shared Components Rule) -->
+<div class="hidden md:flex fixed right-margin-desktop top-4 z-[60] gap-md items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary" href="#">MAP</a>
+<a class="font-label-caps text-label-caps text-primary font-bold bg-secondary-container px-4 py-1 rounded-full" href="#">SKILLS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary" href="#">BACKPACK</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary" href="#">STATS</a>
+</div>
+</body></html>
